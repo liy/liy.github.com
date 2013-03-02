@@ -102,7 +102,410 @@
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/29/mang-a/">忙啊</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-29T21:49:00+00:00" pubdate data-updated="true">Jan 29<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这种写博客的方法还真是安逸，又便宜。只需要弄个域名，每年给个几十块。完全静态网页也有好处哈。</p>
+
+<p>等我忙完这几个星期，看能不能用Ruby写个Octopress的插件，同步更新新浪微博之类的。</p>
+
+<p>废话不多说，准备睡觉了，明天还得上班。 T_T</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/29/first-post/">First Post</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-29T01:47:00+00:00" pubdate data-updated="true">Jan 29<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Too late to sleep</h3>
+
+<p>This is my first post using Octopress and markdown</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/106">Octopress, I&#8217;m Coming!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-28T00:00:00+00:00" pubdate data-updated="true">Jan 28<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Ditching Wordpress and Dreamhost and switch to Octopress on Heroku!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/101">朋友们新春快乐！</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-22T00:00:00+00:00" pubdate data-updated="true">Jan 22<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>万事都如意可能有点玄，但是身体健康是肯定要的！新年快乐！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/94">Install Ruby Through RVM on Xcode 4.2.1 on Lion</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-12T00:00:00+00:00" pubdate data-updated="true">Jan 12<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>rvm cannot compile executable, for some reasons:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div class='bogus-wrapper'>&lt;notextile>&lt;figure class='code'>&lt;div class="highlight">&lt;table>&lt;tr>&lt;td class="gutter">&lt;pre class="line-numbers">&lt;span class='line-number'>1&lt;/span>
+</span><span class='line'>&lt;/pre>&lt;/td>&lt;td class='code'>&lt;pre>&lt;code class=''>&lt;span class='line'>... configure: error: C compiler cannot create executables ...&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>&lt;/div>&lt;/figure>&lt;/notextile>&lt;/div></span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://stackoverflow.com/questions/8032824/cant-install-ruby-under-lion-with-rvm-gcc-issues" target="_blank">This post</a> magically solve the problem!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/91">Install Git Through Homebrew on Lion Notes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-12T00:00:00+00:00" pubdate data-updated="true">Jan 12<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I have Xcode installed already, which puts an older version of git in: <strong>/usr/local/bin/</strong></p>
+
+<p>Homebrew install newer version of git at: <strong>/usr/local/bin/</strong></p>
+
+<p>We have to mannally change <strong>$PATH</strong> variable to ensure the <strong>/user/local/bin</strong> comes before <strong>/usr/local/bin/</strong></p>
+
+<p><a href="https://github.com/mxcl/homebrew/issues/6432#issuecomment-1624857">https://github.com/mxcl/homebrew/issues/6432#issuecomment-1624857</a></p>
+
+<p>By the way, the <strong>$PATH</strong> environment variable is loaded from this file: <strong>/etc/paths</strong></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/88">Some Notes About Ruby on Rail App Deployment on Heroku</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-31T00:00:00+00:00" pubdate data-updated="true">Dec 31<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you get an error when you do database migration, during the deployment process:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ heroku rake db:migrate
+</span><span class='line'>rake aborted!
+</span><span class='line'>Please install the postgresql adapter: `gem install activerecord-postgresql-adapter` (pg is not part of the bundle. Add it to Gemfile.)Tasks: TOP =&gt; db:migrate =&gt; db:load_config
+</span><span class='line'>(See full trace by running task with --trace)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Add PostgreSQL gem, replace the line <strong><em>gem &#8216;sqlite3&#8217;</em></strong> with:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>group :development, :test do
+</span><span class='line'>  gem 'sqlite3'
+</span><span class='line'>end
+</span><span class='line'>group :production do
+</span><span class='line'>  gem 'pg'
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This ensures the production using PostgreSQL, since Heroku does not support sqlite3.</p>
+
+<p><del>If after success deployed the rail app, the application gives an error page like: “We&#8217;re sorry, but something went wrong&#8230;” This is actually a generic error message. It might be caused by the assets loading problem. I did forget to compile the assets before deploy the app.</del></p>
+
+<p><del>Run the following command before deployment to compile the assets to <em><strong>public/</strong></em> directory</p>
+
+<p></del></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;del>bundle exec rake assets:precompile&lt;/del></span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then do the deployment again:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git push heroku master</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/82">Spork in RoR</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-26T00:00:00+00:00" pubdate data-updated="true">Dec 26<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Regarding the &#8221;<a title="Spork" href="http://ruby.railstutorial.org/chapters/static-pages#sec:spork" target="_blank">Spork</a>&#8221; in the RoR tutorial&#8230; Do not use it!!</p>
+
+<p>In the section author mentioned:</p>
+
+<blockquote>&#8230;Spork prefork loading, which can sometimes prevent necessary files from being re-loaded&#8230;</blockquote>
+
+
+<p>The autotest will no longer be reliable if you try to use spork.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/71">Work From Home Tomorrow&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-09T00:00:00+01:00" pubdate data-updated="true">Aug 9<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>英国瓜糜日眼的小坯娃真的有点多&#8230;比例相当大！</p>
+
+<p>Piccadilly赶车，再穿过Oldham，进入深山老林&#8230;感觉不太明智，明天还是呆家里为好。</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -116,6 +519,22 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/29/first-post/">First post</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/106">Octopress, I&#8217;m coming!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/101">朋友们新春快乐！</a>
       </li>
     
   </ul>

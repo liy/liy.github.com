@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Sprite sheet - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Sprite sheet&#8230;啥东西？
+仔细想一哈，游戏里边的2D动画也就是一帧一帧做出来的，就跟电影胶片一样。估计没什么捷径可言。
+就只有一张一张图片得画，画完了再弄到电脑上做成动画。
+ 
+下边的就是《King of Fighter》的 &quot;K&#8217;&quot; &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://liy.github.com/blogs/48">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:liy.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Sprite Sheet</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-30T00:00:00+01:00" pubdate data-updated="true">Apr 30<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1728" class="bvMsg"><div>Sprite sheet&#8230;啥东西？</div>
+<div>仔细想一哈，游戏里边的2D动画也就是一帧一帧做出来的，就跟电影胶片一样。估计没什么捷径可言。</div>
+<div>就只有一张一张图片得画，画完了再弄到电脑上做成动画。</div>
+<div> </div>
+<div>下边的就是《King of Fighter》的 &quot;K&#8217;&quot; 的一个Sprite sheet:</div>
+<div> </div>
+<div><a href="http://img260.imageshack.us/img260/284/ksprtiesheet1wz71sy.png" target="_blank">http://img260.imageshack.us/img260/284/ksprtiesheet1wz71sy.png</a></div>
+<div> </div>
+<div>做2D游戏的人也不容易啊&#8230;</div>
+<div>之前看XNA教程的时候，里边有个method叫SpriteBatch.Draw()：</div>
+<div>SpriteBatch.Draw(texture, position, textureSegment, color, rotation, origin, scale, spriteEffects, layerDepth);</div>
+<div>这个gif图片背景是透明的&#8230; 说不定可以直接拿来用。每次就只需要Update textureSegment&#8230;</div>
+<div> </div>
+<div>我想的最简单的方法是&#8230; Lookup Table&#8230; 简单得解释，</div>
+<div>就是把上边的每个“动作小方格”标上号码：0，1，2，3，4，5，6，7，8，9，10&#8230;&#8230;N</div>
+<div> </div>
+<div>比如说，走路就是0-10的“动作小方格”。</div>
+<div>用伪代码来表示就是：</div>
+<div>//initilize array of ActionSegment object</div>
+<div>ActionSegment actionSegment[] = new ActionSegment(11);</div>
+<div> </div>
+<div>//assign value</div>
+<div>loop()</div>
+<div>&#123;</div>
+<div>   //assign walking actionSegment infors</div>
+<div>   actionSegment[frameIndex] = an instance of ActionSegment, contains all the information about the action segment: </div>
+<div>                                            width, height, rotation, scale&#8230;&#8230;.</div>
+<div>&#125;</div>
+<div> </div>
+<div>最后就只需要在SpriteBatch.Draw里边写</div>
+<div>SpriteBatch.Draw(texture, position, actionSegment[currentFrame].texture, actionSegment[currentFrame].color,</div>
+<div>actionSegment[currentFrame].rotation&#8230;&#8230;&#8230;);</div>
+<div> </div>
+<div>不懂我再说啥子无所谓&#8230; 反正我只是写起耍，顺便看看自己的思路是否清晰。</div>
+<div>等周末我用XNA做出来了再说。</div>
+<div> </div>
+<div> </div>
+<div>其实这些东西跟Flash差不多，只是比Flash更底层一些，需要自己来写timeline。</div>
+<div>简单简单~~~</div>
+<div> </div>
+<div>顺便说一哈&#8230;上边的图片可以拿来做论坛的动画签名档图片&#8230;gif格式的。虽然很俗。</div></div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-30T00:00:00+01:00" pubdate data-updated="true">Apr 30<span>th</span>, 2008</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://liy.github.com/blogs/48" data-via="" data-counturl="http://liy.github.com/blogs/48" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blogs/49" title="Previous Post: 魂斗罗之“半个散弹枪”">&laquo; 魂斗罗之“半个散弹枪”</a>
+      
+      
+        <a class="basic-alignment right" href="/blogs/45" title="Next Post: 我们为什么要碌碌无为？！创造有价值的东西？！">我们为什么要碌碌无为？！创造有价值的东西？！ &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/29/first-post/">First post</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/106">Octopress, I'm coming!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/101">朋友们新春快乐！</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

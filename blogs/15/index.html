@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>XMPP Pubsub大概做完了！ - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="现在都可以监控多个网页或者RSS了，之后可以再把Atom加上！
+Monitor为多线程控制，不过还是最弱智的每隔一段时间扫描一次。
+另外RSS如果更新的话，只会推送最近的一个entry。
+ 
+Subscribe普通的网页url几乎没有什么用处，只能提醒网页是否更新，推送消息内只有网页的连接， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://liy.github.com/blogs/15">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:liy.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">XMPP Pubsub大概做完了！</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-26T00:00:00+00:00" pubdate data-updated="true">Feb 26<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1889" class="bvMsg"><div>现在都可以监控多个网页或者RSS了，之后可以再把Atom加上！</div>
+<div>Monitor为多线程控制，不过还是最弱智的每隔一段时间扫描一次。</div>
+<div>另外RSS如果更新的话，只会推送最近的一个entry。</div>
+<div> </div>
+<div>Subscribe普通的网页url几乎没有什么用处，只能提醒网页是否更新，推送消息内只有网页的连接，没有任何其余Different信息。不过能接收到网页更新提示也不错哦~</div>
+<div> </div>
+<div>Server端的东西稀里糊涂的都几乎写完了，看上去还能用！</div>
+<div>现在任何人都可以写一个XMPP的客户端发送接收XMPP stanze了！简单的要死！语言随选：Java, C, Python, PHP, ActionScirpt, Erlang&#8230;.</div>
+<div>只是我写的XMPP Server Pubsub component只接收我自定的XMPP格式，比如，你想订阅俺的Blog，就发送个以下的stanza到我的服务器:</div>
+<blockquote style="margin-right:0;">
+<div>&lt;iq type=&#8217;set&#8217; to=&#8217;beacon.domain&#8217; id=&#8217;id&#8217;&gt;<br /> &lt;pubsub xmlns=&#8217;http://www.beacon.com/BeaconFeed&#8217;&gt;<br />  &lt;subscribe feed=&#8217;http://liyapriljune.spaces.live.com/feed.rss&#8217; <a href="mailto:jid='xxx@domain'/">jid=&#8217;xxx@domain&#8217;/</a>&gt;<br />  &lt;options/&gt;<br /> &lt;/pubsub&gt;<br />&lt;/iq&gt;</div></blockquote>
+<div>仿佛在options elment里边还以定义你需要订阅这个resource多长时间，或者只接收某些关键字等等信息。不过我没试验过。</div>
+<div> </div>
+<div>我自定义的stanza格式相当不规范，之后还是要修改一下。</div>
+<div>不过现在至少能用了！</div>
+<div> </div>
+<div>说了一堆废话，这个东西到底拿来干嘛？？？</div>
+<div> </div>
+<div>说白了就是一个即时版本的，稍微高级点的Google Reader！！虽然还没做完！！</div>
+<div>同志们可以订阅RSS, Atom或者普通网页url地址，服务器会自动查找它们的更新。当查找到更新的时候，会即时推送消息到你的客户端！客户端可以是本地计算机上边的软件，或者是手机，或者是某个Web Application！！</div>
+<div> </div>
+<div>之所以用XMPP作为这个Project的Protocol，就是因为它易扩展！！简单！！公认！！Google Talk也用XMPP。</div>
+<div>反正以后的发展空间很大！还可以做很多无限高级的东西！！！比如&#8230;Instant Messenging!!不过XMPP本来就是即时聊天的Protocol！连上俺的Server就可以聊天咯！</div>
+<div> </div>
+<div>现在做的只是试验一下我的能力是否足够&#8230;&#8230;仿佛我还不算太瓜&#8230;&#8230;乱弄竟然弄好了！！</div>
+<div>改天写个客户端试试！！Web Application也可以！！</div></div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-26T00:00:00+00:00" pubdate data-updated="true">Feb 26<span>th</span>, 2009</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://liy.github.com/blogs/15" data-via="" data-counturl="http://liy.github.com/blogs/15" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blogs/19" title="Previous Post: Update Monitor Test">&laquo; Update Monitor Test</a>
+      
+      
+        <a class="basic-alignment right" href="/blogs/14" title="Next Post: 更新了 ！！！">更新了 ！！！ &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/29/first-post/">First post</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/106">Octopress, I'm coming!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/101">朋友们新春快乐！</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
