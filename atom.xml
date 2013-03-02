@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://liy.github.com/atom.xml" rel="self"/>
   <link href="http://liy.github.com/"/>
-  <updated>2013-03-02T17:42:30+00:00</updated>
+  <updated>2013-03-02T17:49:29+00:00</updated>
   <id>http://liy.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,5 +12,14 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Migrate to github pages]]></title>
+    <link href="http://liy.github.com/blog/2013/03/02/migrate-to-github-pages/"/>
+    <updated>2013-03-02T17:46:00+00:00</updated>
+    <id>http://liy.github.com/blog/2013/03/02/migrate-to-github-pages</id>
+    <content type="html"><![CDATA[<p>转移到 github 上边。估计会快很多。</p>
+]]></content>
+  </entry>
   
 </feed>
