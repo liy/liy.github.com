@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: 杂货 | My Octopress Blog]]></title>
+  <title><![CDATA[Category: 杂货 | AirCapsule]]></title>
   <link href="http://liy.github.com/blog/categories/杂货/atom.xml" rel="self"/>
   <link href="http://liy.github.com/"/>
-  <updated>2013-03-02T23:27:56+00:00</updated>
+  <updated>2013-03-02T23:44:08+00:00</updated>
   <id>http://liy.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Liy]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
