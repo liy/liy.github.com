@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: 杂货 | AirCapsule]]></title>
-  <link href="http://liy.github.com/blog/categories/杂货/atom.xml" rel="self"/>
-  <link href="http://liy.github.com/"/>
-  <updated>2013-03-02T23:44:08+00:00</updated>
-  <id>http://liy.github.com/</id>
+  <link href="http://aircapsule.com/blog/categories/杂货/atom.xml" rel="self"/>
+  <link href="http://aircapsule.com/"/>
+  <updated>2013-03-03T23:30:06+00:00</updated>
+  <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[忙啊]]></title>
-    <link href="http://liy.github.com/blog/2012/01/29/mang-a/"/>
+    <link href="http://aircapsule.com/blog/2012/01/29/mang-a/"/>
     <updated>2012-01-29T21:49:00+00:00</updated>
-    <id>http://liy.github.com/blog/2012/01/29/mang-a</id>
+    <id>http://aircapsule.com/blog/2012/01/29/mang-a</id>
     <content type="html"><![CDATA[<p>这种写博客的方法还真是安逸，又便宜。只需要弄个域名，每年给个几十块。完全静态网页也有好处哈。</p>
 
 <p>等我忙完这几个星期，看能不能用Ruby写个Octopress的插件，同步更新新浪微博之类的。</p>

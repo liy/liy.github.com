@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://liy.github.com/sitemap.xml 
+Sitemap: http://aircapsule.com/sitemap.xml 
