@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-04T23:04:15+00:00</updated>
+  <updated>2013-03-13T23:56:58+00:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mandelbrot set and WebGL]]></title>
+    <link href="http://aircapsule.com/blog/2013/03/13/mandelbrot-set-and-webgl/"/>
+    <updated>2013-03-13T22:45:00+00:00</updated>
+    <id>http://aircapsule.com/blog/2013/03/13/mandelbrot-set-and-webgl</id>
+    <content type="html"><![CDATA[<p>大二的时候学过 Computer Graphics。其中某堂课作业就是要求弄个 Mandelbrot set，当时是用的 Mesa OpenGL，仿佛弄得还多轻松的。结果时隔多年今天看了一下，连复数是咋回事儿都差不多搞忘了，赶紧复习了一下，照着教程 <a href="http://dev.opera.com/articles/view/raw-webgl-101-part-3-advanced-shader/">advanced shader</a> 做了一个: <a href="http://jsfiddle.net/LG9CR/">Mandelbrot set</a></p>
+
+<p>方向键移动，加减号放大缩小。</p>
+
+<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/LG9CR/embedded/result,html/light/"></iframe>
+
+
+<p>需要支持 WebGL 的主流浏览器，Chrome, Firefox, Safari 之类的才能看得到。IE 内核的肯定没戏。</p>
+
+<p>这个图片核心就在这个公式:</p>
+
+<pre><code>f(x) = x*x + c 
+</code></pre>
+
+<p>上边公式里的 <strong><em>x</em></strong> 跟坐标轴没有关系，就是一个参数。</p>
+
+<p>而 c 才是最重要的，它是一个复数:</p>
+
+<pre><code>c = x + yi
+</code></pre>
+
+<p>这里边的 <strong><em>x</em></strong> 和 <strong><em>y</em></strong> 意思实际就是像素的坐标值。把每个像素的坐标值看成复数，带入到 <strong><em>f(x)</em></strong> 里边就可以判断该像素是不是属于 Mandelbrot set。</p>
+
+<p>最后这个神奇的图像的意思就是：遍历所有像素，如果该像素的 <strong><em>f(x)</em></strong> 数值趋近于 ∞ 。那么它就不在 Mandelbrot set里边，并且给它上个色（非黑色）。反过来说，黑色的像素点就表示 Mandelbrot set。</p>
+
+<p>如何判断该像素在 <strong><em>f(x)</em></strong> 下边是否趋近无穷？多循环几次，把前一次的结果带入下一次的 <strong><em>f(x)</em></strong> 作为参数 <strong><em>x</em></strong>，仿佛只要 <strong><em>x<sup>2</sup> + y<sup>2</sup> >= 4</em></strong> 都可以直接判断为 ∞ 。嗯，反正大概就是这么一回事儿……</p>
+
+<p>看 wikipedia 看得我一愣一愣的，整数学的人就是爱故弄玄虚，啥子 complex plane 嘛！有好“复杂”嘛！说得好高深！结果就相当于普通的 x, y 坐标系（故弄玄虚得叫笛卡儿坐标系 Cartesian coordinate system）。</p>
+
+<p>反正老子记不到！是我越活越蠢还是啥子喃……</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[准备 Life in UK 考试中]]></title>
@@ -565,16 +603,6 @@
 我知道左边那个看起来像一个“囧”&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;参考了挺多东西弄出来个“囧”。<br /><br /> <img src="http://pic2.nipic.com/20090413/1012038_085222068_2.jpg" alt="空 书法" height="268" width="451" />
 <img src="http://pic3.nipic.com/20090623/1344717_173235074_2.jpg" alt="祥云" height="189" width="224" />
 <br />可能IE显示Favicon会出些问题，估计是用那个IconWorkshop到处ico图标的时候设置的问题，还要测试一下。 <br /> <br /></div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[AirCapusle开通啦~~]]></title>
-    <link href="http://aircapsule.com/blogs/6"/>
-    <updated>2010-06-21T00:00:00+01:00</updated>
-    <id>http://aircapsule.com/blogs/6</id>
-    <content type="html"><![CDATA[<div id="msgcns!657528B8E1B18FB4!1946" class="bvMsg"> <a href="http://aircapsule.com">AirCapsule|空气胶囊</a> 试运行当中&#8230;敬请关注。<br /><br /><br />此windows live space估计会停止更新，虽然本来这个blog都很久没打理了。<br /><br />主要闲着没事儿，把猪儿子的古董清华同方笔记本搬出来弄了个Ubuntu Server。包括Web server, Samba file server都弄上了。另外因为那台古董键盘有问题，几个字母键都没法用&#8230;只好又装个OpenSSH，用来局域网登录。<br /><br />好不容易想了个将就的名字：<a href="http://aircapsule.com">空气胶囊|AirCapsule</a>，还画了半天图标&#8230;结果还是很不满意。花了几十镑，注册了<a href="http://aircapsule.com">AirCapsule.com</a>的域名外加DNS hosting&#8230;反正弄得我也稀里糊涂，没搞过这些东西，估计弄贵了，花了些冤枉钱，也就认了。<br /><br />当然，服务器还是那台破笔记本，一开blog我就听到硬盘狂转的声音，吓人啊！<br />想弄个普通的服务器电脑&#8230;看了苹果的Mac mini&#8230;将近700镑&#8230;抢钱也不能这样啊！还不如直接买8核的Mac Pro！！<br /><br />现在服务器上也就只有个wordpress，而且还没个像样的主题界面，都是跟着<a href="http://www.wpdesigner.com/2007/02/19/so-you-want-to-create-wordpress-themes-huh/">教程</a>做的。上个星期才复习了点CSS。至于php，反正简单，没啥可看的，我又不写啥高级的程序，语法跟函数知道了乱写就行了！<br /><br />blog的主题界面，在脑袋里边已经有个大概了，估计过几个星期以后能弄出来。<br /><br /><br />同志们没事儿就不要来黑我了&#8230;懒得搞攻防战，估计不爽我就直接拔网线。<br /><br />以后说不定还可以弄些稀奇古怪的东西，比如游戏开发啊，XMPP，一些特殊网站啊(no porn!!)，简单的教程啊，技巧，经验，资源分享之类的&#8230;所以，新手上线，还请关照，多多提意见啊：<br /><a href="http://aircapsule.com/">AirCapsule|空气胶囊</a><br /> <br /></div>
 
 ]]></content>
   </entry>

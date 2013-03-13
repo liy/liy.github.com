@@ -9,8 +9,7 @@
   <meta name="author" content="Liy">
 
   
-  <meta name="description" content="准备考试当中，毕业5，6年之后的第一次考试哦&#8230;&#8230;等星期五考完了再写了。 不过这几年也没写过几篇。还是详细写一下计算机方面的东西为好，就当记笔记，还可以知识共享。
-">
+  <meta name="description" content="大二的时候学过 Computer Graphics。其中某堂课作业就是要求弄个 Mandelbrot set，当时是用的 Mesa OpenGL，仿佛弄得还多轻松的。结果时隔多年今天看了一下，连复数是咋回事儿都差不多搞忘了，赶紧复习了一下，照着教程 advanced shader 做了一个: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +76,73 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/13/mandelbrot-set-and-webgl/">Mandelbrot Set and WebGL</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-13T22:45:00+00:00" pubdate data-updated="true">Mar 13<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/13/mandelbrot-set-and-webgl/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>大二的时候学过 Computer Graphics。其中某堂课作业就是要求弄个 Mandelbrot set，当时是用的 Mesa OpenGL，仿佛弄得还多轻松的。结果时隔多年今天看了一下，连复数是咋回事儿都差不多搞忘了，赶紧复习了一下，照着教程 <a href="http://dev.opera.com/articles/view/raw-webgl-101-part-3-advanced-shader/">advanced shader</a> 做了一个: <a href="http://jsfiddle.net/LG9CR/">Mandelbrot set</a></p>
+
+<p>方向键移动，加减号放大缩小。</p>
+
+<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/LG9CR/embedded/result,html/light/"></iframe>
+
+
+<p>需要支持 WebGL 的主流浏览器，Chrome, Firefox, Safari 之类的才能看得到。IE 内核的肯定没戏。</p>
+
+<p>这个图片核心就在这个公式:</p>
+
+<pre><code>f(x) = x*x + c 
+</code></pre>
+
+<p>上边公式里的 <strong><em>x</em></strong> 跟坐标轴没有关系，就是一个参数。</p>
+
+<p>而 c 才是最重要的，它是一个复数:</p>
+
+<pre><code>c = x + yi
+</code></pre>
+
+<p>这里边的 <strong><em>x</em></strong> 和 <strong><em>y</em></strong> 意思实际就是像素的坐标值。把每个像素的坐标值看成复数，带入到 <strong><em>f(x)</em></strong> 里边就可以判断该像素是不是属于 Mandelbrot set。</p>
+
+<p>最后这个神奇的图像的意思就是：遍历所有像素，如果该像素的 <strong><em>f(x)</em></strong> 数值趋近于 ∞ 。那么它就不在 Mandelbrot set里边，并且给它上个色（非黑色）。反过来说，黑色的像素点就表示 Mandelbrot set。</p>
+
+<p>如何判断该像素在 <strong><em>f(x)</em></strong> 下边是否趋近无穷？多循环几次，把前一次的结果带入下一次的 <strong><em>f(x)</em></strong> 作为参数 <strong><em>x</em></strong>，仿佛只要 <strong><em>x<sup>2</sup> + y<sup>2</sup> >= 4</em></strong> 都可以直接判断为 ∞ 。嗯，反正大概就是这么一回事儿……</p>
+
+<p>看 wikipedia 看得我一愣一愣的，整数学的人就是爱故弄玄虚，啥子 complex plane 嘛！有好“复杂”嘛！说得好高深！结果就相当于普通的 x, y 坐标系（故弄玄虚得叫笛卡儿坐标系 Cartesian coordinate system）。</p>
+
+<p>反正老子记不到！是我越活越蠢还是啥子喃……</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -490,51 +556,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blogs/82">Spork in RoR</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-26T00:00:00+00:00" pubdate data-updated="true">Dec 26<span>th</span>, 2011</time>
-        
-         | <a href="/blogs/82#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Regarding the &#8221;<a title="Spork" href="http://ruby.railstutorial.org/chapters/static-pages#sec:spork" target="_blank">Spork</a>&#8221; in the RoR tutorial&#8230; Do not use it!!</p>
-
-<p>In the section author mentioned:</p>
-
-<blockquote>&#8230;Spork prefork loading, which can sometimes prevent necessary files from being re-loaded&#8230;</blockquote>
-
-
-<p>The autotest will no longer be reliable if you try to use spork.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -550,6 +571,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/13/mandelbrot-set-and-webgl/">Mandelbrot set and WebGL</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/04/zhun-bei-life-in-uk-kao-shi-zhong/">准备 Life in UK 考试中</a>
       </li>
     
@@ -563,10 +588,6 @@
     
       <li class="post">
         <a href="/blog/2012/01/29/first-post/">First post</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blogs/106">Octopress, I&#8217;m coming!</a>
       </li>
     
   </ul>
