@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-14T21:02:53+00:00</updated>
+  <updated>2013-03-24T10:34:16+00:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[webgl notes]]></title>
+    <link href="http://aircapsule.com/blog/2013/03/24/webgl-notes/"/>
+    <updated>2013-03-24T10:25:00+00:00</updated>
+    <id>http://aircapsule.com/blog/2013/03/24/webgl-notes</id>
+    <content type="html"><![CDATA[<h1><a href="http://games.greggman.com/game/webgl-image-processing-continued/">Framebuffer</a></h1>
+
+<p>Framebuffer is not a buffer. It is a collection of states, which has very low memory footprint. Imagine it is a C struct with lots of pointer to a real buffer, etc.</p>
+
+<h1><a href="http://stackoverflow.com/questions/2213030/whats-the-concept-of-and-differences-between-framebuffer-and-renderbuffer-in">Renderbuffer</a></h1>
+
+<p>Renderbuffer object is newly introduced for offscreen rendering. It allows to render a scene directly to a renderbuffer object, instead of rendering to a texture object. Renderbuffer is simply a data storage object containing a single image of a renderable internal format. It is used to store OpenGL logical buffers that do not have corresponding texture format, such as stencil or depth buffer.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mandelbrot set and WebGL]]></title>
@@ -583,27 +598,6 @@
 <p>虽然SA-GJK只给出boolean，但是我还是得用啊&#8230;浪费半天写了一堆代码总不能不用嘛&#8230;</p>
 
 <p>继续研究&#8230;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Favicon, Logo更新咯！]]></title>
-    <link href="http://aircapsule.com/blogs/5"/>
-    <updated>2010-06-23T00:00:00+01:00</updated>
-    <id>http://aircapsule.com/blogs/5</id>
-    <content type="html"><![CDATA[<div id="msgcns!657528B8E1B18FB4!1947" class="bvMsg">上几个星期就弄过<a href="http://aircapsule.com">Aircapsule</a>的图标。
-<br />
-因为本来就叫<a href="http://aircapsule.com">AirCapusle</a>,所以理所当然需要一个胶囊一样的图标，于是乎弄出来一个这个：<br /><a href="http://aircapsule.com/blog/wp-uploads/2010/06/aircapsule_icon.png"><img title="aircapsule_icon" src="http://aircapsule.com/blog/wp-uploads/2010/06/aircapsule_icon.png" alt="" height="126" width="120" /></a>
-
-<br />晃眼一看还过得去&#8230;不过当我那它来做64*64的Favicon的时候就出问题了&#8230;&#8230;啥都看不到&#8230;&#8230;乱糟糟一团。再仔细看看，就跟个水壶差不多。这个图标就被暂时否定了。
-
-今天放了半天假，干脆就弄了个具有传统纹样的图标：<br /> <a href="http://aircapsule.com/blog/wp-uploads/2010/06/Air.png"><img title="Air" src="http://aircapsule.com/blog/wp-uploads/2010/06/Air.png" alt="" height="256" width="256" /></a><a href="http://aircapsule.com/blog/wp-uploads/2010/06/Cloud.png"><img title="Cloud" src="http://aircapsule.com/blog/wp-uploads/2010/06/Cloud.png" alt="" height="66" width="65" /></a>
-<br />
-一个作为图标，一个作为Favicon&#8230;.
-我知道左边那个看起来像一个“囧”&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;参考了挺多东西弄出来个“囧”。<br /><br /> <img src="http://pic2.nipic.com/20090413/1012038_085222068_2.jpg" alt="空 书法" height="268" width="451" />
-<img src="http://pic3.nipic.com/20090623/1344717_173235074_2.jpg" alt="祥云" height="189" width="224" />
-<br />可能IE显示Favicon会出些问题，估计是用那个IconWorkshop到处ico图标的时候设置的问题，还要测试一下。 <br /> <br /></div>
-
 ]]></content>
   </entry>
   

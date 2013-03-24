@@ -9,7 +9,7 @@
   <meta name="author" content="Liy">
 
   
-  <meta name="description" content="大二的时候学过 Computer Graphics。其中某堂课作业就是要求弄个 Mandelbrot set，当时是用的 Mesa OpenGL，仿佛弄得还多轻松的。结果时隔多年今天看了一下，连复数是咋回事儿都差不多搞忘了，赶紧复习了一下，照着教程 advanced shader 做了一个: &hellip;">
+  <meta name="description" content="Framebuffer Framebuffer is not a buffer. It is a collection of states, which has very low memory footprint. Imagine it is a C struct with lots of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,50 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/24/webgl-notes/">Webgl Notes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-24T10:25:00+00:00" pubdate data-updated="true">Mar 24<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/24/webgl-notes/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1><a href="http://games.greggman.com/game/webgl-image-processing-continued/">Framebuffer</a></h1>
+
+<p>Framebuffer is not a buffer. It is a collection of states, which has very low memory footprint. Imagine it is a C struct with lots of pointer to a real buffer, etc.</p>
+
+<h1><a href="http://stackoverflow.com/questions/2213030/whats-the-concept-of-and-differences-between-framebuffer-and-renderbuffer-in">Renderbuffer</a></h1>
+
+<p>Renderbuffer object is newly introduced for offscreen rendering. It allows to render a scene directly to a renderbuffer object, instead of rendering to a texture object. Renderbuffer is simply a data storage object containing a single image of a renderable internal format. It is used to store OpenGL logical buffers that do not have corresponding texture format, such as stencil or depth buffer.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -472,90 +516,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blogs/88">Some Notes About Ruby on Rail App Deployment on Heroku</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-31T00:00:00+00:00" pubdate data-updated="true">Dec 31<span>st</span>, 2011</time>
-        
-         | <a href="/blogs/88#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>If you get an error when you do database migration, during the deployment process:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ heroku rake db:migrate
-</span><span class='line'>rake aborted!
-</span><span class='line'>Please install the postgresql adapter: `gem install activerecord-postgresql-adapter` (pg is not part of the bundle. Add it to Gemfile.)Tasks: TOP =&gt; db:migrate =&gt; db:load_config
-</span><span class='line'>(See full trace by running task with --trace)</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Add PostgreSQL gem, replace the line <strong><em>gem &#8216;sqlite3&#8217;</em></strong> with:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>group :development, :test do
-</span><span class='line'>  gem 'sqlite3'
-</span><span class='line'>end
-</span><span class='line'>group :production do
-</span><span class='line'>  gem 'pg'
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This ensures the production using PostgreSQL, since Heroku does not support sqlite3.</p>
-
-<p><del>If after success deployed the rail app, the application gives an error page like: “We&#8217;re sorry, but something went wrong&#8230;” This is actually a generic error message. It might be caused by the assets loading problem. I did forget to compile the assets before deploy the app.</del></p>
-
-<p><del>Run the following command before deployment to compile the assets to <em><strong>public/</strong></em> directory</p>
-
-<p></del></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;del>bundle exec rake assets:precompile&lt;/del></span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then do the deployment again:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git push heroku master</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -571,6 +531,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/13/mandelbrot-set-and-webgl/">Mandelbrot set and WebGL</a>
       </li>
     
@@ -584,10 +548,6 @@
     
       <li class="post">
         <a href="/blog/2012/01/29/mang-a/">忙啊</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/first-post/">First post</a>
       </li>
     
   </ul>
