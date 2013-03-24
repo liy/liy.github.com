@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-24T14:15:50+00:00</updated>
+  <updated>2013-03-24T14:29:39+00:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -82,22 +82,12 @@
 
 <script type="math/tex; mode=display">% &lt;![CDATA[
 
-\left( \begin{matrix}
+\begin{bmatrix*}{rr}
 2/resolution.width & 0 & 0 & -1 \\
 0 & -2/resolution.height & 0 & 1 \\
 0 & 0 & 2/resoultion.depth & -1 \\
 0 & 0 & 0 & 1 
-\end{matrix} \right)
- %]]&gt;</script>
-
-<script type="math/tex; mode=display">% &lt;![CDATA[
-
-\left(
-\begin{array}{ccc}
-   1 & 1 & 1 \\
-   0 & 1 & 2
-\end{array}
-\right)
+\end{bmatrix*}
  %]]&gt;</script>
 ]]></content>
   </entry>
