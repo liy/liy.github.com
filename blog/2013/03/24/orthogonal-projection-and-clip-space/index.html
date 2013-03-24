@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>空气胶囊</title>
+  <title>orthogonal projection and clip space - 空气胶囊</title>
   <meta name="author" content="Liy">
 
   
@@ -31,7 +31,7 @@ uniform vec2 u_resolution; void main &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://aircapsule.com/">
+  <link rel="canonical" href="http://aircapsule.com/blog/2013/03/24/orthogonal-projection-and-clip-space/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -119,15 +119,12 @@ uniform vec2 u_resolution; void main &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">Orthogonal Projection and Clip Space</a></h1>
+      <h1 class="entry-title">Orthogonal Projection and Clip Space</h1>
     
     
       <p class="meta">
@@ -145,14 +142,14 @@ uniform vec2 u_resolution; void main &hellip;">
 
 <time datetime="2013-03-24T12:05:00+00:00" pubdate data-updated="true">Mar 24<span>th</span>, 2013</time>
         
-         | <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>In OpenGL clip space coordinate system is between:<code>[-1, 1]</code>. </p>
+<div class="entry-content"><p>In OpenGL clip space coordinate system is between:<code>[-1, 1]</code>. </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -236,65 +233,16 @@ uniform vec2 u_resolution; void main &hellip;">
 asdf
 asdfas</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/24/webgl-notes/">Webgl Notes</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Liy</span></span>
 
-<time datetime="2013-03-24T10:25:00+00:00" pubdate data-updated="true">Mar 24<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/24/webgl-notes/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3 id="framebufferhttpgamesgreggmancomgamewebgl-image-processing-continued"><a href="http://games.greggman.com/game/webgl-image-processing-continued/">Framebuffer</a></h3>
-<p>Framebuffer is not a buffer. It is a collection of states, which has very low memory footprint. Imagine it is a C struct with lots of pointer to a real buffer, etc.</p>
-
-<h3 id="renderbufferhttpstackoverflowcomquestions2213030whats-the-concept-of-and-differences-between-framebuffer-and-renderbuffer-in"><a href="http://stackoverflow.com/questions/2213030/whats-the-concept-of-and-differences-between-framebuffer-and-renderbuffer-in">Renderbuffer</a></h3>
-
-<p>Renderbuffer object is newly introduced for offscreen rendering. It allows to render a scene directly to a renderbuffer object, instead of rendering to a texture object. Renderbuffer is simply a data storage object containing a single image of a renderable internal format. It is used to store OpenGL logical buffers that do not have corresponding texture format, such as stencil or depth buffer.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/13/mandelbrot-set-and-webgl/">Mandelbrot Set and WebGL</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -306,340 +254,38 @@ asdfas</p>
   
 
 
-<time datetime="2013-03-13T22:45:00+00:00" pubdate data-updated="true">Mar 13<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/13/mandelbrot-set-and-webgl/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>大二的时候学过 Computer Graphics。其中某堂课作业就是要求弄个 Mandelbrot set，当时是用的 Mesa OpenGL，仿佛弄得还多轻松的。结果时隔多年今天看了一下，连复数是咋回事儿都差不多搞忘了，赶紧复习了一下，照着教程 <a href="http://dev.opera.com/articles/view/raw-webgl-101-part-3-advanced-shader/">advanced shader</a> 做了一个: <a href="http://jsfiddle.net/zUUQp/">Mandelbrot set</a></p>
-
-<p>方向键移动，加减号放大缩小。</p>
-
-<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/zUUQp/embedded/result,html/light/"></iframe>
-
-<p>需要支持 WebGL 的主流浏览器，Chrome, Firefox, Safari 之类的才能看得到。IE 内核的肯定没戏。</p>
-
-<p>这个图片核心就在这个公式: </p>
-
-<pre><code>f(x) = x*x + c 
-</code></pre>
-
-<p>上边公式里的 <strong><em>x</em></strong> 跟坐标轴没有关系，就是一个参数。</p>
-
-<p>而 c 才是最重要的，它是一个复数: </p>
-
-<pre><code>c = x + yi
-</code></pre>
-
-<p>这里边的 <strong><em>x</em></strong> 和 <strong><em>y</em></strong> 意思实际就是像素的坐标值。把每个像素的坐标值看成复数，带入到 <strong><em>f(x)</em></strong> 里边就可以判断该像素是不是属于 Mandelbrot set。</p>
-
-<p>最后这个神奇的图像的意思就是：遍历所有像素，如果该像素的 <strong><em>f(x)</em></strong> 数值趋近于 ∞ 。那么它就不在 Mandelbrot set里边，并且给它上个色（非黑色）。反过来说，黑色的像素点就表示 Mandelbrot set。</p>
-
-<p>如何判断该像素在 <strong><em>f(x)</em></strong> 下边是否趋近无穷？多循环几次，把前一次的结果带入下一次的 <strong><em>f(x)</em></strong> 作为参数 <strong><em>x</em></strong>，仿佛只要 <strong><em>x^2 + y^2 &gt;= 4</em></strong> 都可以直接判断为 ∞ 。嗯，反正大概就是这么一回事儿……</p>
-
-<p>看 wikipedia 看得我一愣一愣的，整数学的人就是爱故弄玄虚，啥子 complex plane 嘛！有好“复杂”嘛！说得好高深！结果就相当于普通的 x, y 坐标系（故弄玄虚得叫笛卡儿坐标系 Cartesian coordinate system）。</p>
-
-<p>反正老子记不到！是我越活越蠢还是啥子喃……</p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-03-24T12:05:00+00:00" pubdate data-updated="true">Mar 24<span>th</span>, 2013</time>
       
-  <header>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/2013/03/04/zhun-bei-life-in-uk-kao-shi-zhong/">准备 Life in UK 考试中</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
+      <div class="sharing">
   
-
-
-<time datetime="2013-03-04T22:44:00+00:00" pubdate data-updated="true">Mar 4<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/04/zhun-bei-life-in-uk-kao-shi-zhong/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>准备考试当中，毕业5，6年之后的第一次考试哦……等星期五考完了再写了。</p>
-
-<p>不过这几年也没写过几篇。还是详细写一下计算机方面的东西为好，就当记笔记，还可以知识共享。</p>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://aircapsule.com/blog/2013/03/24/orthogonal-projection-and-clip-space/" data-via="" data-counturl="http://aircapsule.com/blog/2013/03/24/orthogonal-projection-and-clip-space/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to Github Pages</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-02T17:46:00+00:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/02/migrate-to-github-pages/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>转移到 github 上边。估计会快很多。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+        <a class="basic-alignment left" href="/blog/2013/03/24/webgl-notes/" title="Previous Post: webgl notes">&laquo; webgl notes</a>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/29/mang-a/">忙啊</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-29T21:49:00+00:00" pubdate data-updated="true">Jan 29<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/01/29/mang-a/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>这种写博客的方法还真是安逸，又便宜。只需要弄个域名，每年给个几十块。完全静态网页也有好处哈。</p>
-
-<p>等我忙完这几个星期，看能不能用Ruby写个Octopress的插件，同步更新新浪微博之类的。</p>
-
-<p>废话不多说，准备睡觉了，明天还得上班。 T_T</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/29/first-post/">First Post</a></h1>
-    
-    
-      <p class="meta">
-        
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-29T01:47:00+00:00" pubdate data-updated="true">Jan 29<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/01/29/first-post/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3 id="too-late-to-sleep">Too late to sleep</h3>
-<p>This is my first post using Octopress and markdown</p>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  
-  
+  </section>
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blogs/106">Octopress, I&#8217;m Coming!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-28T00:00:00+00:00" pubdate data-updated="true">Jan 28<span>th</span>, 2012</time>
-        
-         | <a href="/blogs/106#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Ditching Wordpress and Dreamhost and switch to Octopress on Heroku!</p>
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blogs/101">朋友们新春快乐！</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-22T00:00:00+00:00" pubdate data-updated="true">Jan 22<span>nd</span>, 2012</time>
-        
-         | <a href="/blogs/101#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>万事都如意可能有点玄，但是身体健康是肯定要的！新年快乐！</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blogs/94">Install Ruby Through RVM on Xcode 4.2.1 on Lion</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-12T00:00:00+00:00" pubdate data-updated="true">Jan 12<span>th</span>, 2012</time>
-        
-         | <a href="/blogs/94#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>rvm cannot compile executable, for some reasons:</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">&lt;div class='bogus-wrapper'&gt;&lt;notextile&gt;&lt;figure class='code'&gt;&lt;div class="highlight"&gt;&lt;table&gt;&lt;tr&gt;&lt;td class="gutter"&gt;&lt;pre class="line-numbers"&gt;&lt;span class='line-number'&gt;1&lt;/span&gt;
-</span><span class="line">&lt;/pre&gt;&lt;/td&gt;&lt;td class='code'&gt;&lt;pre&gt;&lt;code class=''&gt;&lt;span class='line'&gt;... configure: error: C compiler cannot create executables ...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;&lt;/notextile&gt;&lt;/div&gt;</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p><a href="http://stackoverflow.com/questions/8032824/cant-install-ruby-under-lion-with-rvm-gcc-issues" target="_blank">This post</a> magically solve the problem!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -677,6 +323,7 @@ asdfas</p>
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -691,7 +338,10 @@ asdfas</p>
       var disqus_shortname = 'aircapsule';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://aircapsule.com/blog/2013/03/24/orthogonal-projection-and-clip-space/';
+        var disqus_url = 'http://aircapsule.com/blog/2013/03/24/orthogonal-projection-and-clip-space/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

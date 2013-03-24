@@ -32,6 +32,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -116,16 +148,16 @@
 <div> </div>
 <div> </div>
 <div><font color="#000000"><strong>&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;</strong></font></div>
-<div><font color="#000000"><strong></strong></font> </div>
+<div><font color="#000000"><strong /></font> </div>
 <div><font color="#000000"><strong><font size="2">技术无限高级</font>！！！！！！！！！！！！！！</strong></font></div>
-<div><font color="#000000"><strong></strong></font> </div>
+<div><font color="#000000"><strong /></font> </div>
 <div><font color="#000000"><strong>&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;</strong></font></div>
-<div><font color="#000000"><strong></strong></font> </div>
+<div><font color="#000000"><strong /></font> </div>
 <div><font color="#000000"><strong><font size="4">界面无限难看</font>！！！！！！！！！！！！！！</strong></font></div>
-<div><strong></strong> </div>
+<div><strong /> </div>
 <div><strong>简直是两个极端！！！！</strong></div>
-<div><strong></strong> </div>
-<div><strong></strong> </div>
+<div><strong /> </div>
+<div><strong /> </div>
 <div>承认Wallop里边的技术含量很高&#8230;不过GUI简直就是恶心&#8230;</div>
 <div>发两张截图&#8230;大家看看&#8230;未必我的审美观有问题么？！</div>
 <p><img src="http://www.umsu.manchester.ac.uk/tabletennis/Flash/galleryInfo/Snap1.jpg" width="100%" /></p>
@@ -144,7 +176,6 @@
 <div>顺便发张最近装的Windows Vista Enterprise的截图&#8230;.两个操作系统就是安逸&#8230;</div>
 <p><img src="http://www.umsu.manchester.ac.uk/tabletennis/Flash/galleryInfo/%b2%b6%bb%f1.JPG" width="100%" /> </p>
 <p><img src="http://www.umsu.manchester.ac.uk/tabletennis/Flash/galleryInfo/Snap3.JPG" width="100%" /></p></div>
-
 </div>
 
 
@@ -208,6 +239,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -221,10 +256,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

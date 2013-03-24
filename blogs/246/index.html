@@ -29,6 +29,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -106,7 +138,6 @@
 
 <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!584" class="bvMsg"><div>这几天都呆在屋子里边，一个懒字就打发了。<br />很节约得做饭。<br />今天稍微奢侈一点弄了 煮肉片，可是原料不足，弄了半小时，做出来的味道也只能平平淡淡。<br />就跟真的 差不多。<br />只是今天就吃了燕麦牛奶早饭， 午狗屎薛来骚扰我，又弄了点鸡蛋，饿得不行。<br />做得垃圾，也只能将就吃了。<br /> <br />看看6park上边的美食。突然很想做蛋糕。<br />以前做过一次。弄得比馒头还硬，而且什 味道都没有。<br /> <br />明天应该去买菜了。去ASDA。 &#8230;又要负重长征了。估计得走个20多分钟。<br /> <br />飘飘同志不理我了。不知道咋了，不会是因为那天小曾同学来我这儿上网，我没跟 说话吧&#8230;<br /> &#8230;我又想多了。<br />我多适合胡思乱想，写科幻小说&#8230;不对，应该是幻想小说。<br />哪天写一个。 像我还没写过玄一点的东西。<br /> <br />飘飘给我的魔方扭了几天了，最多拼 一面。只能说明我的智商比较低。<br /> <br />生活还算顺利，到现在为止。爸妈发信过来问我。我就只能这 说。<br />没找工作，现在成了我心里边一个结。之前是考试及没及格的问题。<br />毕竟我不是有钱的留学生，我花父母的钱会难受。<br />如果我有女朋友，那就更麻烦了。幸 没有，我并不希望自己显得拮据，尽管事实如此。<br />这种思想有点龌耻，只是自己的龌耻得不止这些。<img src="/rte/emoticons/smile_eyeroll.gif" /></div>
 <div></div></div>
-
 </div>
 
 
@@ -170,6 +201,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -183,10 +218,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

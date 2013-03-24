@@ -35,6 +35,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -132,8 +164,8 @@
 <p> 
 <p>没有美化过&#8230; 只有基本上的一些功能&#8230;
 <p>有兴趣去看吧&#8230;只是从国内上肯定会无限慢
-<p>地址: <a href="http://www.umsu.manchester.ac.uk/tabletennis/PetalBlog/PetalBlogTemplate v2.html">http://www.umsu.manchester.ac.uk/tabletennis/PetalBlog/PetalBlogTemplate%20v2.html</a></div>
-
+<p>地址: <a href="http://www.umsu.manchester.ac.uk/tabletennis/PetalBlog/PetalBlogTemplate v2.html">http://www.umsu.manchester.ac.uk/tabletennis/PetalBlog/PetalBlogTemplate%20v2.html</a>
+</p></p></p></p></p></div>
 </div>
 
 
@@ -197,6 +229,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -210,10 +246,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

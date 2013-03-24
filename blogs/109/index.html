@@ -33,6 +33,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -120,7 +152,6 @@
 <div>最近做这个新网站，写ActionScript的进度有点慢&#8230;状态不好&#8230;问题一个接一个&#8230;一个比一个无稽&#8230;还好已经有头绪了&#8230;但愿不要让我的新网站搁浅。</div>
 <div> </div>
 <div>另外&#8230;IE7挺高级&#8230;特别是它支持RSS&#8230;功能还不错，只是不支持查看Comments</div></div>
-
 </div>
 
 
@@ -184,6 +215,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -197,10 +232,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

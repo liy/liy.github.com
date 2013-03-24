@@ -31,6 +31,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -109,7 +141,6 @@
 <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!923" class="bvMsg"><p align="left">今天天气不错   一场大雾  现在还没有散<br />真是适合发生一些神秘事件<br /></p>
 <p align="left">神秘   神秘   神神秘秘&#8230;<br /></p>
 <p align="left"><br />&#8230;&#8230;<br />状态低落在底线&#8230;&#8230;一片茫然<br />仿佛得病了   而且情况比较严重<br />脑袋都空了  完全无法思考<br />记忆力继续下降&#8230;<br /> <br /> <br />&#8230;..竟然会有抑郁症的感觉&#8230;<br />怎么会弄成这样了<br />都跟死人差不多了<br /> <br /> <br />&#8230;可能应该挣扎一下&#8230;</p></div>
-
 </div>
 
 
@@ -173,6 +204,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -186,10 +221,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

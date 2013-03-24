@@ -33,6 +33,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -111,26 +143,25 @@
 <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!825" class="bvMsg"><div><font color="#808080">早上还是旷了一节课。</font></div>
 <div><font color="#808080">买了250镑的Postal Order，然后去关于签证的预约。</font></div>
 <div><font color="#808080">回到学校赶去Tutorial，早上才从同学那儿知道有CS2341的Presentation，迟到半小时，结果演讲推迟到下星期。</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">终于给爸妈打了电话。说了些关于签证的事情，还有最近的一些情况，包括胃一开的问题。</font></div>
 <div><font color="#808080">他们总是会瞎操心，不过我理解。</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#ffffff">所以我不喜欢打电话回家。</font></div>
-<div><font color="#808080"></font> </div>
-<div><font color="#808080"></font> </div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
+<div><font color="#808080" /> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">刚才重装系统，然后下载了I&#8217;S，又看了一遍。</font></div>
 <div><font color="#808080">4年前，借同学的看过一次。</font></div>
 <div><font color="#808080">That&#8217;s all。</font></div>
-<div><font color="#808080"></font> </div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#ffffff">记得几年前的日记里边也有提到过I&#8217;S&#8230;</font></div>
 <div><font color="#ffffff">很久以前的事情了&#8230;&#8230;真是模糊不清呃&#8230;&#8230;</font></div>
 <div><font color="#ffffff">真是像失忆了。</font></div>
-<div><font color="#808080"></font> </div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">休息&#8230;</font></div></div>
-
 </div>
 
 
@@ -194,6 +225,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -207,10 +242,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

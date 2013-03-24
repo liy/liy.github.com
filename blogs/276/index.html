@@ -9,7 +9,8 @@
   <meta name="author" content="Liy">
 
   
-  <meta name="description" content="不想看shell script 不想看report做presentation 就想干点其他事情 不务正业的事情 做网页 看JApplet 看JavaScript 再给我24个小时时间OK???!?!?!??!? 时间简直不够用 ">
+  <meta name="description" content="不想看shell script 不想看report做presentation 就想干点其他事情 不务正业的事情 做网页 看JApplet 看JavaScript 再给我24个小时时间OK???!?!?!??!? 时间简直不够用
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -29,6 +30,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -105,7 +138,6 @@
 
 
 <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!344" class="bvMsg"><p>不想看shell script 不想看report做presentation</p> <p>就想干点其他事情 不务正业的事情 做网页 看JApplet 看JavaScript</p> <p>再给我24个小时时间OK???!?!?!??!?</p> <p>时间简直不够用<img height="19" src="http://spaces.msn.com/mmm2005-04-13_18.20/RTE/emoticons/smile_sarcastic.gif" width="19" /></p></div>
-
 </div>
 
 
@@ -169,6 +201,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -182,10 +218,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

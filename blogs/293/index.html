@@ -29,6 +29,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -105,7 +137,6 @@
 
 
 <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!300" class="bvMsg"><p>昨天的收获是 知道一个道理: 做水煮肉片的时候绝对不能看 少林足球</p> <p>绝对不能看!!  以免把房子烧了&#8230;&#8230;</p> <p>希望没人注意到地板上烧焦的痕迹 希望下下个星期打扫卫生的人不要抱怨</p> <p>希望今天吃的水煮肉片里边没有干粉&#8230; 希望不要罚款&#8230;</p> <p> </p> <p>另外知道了&#8230;&#8230;&#8230;&#8230;火山灰的威力是很恐怖的</p> <p>还知道 吃了火山灰还是能将就活一段时间的&#8230;</p> <p> </p> <p>&#8230;唉&#8230;&#8230;&#8230;&#8230;我的锅啊<img height="19" src="http://spaces.msn.com/mmm2005-01-24_16.34/RTE/emoticons/heart_broken.gif" width="19" />&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;..默哀&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;<img height="19" src="http://spaces.msn.com/mmm2005-01-24_16.34/RTE/emoticons/rose_wilted.gif" width="19" /></p> <p>幸好我是外星人&#8230;.</p> <p> </p> <p>后天打算去black pool 虽然我的program还没动&#8230;但是这次机会是不能放过的</p> <p>我要坐过山车!!<img height="19" src="http://spaces.msn.com/mmm2005-01-24_16.34/RTE/emoticons/smile_tongue.gif" width="19" /></p></div>
-
 </div>
 
 
@@ -169,6 +200,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -182,10 +217,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

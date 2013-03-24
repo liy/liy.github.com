@@ -33,6 +33,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -109,28 +141,27 @@
 
 
 <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!682" class="bvMsg"><div><font color="#666699">从高三到现在，不知道已经写了多少字的日记了&#8230;10万？可能还多些。</font></div>
-<div><font color="#666699"></font> </div>
+<div><font color="#666699" /> </div>
 <div><font color="#666699">不是日记的日记。同名日记而已。</font></div>
-<div><font color="#666699"></font> </div>
+<div><font color="#666699" /> </div>
 <div><font color="#666699">想继续画画，反正明天3点钟才有课。但是很困&#8230;昨天是凌晨3点才睡，8点又爬起来上课。刚才在弄Cygwin，还有Putty两个软件，用来连接计算机系的Linux操作系统。趴在桌子上就睡着了。睡了20分钟。</font></div>
-<div><font color="#666699"></font> </div>
+<div><font color="#666699" /> </div>
 <div><font color="#666699">死胖子今天突然打电话给我，第一句吓我一跳，他才到London Heathrow；接下来几句，我就懵了，他说他不上学了，想回国；然后让我看看Manchester有没有沙萱的理发书。</font></div>
 <div><font color="#666699">三个毫无关联的振奋人心的句子。</font></div>
 <div><font color="#666699">他还真疯狂。不行，得好好教育他一下！</font></div>
 <div><font color="#666699">明天上完课教育他。</font></div>
-<div><font color="#666699"></font> </div>
-<div><font color="#666699"></font> </div>
+<div><font color="#666699" /> </div>
+<div><font color="#666699" /> </div>
 <div><font color="#666699">死英国人又在乱砸门。对英国人真的受够了。</font></div>
 <div><font color="#666699">今天房子漏水，幸好在靠近大门口漏，没在房间里边漏。到Reception反应，结果我上完课回来仍然没人来解决。受不了这种态度，很不爽得再次找那个死女人，她还是死脸一样，好像很平常的事情。然后旁边的男的说，楼上的莲蓬头坏了，地上积水，所以漏水。说过会儿就好了。</font></div>
 <div><font color="#666699">交了3000多镑的房租住一个这种房子？！然后还要看这些的鬼脸？！每天晚上被砸门？！</font></div>
 <div><font color="#666699">Well，其实不算惨，在外边就得忍。</font></div>
-<div><font color="#666699"></font> </div>
+<div><font color="#666699" /> </div>
 <div><font color="#666699">是啊&#8230;忍。我很想骂两句什么。算了。</font></div>
-<div><font color="#666699"></font> </div>
+<div><font color="#666699" /> </div>
 <div><font color="#666699">惹不起躲得起。</font></div>
 <div><font color="#666699">我就这种人。用四川话来说就是虾子。</font></div>
 <div><font color="#666699">无所谓了，都这样几年了。</font></div></div>
-
 </div>
 
 
@@ -194,6 +225,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -207,10 +242,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

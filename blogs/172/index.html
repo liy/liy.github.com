@@ -38,6 +38,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -135,7 +167,7 @@
 <p><font color="#000000"> </font></p>
 <p><font color="#000000">今天收获不少</font></p>
 <p><font color="#000000">BT将就能下东西  </font></p>
-<p><font color="#000000">另外下了个Guitar Pro 5&#8230;<img src="http://spaces.msn.com/rte/emoticons/smile_regular.gif" /></p>
+<p><font color="#000000">另外下了个Guitar Pro 5&#8230;<img src="http://spaces.msn.com/rte/emoticons/smile_regular.gif" />
 <p>
 <hr />
 </p>
@@ -145,8 +177,8 @@
 <p>然后第一段弹了闷音</p>
 <p>好一点点了   偶尔有些错误</p>
 <p>不过第三段的勾击弦比较麻烦   不太熟悉</p>
-<p>还是将就听</p></div>
-
+<p>还是将就听</p>
+</font></p></div>
 </div>
 
 
@@ -210,6 +242,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -223,10 +259,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

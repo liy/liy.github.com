@@ -33,6 +33,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -120,18 +152,18 @@
 <div><font color="#ff99cc">从他家骂到电梯口 从<font face="Lucida Handwriting, Cursive">Reception</font>骂到大街上&#8230;我说&#8230;你天天吃屎咋个还这样呢?</font></div>
 <div> </div><img style="filter:Alpha(opacity=100,finishOpacity=30,style=1);" src="http://images.uploadyourimages.com/798800.jpg" align="left" /> 
 <div><font color="#ff99cc">他冒了一句: 你就是个</font><font size="4"><font face="Courier New, Courier, Monospace" color="#ffffff" size="2"><strong>天</strong></font>&quot;<font color="#ffffff"><strong>屎</strong></font>&quot;</font> 
-<p></p>
+<p />
 <div><font color="#ff99cc">完蛋&#8230;天使就莫名其妙得被他亵渎了&#8230; 估计他会受报应</font></div>
 <div><font color="#ff99cc">因果报应嘛 虽然他有恩于我&#8230;</font></div>
-<div><font color="#ff99cc"></font> </div>
+<div><font color="#ff99cc" /> </div>
 <div><font color="#ff99cc">为了报答一下那天他救急的310镑 我就亲自下厨</font></div>
 <div><font color="#ff99cc">本来打算做水煮肉片的 可是太麻烦 也就算了</font></div>
 <div><font color="#ff99cc">还是弄<font face="Lucida Handwriting, Cursive">Chicken Pasta</font>&#8230;</font></div>
 <div><font color="#ff99cc">最后他直叫: 行啊! 小子!跟我做的有得一拼! 他纯粹在贬低 诋毁我</font></div>
-<div><font color="#ff99cc"></font> </div>
+<div><font color="#ff99cc" /> </div>
 <div><font color="#ff99cc">然后又试着弄了个跟鸡蛋有关的&#8230;其实是几个星期前在国内</font></div>
 <div><font color="#ff99cc">飘飘带我去她的美国朋友家里边吃的东西&#8230; 我把它<font face="Lucida Handwriting, Cursive">COPY</font>下来了 虽然不知道具体他们加了什么东西</font></div>
-<div><font color="#ff99cc"></font> </div>
+<div><font color="#ff99cc" /> </div>
 <div align="center"><font color="#ffff99">但是我还是猜出来了 主要还是<font face="Lucida Handwriting, Cursive">Mayonnaise </font></font></div>
 <div><font color="#ffff99"> </font></div>
 <div align="center"><font color="#ffff99">其实蛋黄酱是个很好的东西&#8230;虽然是黄色的&#8230;跟天<strong><font size="2">屎</font></strong>有关</font></div>
@@ -147,7 +179,7 @@
 <div><font color="#ff99cc"> </font></div>
 <div align="right"><font color="#cc99ff">几个曲子 我都只弹了半截&#8230; 然后说: 你去买个吉他自己学 20镑的&#8230;也不贵</font></div>
 <div align="right"><font color="#cc99ff">要是真的有这么便宜的我真的<font size="3"><strong>想</strong></font>买个 他说</font></div>
-<div align="right"><font color="#cc99ff"></font> </div>
+<div align="right"><font color="#cc99ff" /> </div>
 <div align="right"><font color="#cc99ff"><img style="filter:Alpha(opacity=100,finishOpacity=5,style=2);" src="http://images.uploadyourimages.com/835165guitar_by_willinux2.jpg" align="right" /></font></div>
 <div align="right"><font color="#cc99ff">买个2手的 就在<font face="Lucida Handwriting, Cursive">Pizza Co</font>旁边的二手市场 我说 </font></div>
 <div align="right"><font color="#cc99ff">把这把吉他卖我吧&#8230;10镑&#8230;他笑</font></div>
@@ -166,12 +198,11 @@
 <div><font color="#99ccff"> </font></div>
 <div><font color="#99ccff">人就是贪婪 <strong><font size="3">犯</font></strong>贱 </font></div>
 <div><font color="#99ccff">像我一样 放在手边的吉他不弹 偏偏天天想着要弹钢琴</font></div>
-<div><font color="#cc99ff"></font> </div>
+<div><font color="#cc99ff" /> </div>
 <div><font color="#cc99ff"><font color="#99ccff">我在</font><strong><font color="#8080ff"><font size="3">亵</font><font size="2">渎</font></font></strong></font><font color="#99ccff">什么&#8230;</font></div>
 <div> </div>
 <div> </div></div>
 <div></div></div>
-
 </div>
 
 
@@ -235,6 +266,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -248,10 +283,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

@@ -36,6 +36,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -113,22 +145,22 @@
 
 <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1070" class="bvMsg"><div><font color="#808080">WMP里边是我才录的曲子&#8230;一个小品古典曲目</font></div>
 <div><font color="#808080">虽然说这首曲子很简单 很弱智  但是确很好听  </font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">只是稍微忧伤一点点</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">应该是才开始学吉他的时候学会的曲子  跟小罗曼史有很多相似的地方</font></div>
-<div><font color="#808080"></font> </div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">忘了曲子什么名字了&#8230;  仿佛是<a href="http://www.freehomepages.com/liy8272/无名曲子.mp3">E小调&#8230;</a>什么东西来着&#8230; </font></div>
 <div>
 <div><font color="#808080">我健忘   没办法</font></div></div>
 <div><font color="#808080">唉&#8230;谱子都搞掉了还好能记住怎么弹</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">用云之臀部给我的Audition录的  加了点混响</font></div>
 <div><font color="#808080">没想到125镑的Yamaha吉他  加上弹了大半年的琴弦   音色还能这么亮</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">我就只能弹这些  弹烂的曲子才会有感觉</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">好听的话  记得说一声!<img src="http://spaces.msn.com/rte/emoticons/smile_sarcastic.gif" /></font></div>
 <div>
 <hr />
@@ -137,7 +169,6 @@
 <div><font color="#800000">好像那个空间不太好用&#8230;  列表里边的东西没法下载<img src="http://spaces.msn.com/rte/emoticons/smile_confused.gif" /></font></div>
 <div><font color="#800000">需要在用flashget或者迅雷下载的时候输入 帐户名和密码</font></div>
 <div><font color="#800000">看看地址就知道帐户名了&#8230;密码也写在右边的列表里边了</font></div></div>
-
 </div>
 
 
@@ -201,6 +232,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -214,10 +249,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

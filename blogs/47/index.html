@@ -34,6 +34,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -128,7 +160,7 @@
 <div>
 <li><font face="Arial" size="2">G = the movement cost to move from the starting point A to a given point, following the path generated to get there. </font> 
 <li><font face="Arial" size="2">H = the estimated movement cost to move from that given square on the grid to the final destination, point B. </font>
-<li><font face="Arial" size="2">F&#8230;. 就是把他们加起来的和。</font></div>
+<li><font face="Arial" size="2">F&#8230;. 就是把他们加起来的和。</font>
 <p><font face="Arial" size="2">下边是我写的垃圾A*算法演示&#8230;. 说是垃圾&#8230; 因为根本就有很多小错误。</font><font face="Arial" size="2"> 
 <div>绿色的是起点，橘黄色的是重点，暗红色的是墙壁(也就是说不能走的地方)，草绿色的是表示已经查找过的格子&#8230; </div>
 <div>另外里边的数字分别是：左上角F，左下角G，右下角H。</div>
@@ -138,8 +170,8 @@
 <div> </div>
 <div>友情提示&#8230; 不要不停的按键盘&#8230; 我不晓得会有啥后果&#8230;</div>
 <div> </div>
-<div>最后的结果不一定是最短路程&#8230; 因为还有一个东西没加上&#8230;因为没法加&#8230;急急忙忙写出来，太乱了，我都不知道写的啥。将就耍可以。</div></font><span style="display:none;"> </span><span style="display:none;"> </span><a href="http://liy8272.googlepages.com/main.swf">http://liy8272.googlepages.com/main.swf</a> </div>
-
+<div>最后的结果不一定是最短路程&#8230; 因为还有一个东西没加上&#8230;因为没法加&#8230;急急忙忙写出来，太乱了，我都不知道写的啥。将就耍可以。</div></font><span style="display:none;"> </span><span style="display:none;"> </span><a href="http://liy8272.googlepages.com/main.swf">http://liy8272.googlepages.com/main.swf</a> 
+</p></li></li></li></div></div>
 </div>
 
 
@@ -203,6 +235,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -216,10 +252,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

@@ -34,6 +34,38 @@ space链接来链接去，链到一个不认识的帅哥那儿&#8230;确实是�
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -134,15 +166,14 @@ space链接来链接去，链到一个不认识的帅哥那儿&#8230;确实是�
 <div> </div>
 <div> </div>
 <div><font color="#808080">&#8230;&#8230;.虽然我会那么一点点钢琴&#8230;&#8230;.没琴弹啊&#8230;&#8230;..555555555&#8230;&#8230;想弹都没法。</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">其实我的吉他谱子里边也有 <font color="#99ccff">超级玛丽</font> 跟 <font color="#008080">Final Fantasy X</font> 的 <font color="#99cc00">Suteki da Ne</font>， <font color="#ff00ff"><font color="#ff99cc">Final Fantasy VIII</font> </font>的 <font color="#ff6600">Eyes On Me</font> 的谱子，不过弹起来确实没有钢琴的感觉好。</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">我一定要弄个钢琴&#8230;..不管用什么方法，买也好，租也好，去旁边的 <font color="#551a8b">Royal Northern College of Music  </font>book a room也好&#8230;反正必须得弹&#8230;</font></div>
 <div><font color="#808080">弄个几百镑的Electronic Piano也好&#8230; 最最差劲&#8230;.也得弄个&#8230;.电子琴&#8230;&#8230;&#8230;.电子琴也可以&#8230;虽然是买电子琴弹是浪费钱&#8230;</font></div>
-<div><font color="#808080"></font> </div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">另外，今天删了不少Blog，因为今天看它们不爽，就删了。</font></div></div>
-
 </div>
 
 
@@ -206,6 +237,10 @@ space链接来链接去，链到一个不认识的帅哥那儿&#8230;确实是�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -219,10 +254,6 @@ space链接来链接去，链到一个不认识的帅哥那儿&#8230;确实是�
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

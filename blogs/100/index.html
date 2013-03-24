@@ -29,6 +29,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -114,7 +146,7 @@
 <ol>
 <li>首先呢&#8230;形象一点说，我们要Define一个方形的框框，长宽是奇数的&#8230;&#8230;.就是那个红色框框！！看见啦！！它高宽分别叫：<strong>erosionHeight</strong>和<strong>erosionWidth</strong>。 
 <li>然后呢，在那个红框框里边找到中间那个pixel&#8230;看见那个红色圆圈没？就是index=40那个！嗯！！叫它<strong>centrePixelIndex</strong> 
-<li>然后呢&#8230;我想找到那个小红框左上角的&#8230;.那个绿色的那个！！看见没？ index＝21那个，暂时叫它startPixelIndex！<font color="#ff9900">我就是想根据上边这些变量：<strong><font color="#ff0000">imageWidth, imageHeight, erosionWidth, erosionHeight 和 centrePixelIndex</font></strong> 来求出 <font color="#ff0000"><strong>startPixelIndex</strong></font>！！！就这么简单的事情&#8230;哇哈哈哈</font></ol>
+<li>然后呢&#8230;我想找到那个小红框左上角的&#8230;.那个绿色的那个！！看见没？ index＝21那个，暂时叫它startPixelIndex！<font color="#ff9900">我就是想根据上边这些变量：<strong><font color="#ff0000">imageWidth, imageHeight, erosionWidth, erosionHeight 和 centrePixelIndex</font></strong> 来求出 <font color="#ff0000"><strong>startPixelIndex</strong></font>！！！就这么简单的事情&#8230;哇哈哈哈</font>
 <p>然后呢&#8230;我就不知道咋办咯&#8230;虽然能挺简单得找出来等式来求startPixelIndex&#8230;.但是&#8230;&#8230;&#8230;&#8230;但是&#8230;&#8230;&#8230;. 
 <p>像遇到桔黄色框框那种情况&#8230;就麻烦了&#8230;知道Java的人应该知道会出现啥情况&#8230;IndexOutOfBoundsException&#8230;.看不懂这长串没关系&#8230;反正就是出错啦~~因为俺要找的框框最左上角的那个Pixel根本不存在&#8230; 这种两种情况下&#8230;俺要的找的就是startPixelIndex就是45和0。(startPixelIndex&#8230;顾名思义&#8230;意思就是说，在框框里边&#8230;从左到右，从上到下&#8230;的第一个Pixel的Index&#8230;.) 说白了&#8230;.这些情况太多了&#8230;不好用Java写出来&#8230;至少俺暂时写不出来完美无缺的查找startPixelIndex的Java code&#8230; 
 <p>本人在这儿卡壳了&#8230; 因为今天忙了一天&#8230; 脑袋也不清醒了，暂时想不出来解决方案&#8230;&#8230;没事儿&#8230;就把这个问题放上来玩玩儿~~~~看看有没有无聊的天才可以帮我解决&#8230;以免我想半天&#8230; 
@@ -138,8 +170,8 @@
 
 <p><font color="#ff0000">顺便送会弹吉他的同志们一个吉他谱子&#8230;就是我WMP里边放的那个&#8230;地球人都知道的&#8230;. </font><a href="http://www.umsu.manchester.ac.uk/tabletennis/Flash/galleryInfo/mess/%cf%c9%bd%a3%c6%e6%cf%c0%b4%ab %b5%fb%c1%b5 gp4.rar"><u>《仙剑奇侠传 蝶恋》</u></a> <font color="#ff0000">吉他谱子！！需要Guitar Pro 4.0打开&#8230;找google去下&#8230;.</font>
 <p><font color="#ff0000">曲子是一个叫 支丫冰 编的，我感觉不错&#8230;就扒下来了&#8230;后来听说那人是用键盘合成弹出来的&#8230;</font>
-<p><font color="#ff0000">我尽然把它用一把吉他弹出来了！！！我真是强人啊&#8230;.哇哈哈哈&#8230;. 谱子稍微有点难&#8230;左手跨度有点大&#8230;还是能将就弹！！！！ Enjoy！！！</font></p></p></div>
-
+<p><font color="#ff0000">我尽然把它用一把吉他弹出来了！！！我真是强人啊&#8230;.哇哈哈哈&#8230;. 谱子稍微有点难&#8230;左手跨度有点大&#8230;还是能将就弹！！！！ Enjoy！！！</font></p></p>
+</p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></li></li></li></ol></p></p></p></p></p></p></div>
 </div>
 
 
@@ -203,6 +235,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -216,10 +252,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

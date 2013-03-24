@@ -33,6 +33,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -129,12 +161,12 @@
 <li>我出来的目的是为了学些新的，国内无法接受到的东西，既然目的都要达到了，就不用在这边呆着了&#8230; 虽然说啥活到老学到老。 
 <li>英国的机会机遇大多都是给本国人的，我们这种留学生，如果不是无限拔尖的人才，哪个会给你机会哦&#8230; 做些自己的东西&#8230;梦&#8230; 
 <li>最重要的，我就不喜欢英国&#8230; 从骨子里反感这边。 完全没有任何亲切感&#8230; 冰凉的大理石，用错地方，就是华而不实了。我实在难以接受这个地方！！中国情节确实有的。 
-<li>&#8230;&#8230;等等&#8230;&#8230;说上几天都说不完&#8230;</ol>
+<li>&#8230;&#8230;等等&#8230;&#8230;说上几天都说不完&#8230;
 <p>  
 <p>8点了&#8230;关灯&#8230; 
 <p>不过电脑400瓦的电源，外加显示器和音响&#8230; 不知道要抵好多盏灯&#8230; 
-<div>&#8230;虚荣呃&#8230;虚荣&#8230;</div></div>
-
+<div>&#8230;虚荣呃&#8230;虚荣&#8230;</div>
+</p></p></p></li></li></li></li></li></li></li></li></li></li></ol></div>
 </div>
 
 
@@ -198,6 +230,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -211,10 +247,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

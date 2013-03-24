@@ -9,7 +9,8 @@
   <meta name="author" content="Liy">
 
   
-  <meta name="description" content="Regarding the &#8221;Spork&#8221; in the RoR tutorial&#8230; Do not use it!! In the section author mentioned: &#8230;Spork prefork loading, which can &hellip;">
+  <meta name="description" content="Regarding the “Spork” in the RoR tutorial… Do not use it!! In the section author mentioned:
+&#8230;Spork prefork loading, which can sometimes prevent &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -29,6 +30,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -104,13 +137,10 @@
   </header>
 
 
-<div class="entry-content"><p>Regarding the &#8221;<a title="Spork" href="http://ruby.railstutorial.org/chapters/static-pages#sec:spork" target="_blank">Spork</a>&#8221; in the RoR tutorial&#8230; Do not use it!!</p>
+<div class="entry-content"><p>Regarding the “<a title="Spork" href="http://ruby.railstutorial.org/chapters/static-pages#sec:spork" target="_blank">Spork</a>” in the RoR tutorial… Do not use it!!</p>
 
 <p>In the section author mentioned:</p>
-
 <blockquote>&#8230;Spork prefork loading, which can sometimes prevent necessary files from being re-loaded&#8230;</blockquote>
-
-
 <p>The autotest will no longer be reliable if you try to use spork.</p>
 </div>
 
@@ -175,6 +205,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -188,10 +222,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

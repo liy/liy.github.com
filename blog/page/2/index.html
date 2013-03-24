@@ -9,13 +9,7 @@
   <meta name="author" content="Liy">
 
   
-  <meta name="description" content="If you get an error when you do database migration, during the deployment process: 1
-2
-3
-4
-$ heroku rake db:migrate
-rake aborted!
-Please install the &hellip;">
+  <meta name="description" content="I have Xcode installed already, which puts an older version of git in: /usr/local/bin/ Homebrew install newer version of git at: /usr/local/bin/ We &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -35,6 +29,38 @@ Please install the &hellip;">
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -88,6 +114,52 @@ Please install the &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blogs/91">Install Git Through Homebrew on Lion Notes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-12T00:00:00+00:00" pubdate data-updated="true">Jan 12<span>th</span>, 2012</time>
+        
+         | <a href="/blogs/91#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I have Xcode installed already, which puts an older version of git in: <strong>/usr/local/bin/</strong></p>
+
+<p>Homebrew install newer version of git at: <strong>/usr/local/bin/</strong></p>
+
+<p>We have to mannally change <strong>$PATH</strong> variable to ensure the <strong>/user/local/bin</strong> comes before <strong>/usr/local/bin/</strong></p>
+
+<p><a href="https://github.com/mxcl/homebrew/issues/6432#issuecomment-1624857">https://github.com/mxcl/homebrew/issues/6432#issuecomment-1624857</a></p>
+
+<p>By the way, the <strong>$PATH</strong> environment variable is loaded from this file: <strong>/etc/paths</strong></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blogs/88">Some Notes About Ruby on Rail App Deployment on Heroku</a></h1>
     
     
@@ -115,50 +187,45 @@ Please install the &hellip;">
 
   <div class="entry-content"><p>If you get an error when you do database migration, during the deployment process:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ heroku rake db:migrate
-</span><span class='line'>rake aborted!
-</span><span class='line'>Please install the postgresql adapter: `gem install activerecord-postgresql-adapter` (pg is not part of the bundle. Add it to Gemfile.)Tasks: TOP =&gt; db:migrate =&gt; db:load_config
-</span><span class='line'>(See full trace by running task with --trace)</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">$ heroku rake db:migrate
+</span><span class="line">rake aborted!
+</span><span class="line">Please install the postgresql adapter: `gem install activerecord-postgresql-adapter` (pg is not part of the bundle. Add it to Gemfile.)Tasks: TOP =&gt; db:migrate =&gt; db:load_config
+</span><span class="line">(See full trace by running task with --trace)</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<p>Add PostgreSQL gem, replace the line <strong><em>gem ‘sqlite3’</em></strong> with:</p>
 
-<p>Add PostgreSQL gem, replace the line <strong><em>gem &#8216;sqlite3&#8217;</em></strong> with:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>group :development, :test do
-</span><span class='line'>  gem 'sqlite3'
-</span><span class='line'>end
-</span><span class='line'>group :production do
-</span><span class='line'>  gem 'pg'
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">group :development, :test do
+</span><span class="line">  gem 'sqlite3'
+</span><span class="line">end
+</span><span class="line">group :production do
+</span><span class="line">  gem 'pg'
+</span><span class="line">end</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>This ensures the production using PostgreSQL, since Heroku does not support sqlite3.</p>
 
-<p><del>If after success deployed the rail app, the application gives an error page like: “We&#8217;re sorry, but something went wrong&#8230;” This is actually a generic error message. It might be caused by the assets loading problem. I did forget to compile the assets before deploy the app.</del></p>
+<p><del>If after success deployed the rail app, the application gives an error page like: “We’re sorry, but something went wrong…” This is actually a generic error message. It might be caused by the assets loading problem. I did forget to compile the assets before deploy the app.</del></p>
 
-<p><del>Run the following command before deployment to compile the assets to <em><strong>public/</strong></em> directory</p>
+<p><del>Run the following command before deployment to compile the assets to <em><strong>public/</strong></em> directory</del></p>
 
-<p></del></p>
+<p>&lt;/del&gt;</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;del>bundle exec rake assets:precompile&lt;/del></span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">&lt;del&gt;bundle exec rake assets:precompile&lt;/del&gt;</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Then do the deployment again:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git push heroku master</span></code></pre></td></tr></table></div></figure>
-
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">git push heroku master</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 </div>
   
@@ -197,13 +264,10 @@ Please install the &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>Regarding the &#8221;<a title="Spork" href="http://ruby.railstutorial.org/chapters/static-pages#sec:spork" target="_blank">Spork</a>&#8221; in the RoR tutorial&#8230; Do not use it!!</p>
+  <div class="entry-content"><p>Regarding the “<a title="Spork" href="http://ruby.railstutorial.org/chapters/static-pages#sec:spork" target="_blank">Spork</a>” in the RoR tutorial… Do not use it!!</p>
 
 <p>In the section author mentioned:</p>
-
 <blockquote>&#8230;Spork prefork loading, which can sometimes prevent necessary files from being re-loaded&#8230;</blockquote>
-
-
 <p>The autotest will no longer be reliable if you try to use spork.</p>
 </div>
   
@@ -242,9 +306,9 @@ Please install the &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>英国瓜糜日眼的小坯娃真的有点多&#8230;比例相当大！</p>
+  <div class="entry-content"><p>英国瓜糜日眼的小坯娃真的有点多…比例相当大！</p>
 
-<p>Piccadilly赶车，再穿过Oldham，进入深山老林&#8230;感觉不太明智，明天还是呆家里为好。</p>
+<p>Piccadilly赶车，再穿过Oldham，进入深山老林…感觉不太明智，明天还是呆家里为好。</p>
 </div>
   
   
@@ -286,11 +350,9 @@ Please install the &hellip;">
 <p style="text-align: left;"><strong>Are glTranslate/glRotate/glScale hardware accelerated?</strong></p>
 <p style="text-align: left;"><span style="color: #808080;">No, there are no known GPUs that execute this. The driver computes the matrix on the CPU and uploads it to the GPU. All the other matrix operations are done on the CPU as well : glPushMatrix, glPopMatrix, glLoadIdentity, glFrustum, glOrtho. This is the reason why these functions are considered deprecated in GL 3.0. You should have your own math library, build your own matrix, upload your matrix to the shader. There are some libraries which you can use for this.</span></p>
 </blockquote>
-
-
 <p>看来我得手动concatenate matrix了，Graphics和Math library需要更新一下。其实自己手动写matrix乘法更助于理解OpenGL是如何使用matrix的。</p>
 
-<p>记得我以前写了一篇笔记。关于为什么OpenGL的model view transformation为啥总是“反”着来写的&#8230;找找看，一会儿贴上来，以免掉了。</p>
+<p>记得我以前写了一篇笔记。关于为什么OpenGL的model view transformation为啥总是“反”着来写的…找找看，一会儿贴上来，以免掉了。</p>
 </div>
   
   
@@ -331,22 +393,19 @@ Please install the &hellip;">
   <div class="entry-content"><p>自从我毕业以后我就想把C++跟OpenGL捡起来，虽然现在遍地都是游戏开发平台，框架，工具。但是我依然坚持，而且我也厌倦了用Flash写东西了，估计跟工作有关。也不太想用auto garbage collection的语言写东西。还是自己手动管理内存听起来比较安逸，我是控制狂！所以现在简直就是绝好的一次机会！用了这么几个月现在的开发环境，感觉还是不错的。</p>
 
 <p>废话了半天，我用的啥工具，啥API？</p>
-
 <ol>
-    <li>Visual Studio 2010 Professional</li>
-    <li>OpenGL. 这个是VS(Visual Studio)自带的，版本不太清楚，只要能用就行！</li>
-    <li>freeglut. 这个是开源的glut(OpenGL utility Toolkit)。用起来简单，创建窗口啊，管理键盘输入啊都很方便。不过我只用它来写一些测试代码。游戏还是用的win32 API。</li>
-    <li>Qt. 一个跨平台的GUI framwork。我才是看，打算用它来弄地图编辑器。不过要让它跟Visual Studio 2010配合，还真花了点时间&#8230;至少2个小时以上！</li>
-    <li>DirectInput. 我的游戏支持手柄，所以肯定还是要用DirectInput的。不过仿佛微软更推荐XInput，可以Xbox的手柄。现在Logitech新的手柄也都支持XInput，仿佛连Mac OS X也支持XInput （不确定）。有机会还是两个都弄上，新旧手柄都支持。</li>
-    <li>Git和Github，作为版本控制系统。用起来不错，网站也不错！我喜欢！比CVS,SVN好多了！</li>
+	<li>Visual Studio 2010 Professional</li>
+	<li>OpenGL. 这个是VS(Visual Studio)自带的，版本不太清楚，只要能用就行！</li>
+	<li>freeglut. 这个是开源的glut(OpenGL utility Toolkit)。用起来简单，创建窗口啊，管理键盘输入啊都很方便。不过我只用它来写一些测试代码。游戏还是用的win32 API。</li>
+	<li>Qt. 一个跨平台的GUI framwork。我才是看，打算用它来弄地图编辑器。不过要让它跟Visual Studio 2010配合，还真花了点时间&#8230;至少2个小时以上！</li>
+	<li>DirectInput. 我的游戏支持手柄，所以肯定还是要用DirectInput的。不过仿佛微软更推荐XInput，可以Xbox的手柄。现在Logitech新的手柄也都支持XInput，仿佛连Mac OS X也支持XInput （不确定）。有机会还是两个都弄上，新旧手柄都支持。</li>
+	<li>Git和Github，作为版本控制系统。用起来不错，网站也不错！我喜欢！比CVS,SVN好多了！</li>
 </ol>
-
-
 <p><strong>TODO：</strong>具体Visual Studio 2010的solution，project设置，我会另外抽空记录下来。这里只简单带过如何让这几样东西合作！</p>
 
 <p><strong>Visua Studio 2010 Professional 配置和安装</strong></p>
 
-<p>实际上这个没啥好说的，就是下载一个，装上就完了。至于我哪儿搞得Professional版本&#8230; <a href="https://www.dreamspark.com/default.aspx" target="_blank">Dreamspark</a>呗，学生可以免费下！<strong></strong>如果一路Next点下去就行了。不过劝大家还是装英文版，因为有时候某些插件对英文版的支持要好些。</p>
+<p>实际上这个没啥好说的，就是下载一个，装上就完了。至于我哪儿搞得Professional版本… <a href="https://www.dreamspark.com/default.aspx" target="_blank">Dreamspark</a>呗，学生可以免费下！<strong />如果一路Next点下去就行了。不过劝大家还是装英文版，因为有时候某些插件对英文版的支持要好些。</p>
 
 <p>VS的插件是相当有必要的，因为裸体的VS确实不咋样。装了这些：</p>
 
@@ -356,74 +415,57 @@ Please install the &hellip;">
 
 <p>ItalicComments,我喜欢把代码和comment分得清晰些，这个插件相当不错。</p>
 
-<p>Productivity Power Tools，微软的免费的插件，功能很多，自行查看吧&#8230; 我最常用的功能之一就是：Ctrl + Click 直接跳转到Variable definition或者Class文件。Flash Builder里边也有这么个功能，习惯！</p>
+<p>Productivity Power Tools，微软的免费的插件，功能很多，自行查看吧… 我最常用的功能之一就是：Ctrl + Click 直接跳转到Variable definition或者Class文件。Flash Builder里边也有这么个功能，习惯！</p>
 
-<p>Visual Assist X，这不是免费的&#8230;但是试用了一下，相当不错。特别是它的Refactoring功能。因为Visual C++的Refactoring就是一坨屎！</p>
+<p>Visual Assist X，这不是免费的…但是试用了一下，相当不错。特别是它的Refactoring功能。因为Visual C++的Refactoring就是一坨屎！</p>
 
 <p><strong>OpenGL</strong></p>
 
 <p>装完VS 2010以后，俩header文件：GL.h (OpenGL header file)，GLU.h (OpenGL utility header file)，都能在Microsoft SDKs的include文件夹里边找到：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Include\gl</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Include\gl</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>至于相对的俩lib文件：opengl32.lib和glu32.lib。同理，也在Microsoft SDKs文件夹里头：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>上边说到的两个地址，一个include文件夹，一个lib文件夹。VS在编译程序默认会在这俩文件夹里查找所需要的header和lib文件。所以不需要手动添加设置。</p>
 
 <p>反正就是，你啥都不用管，装上VS以后，OpenGL理论上就能用了。不过要注意一点就是，如果你以为写下边俩行就能开始用OpenGL的话，那你就错了！（其实只需要inlcude glu.h就行了，因为glu.h includes gl.h）</p>
 
-<p>[cpp]</p>
+<p>[cpp]
+#include &lt;gl\gl.h&gt;
+#include &lt;gl\glu.h&gt;
+[/cpp]</p>
 
-<h1>include &lt;gl\gl.h&gt;</h1>
+<p>你还需要加上 
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">#include &lt;windows.h&gt;</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
-<h1>include &lt;gl\glu.h&gt;</h1>
-
-<p>[/cpp]</p>
-
-<p>你还需要加上</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;windows.h&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>[cpp]</p>
-
-<h1>include &lt;windows.h&gt; // windows specific&#8230;. no idea why.</h1>
-
-<h1>include &lt;gl\gl.h&gt;</h1>
-
-<h1>include &lt;gl\glu.h&gt;</h1>
-
-<p>[/cpp]</p>
+<p>[cpp]
+#include &lt;windows.h&gt; // windows specific…. no idea why.
+#include &lt;gl\gl.h&gt;
+#include &lt;gl\glu.h&gt;	
+[/cpp]</p>
 
 <p><strong>freeglut</strong></p>
 
 <p>安装起来稍微有点麻烦。有两种方法：</p>
-
 <ol>
-    <li>下载编译好的freeglut 2.6.0-3 for MSVC：<a href="http://www.transmissionzero.co.uk/software/freeglut-devel/" target="_blank">http://www.transmissionzero.co.uk/software/freeglut-devel/</a></li>
-    <li>自己下载源码，用VS2010编译：<a href="http://freeglut.sourceforge.net/index.php#download" target="_blank">http://freeglut.sourceforge.net/index.php#download</a></li>
+	<li>下载编译好的freeglut 2.6.0-3 for MSVC：<a href="http://www.transmissionzero.co.uk/software/freeglut-devel/" target="_blank">http://www.transmissionzero.co.uk/software/freeglut-devel/</a></li>
+	<li>自己下载源码，用VS2010编译：<a href="http://freeglut.sourceforge.net/index.php#download" target="_blank">http://freeglut.sourceforge.net/index.php#download</a></li>
 </ol>
-
-
 <p>当然第二个要麻烦些。不过最重要的一点是要了解，总共只有6个文件需要安装。至于放哪儿，后边解释。</p>
-
 <ul>
-    <li>freeglut.h</li>
-    <li>freeglut_ext.h</li>
-    <li>freeglut_std.h</li>
-    <li>glut.h</li>
-    <li>freeglut.lib</li>
-    <li>freeglut.dll</li>
+	<li>freeglut.h</li>
+	<li>freeglut_ext.h</li>
+	<li>freeglut_std.h</li>
+	<li>glut.h</li>
+	<li>freeglut.lib</li>
+	<li>freeglut.dll</li>
 </ul>
-
-
 <p>第一种方法，下载，解压之后</p>
 
 <p><img src="data:image/png;base64,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" alt="" /></p>
@@ -436,7 +478,7 @@ Please install the &hellip;">
 
 <p><img src="data:image/png;base64,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" alt="" /></p>
 
-<p>打开一看，里边有个GL文件夹，再进一步，果不其然，里头就有我们需要的前4个header文件。把它们拷贝出来，放在一个文件夹（随便你放哪儿，能找到就行）里边待用&#8230;</p>
+<p>打开一看，里边有个GL文件夹，再进一步，果不其然，里头就有我们需要的前4个header文件。把它们拷贝出来，放在一个文件夹（随便你放哪儿，能找到就行）里边待用…</p>
 
 <p>至于另外两个文件，freeglut.lib和freeglut.dll在哪儿。这就需要我们编译freeglut了。幸运的是，freeglut提供了Visual Studio 2008的solution。就在源代码文件夹里边。忽略另外一个叫VisualStudio2008Static的文件夹，那个solution没法编译出dll文件，因为我们需要dll文件，dynamic link library文件，光编译lib，static library不行：</p>
 
@@ -454,56 +496,47 @@ Please install the &hellip;">
 
 <p>freeglut
 |
-|&#8212;include
-|        |&#8212;&#8212; 4 header files
+|—include
+|        |—— 4 header files
 |
-|&#8212;lib
-|     |&#8212;&#8212; freeglut.lib
+|—lib
+|     |—— freeglut.lib
 |
-|&#8212;freeglut.dll</p>
+|—freeglut.dll</p>
 
 <p>接下来就是怎么安装这些文件了，或者说，到底把它们放哪儿。</p>
-
 <ul>
-    <li>freeglut.h</li>
-    <li>freeglut_ext.h</li>
-    <li>freeglut_std.h</li>
-    <li>glut.h</li>
+	<li>freeglut.h</li>
+	<li>freeglut_ext.h</li>
+	<li>freeglut_std.h</li>
+	<li>glut.h</li>
 </ul>
-
-
-<p>其中这4个是freeglut的header文件。你可以把它们仍在上边提到的Microsoft SDKs的include文件夹里边&#8230;当然这样弄相当不专业！本人认为，应该创建一个专门的文件夹来储存这些第三方library和header文件。</p>
-
+<p>其中这4个是freeglut的header文件。你可以把它们仍在上边提到的Microsoft SDKs的include文件夹里边…当然这样弄相当不专业！本人认为，应该创建一个专门的文件夹来储存这些第三方library和header文件。</p>
 <ul>
-    <li>freeglut.lib</li>
+	<li>freeglut.lib</li>
 </ul>
-
-
 <p>这个static library一样，你也可以非常不专业的把它扔在</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>我不推荐！</p>
 
 <p>最后的dynamic link library。</p>
 
-<p>网上的教程都说扔在系统文件夹里边&#8230;说是x86，32位的电脑，把dll扔在：</p>
+<p>网上的教程都说扔在系统文件夹里边…说是x86，32位的电脑，把dll扔在：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>C:\WINDOWS\system32\</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">C:\WINDOWS\system32\</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>x64，64位的电脑把dll扔在：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>C:\Windows\SysWOW64\</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">C:\Windows\SysWOW64\</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>虽然我又想说不专业，但是上边的这些直接扔在系统文件夹，VS在编译的时候默认查询的的文件夹里边，这样做有一个好处，那就是以后你所创建的所有的Project都可以不用一而在再而三的设置VS额外查询的include文件夹和lib文件夹，也不用把dll文件放在每个project的文件夹里边。</p>
 
-<p>不过我认为，为了结构的清晰，还是需要创建一个专门library文件夹，把所有第三方的header文件，lib文件都分好类，放进去。dll文件还是手动放在在需要的VS project文件夹下边（一般都是有可执行的exe的project）。这样一来，整个project的结构就简洁清晰了很多&#8230;查找起来也方便了。唯一坏处是必须要手动修改VS Proejct的properties，告诉VS在编译的时候需要在某个include文件夹查找header文件，在某个lib文件夹查找.lib文件。</p>
+<p>不过我认为，为了结构的清晰，还是需要创建一个专门library文件夹，把所有第三方的header文件，lib文件都分好类，放进去。dll文件还是手动放在在需要的VS project文件夹下边（一般都是有可执行的exe的project）。这样一来，整个project的结构就简洁清晰了很多…查找起来也方便了。唯一坏处是必须要手动修改VS Proejct的properties，告诉VS在编译的时候需要在某个include文件夹查找header文件，在某个lib文件夹查找.lib文件。</p>
 
 <p>当你安装完所有文件以后，freeglut也就安装完成了。其实也不难。</p>
 
@@ -513,33 +546,27 @@ Please install the &hellip;">
 
 <p>我还没认真开始写关于Qt的代码，所以也不清楚好用不。不过还是记一下如何配置，安装Qt。</p>
 
-<p>总的来说，比较麻烦，费时间，就算用最简洁的编译设置，据说也需要编译半个小时。编译完成之后需要安装 <a href="http://qt.nokia.com/downloads/visual-studio-add-in" target="_blank">Qt Visual Studio Add-in</a> 这个plugin是Visual Studio编译Qt project必须的。听说Visual Studio Express不支持安装插件&#8230;这就有点麻烦了&#8230;所以，随便买个，偷个，抢个Professional来装上吧！</p>
+<p>总的来说，比较麻烦，费时间，就算用最简洁的编译设置，据说也需要编译半个小时。编译完成之后需要安装 <a href="http://qt.nokia.com/downloads/visual-studio-add-in" target="_blank">Qt Visual Studio Add-in</a> 这个plugin是Visual Studio编译Qt project必须的。听说Visual Studio Express不支持安装插件…这就有点麻烦了…所以，随便买个，偷个，抢个Professional来装上吧！</p>
 
 <p>具体的安装方法，我参考了：</p>
-
 <ol>
-    <li><a href="http://www.holoborodko.com/pavel/2011/02/01/how-to-compile-qt-4-7-with-visual-studio-2010/" target="_blank">How to compile Qt 4.7 with Visual Studio 2010</a></li>
-    <li><a href="http://stackoverflow.com/questions/5601950/how-to-build-qt-for-visual-studio-2010" target="_blank">How to build Qt for Visual Studio 2010</a></li>
+	<li><a href="http://www.holoborodko.com/pavel/2011/02/01/how-to-compile-qt-4-7-with-visual-studio-2010/" target="_blank">How to compile Qt 4.7 with Visual Studio 2010</a></li>
+	<li><a href="http://stackoverflow.com/questions/5601950/how-to-build-qt-for-visual-studio-2010" target="_blank">How to build Qt for Visual Studio 2010</a></li>
 </ol>
-
-
-<p>实际上，如果你把上边两个认真看一遍，也就肯定会弄了。我这里就不废话了。我是按照第一个方法来编译的，里边用到了一个叫jom的东西，反正就是可以指定用多个CPU核心来编译，速度会快一些，刚好我的是4核。睡了一觉就编译好了~具体几个小时不清楚&#8230;</p>
+<p>实际上，如果你把上边两个认真看一遍，也就肯定会弄了。我这里就不废话了。我是按照第一个方法来编译的，里边用到了一个叫jom的东西，反正就是可以指定用多个CPU核心来编译，速度会快一些，刚好我的是4核。睡了一觉就编译好了~具体几个小时不清楚…</p>
 
 <p>我之前编译一直出错，估计因为我的电脑装了太多乱七八糟的东西，或者Visual Studio没有安装完整。一气之下就重装了整个电脑，最后也就编译成功了~</p>
 
-<p>所以，有些无稽的错误，实在没法解决，那就重装电脑吧&#8230;</p>
+<p>所以，有些无稽的错误，实在没法解决，那就重装电脑吧…</p>
 
 <p><strong>DirectInput, DirectX</strong></p>
 
 <p>这个需要同志们安装Microsoft DirectX SDK：</p>
 
-<p><a href="http://msdn.microsoft.com/en-us/directx/aa937788" target="_blank"></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>http://msdn.microsoft.com/en-us/directx/aa937788</span></code></pre></td></tr></table></div></figure>
-
-
-<p></a></p>
+<p><a href="http://msdn.microsoft.com/en-us/directx/aa937788" target="_blank">
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">http://msdn.microsoft.com/en-us/directx/aa937788</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;
+</a></p>
 
 <p>最新的版本是2010 June的版本。下载安装好了之后，配置Visual Studio添加相对的文件和文件夹到Additional Include Directory，Additional Library Directories，Additional Dependencies，就可以使用DirectInput来控制手柄了。估计也可以用XInput，以后用空实验完了再来记录。</p>
 
@@ -549,18 +576,15 @@ Please install the &hellip;">
 
 <p>总而言之，<a href="http://git-scm.com/" target="_blank">Git</a>跟某些地球人都知道的CVS，SVN一样，是一个version control system。更准确的说是更高级的distributed version control system。另外的<a href="http://mercurial.selenic.com/" target="_blank">Mercurial</a>，<a href="http://bazaar.canonical.com/en/" target="_blank">Bazzar</a>也都是差不多的。具体区别，我也不太清楚（仿佛Git很快），可以随便选一个用。我只是觉得<a href="http://git-scm.com/" target="_blank">Git</a>的网站要好看些，所以就用它了~ 不过我要提醒的是，Git稍微有点难上手。</p>
 
-<p>说白了distributed version control system跟普通的CVS，SVN的最大区别就是前者不需要服务器也能进行大多数核心操作，比如commit，view history，branching，merge，tagging&#8230;等等。除了不能把repository上传到服务器之外，其他几乎都行（废话）！所以说，如果单个程序员不用设置服务器也能用Git。所有的history，tags&#8230;都储存在本地。当然用起来也就非常之快咯。</p>
+<p>说白了distributed version control system跟普通的CVS，SVN的最大区别就是前者不需要服务器也能进行大多数核心操作，比如commit，view history，branching，merge，tagging…等等。除了不能把repository上传到服务器之外，其他几乎都行（废话）！所以说，如果单个程序员不用设置服务器也能用Git。所有的history，tags…都储存在本地。当然用起来也就非常之快咯。</p>
 
 <p>当然用服务器也是有用的，Github就是其中一个Git hosting的提供商，它把写代码弄成了类似social network一样，相当不错！只是如果你要想用private repository需要给钱~当然我没钱，就将就Open source呗~</p>
 
 <p>给点地址吧：</p>
-
 <ol>
-    <li><a href="http://progit.org/book/" target="_blank">Pro Git</a>. 官方git tutorial，看完了你就牛了！我只看了前3章&#8230;</li>
-    <li><a href="http://help.github.com/win-set-up-git/" target="_blank">Setup Git</a>. Github的帮助文档，里边教你咋安装git，最重要的是它还告诉你怎么用ssh keys。没有正确的设置public和private key是没法用git protocol来push repository到github的。</li>
+	<li><a href="http://progit.org/book/" target="_blank">Pro Git</a>. 官方git tutorial，看完了你就牛了！我只看了前3章&#8230;</li>
+	<li><a href="http://help.github.com/win-set-up-git/" target="_blank">Setup Git</a>. Github的帮助文档，里边教你咋安装git，最重要的是它还告诉你怎么用ssh keys。没有正确的设置public和private key是没法用git protocol来push repository到github的。</li>
 </ol>
-
-
 <p>完了~没了~我的开发环境大概记录了一下。</p>
 </div>
   
@@ -647,7 +671,7 @@ Please install the &hellip;">
 
   <div class="entry-content"><p>很早之前就研究过关于Game loop的问题。昨天在研究Win32 game window的时候再次牵扯到了该问题。发现以前了解的game loop结构不对。</p>
 
-<p>关于各种Game loop的解析：<a href="http://www.koonsolo.com/news/dewitters-gameloop/" target="_blank">the game loop</a> 还得仔细再看看才行&#8230;</p>
+<p>关于各种Game loop的解析：<a href="http://www.koonsolo.com/news/dewitters-gameloop/" target="_blank">the game loop</a> 还得仔细再看看才行…</p>
 
 <p>另外还有个基于上边这个文章的视频：</p>
 
@@ -689,22 +713,17 @@ Please install the &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>You&#8217;d better read both of them to gain the full understanding on Win32 and OpenGL setup.</p>
-
+  <div class="entry-content"><p>You’d better read both of them to gain the full understanding on Win32 and OpenGL setup.</p>
 <ul>
-    <li><a href="http://www.winprog.org/tutorial/" target="_blank">theForger&#8217;s Win32 API Tutorial</a> Part 1-4.</li>
-    <li><a href="http://nehe.gamedev.net/data/lessons/lesson.asp?lesson=01" target="_blank">NeHe OpenGL lesson 1</a></li>
+	<li><a href="http://www.winprog.org/tutorial/" target="_blank">theForger&#8217;s Win32 API Tutorial</a> Part 1-4.</li>
+	<li><a href="http://nehe.gamedev.net/data/lessons/lesson.asp?lesson=01" target="_blank">NeHe OpenGL lesson 1</a></li>
 </ul>
-
-
 <p>不太喜欢用GLUT，之前用过，老是感觉很怪，比如有鼠标在屏幕上动，callback interval会变慢。另外也找不到合适的方式来设置game loop。最大的好处就是不需要写太多代码，而且跨平台。</p>
 
-<p>所以还是按照比较正常的win32开发方式来弄咯。NeHe的教程仿佛也没用GLUT。</p>
-
-<div id="_mcePaste" class="mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;overflow:hidden;">
-# theForger&#8217;s Win32 API Programming Tutorial
-</div>
-
+<p>所以还是按照比较正常的win32开发方式来弄咯。NeHe的教程仿佛也没用GLUT。
+&lt;div id=&#8221;_mcePaste&#8221; class=&#8221;mcePaste&#8221; style=&#8221;position:absolute;left:-10000px;top:0;width:1px;height:1px;overflow:hidden;&#8221;&gt;
+# theForger’s Win32 API Programming Tutorial
+&lt;/div&gt;</p>
 </div>
   
   
@@ -748,63 +767,15 @@ Please install the &hellip;">
 
 <p>左边是两个三角形有一点碰撞，实际上可以直接通过原点到simplex的最近的边（橘黄色右上的那个边），作垂线，然后这个垂线就是penetration vector，可以拿来获取碰撞信息，比如，contact normal，penetration depth，contact points啊。显而易见三。</p>
 
-<p>不过右边那个图，因为碰撞且有很大幅度的相互覆盖，如果找最近的那条边的垂线&#8230;显而易见已经不再能表示具体含义了。</p>
+<p>不过右边那个图，因为碰撞且有很大幅度的相互覆盖，如果找最近的那条边的垂线…显而易见已经不再能表示具体含义了。</p>
 
 <p><a href="http://aircapsule.files.wordpress.com/2010/10/gjk.jpg"><img class="alignleft size-full wp-image-318" title="GJK collision detection" src="http://aircapsule.files.wordpress.com/2010/10/gjk.jpg" alt="" width="670" height="233" /></a></p>
 
 <p>所以说为啥网上的人说GJK需要加一个很小的margin，这样两个物体的margin相互覆盖的时候叫做shallow penetration，然后可以获取比较准确的contact information。如果是deep penetration，就是相互覆盖太大了，就需要用另外的算法来检测碰撞信息了！！比如：EPA！</p>
 
-<p>刚才又在想，为啥不直接找从原点到整个minkowski sum(difference)的边的最短垂线，仿佛那样就是penetration vector。不过想了一下，再次证明我睁眼瞎&#8230;如果以两个12边型相互碰撞&#8230;搞不好有24条边要检测；再或者，如果是俩圆形，椭圆形，不规则的圆弧convex&#8230;再加上3D&#8230;估计再好的电脑也撑不住吧。</p>
+<p>刚才又在想，为啥不直接找从原点到整个minkowski sum(difference)的边的最短垂线，仿佛那样就是penetration vector。不过想了一下，再次证明我睁眼瞎…如果以两个12边型相互碰撞…搞不好有24条边要检测；再或者，如果是俩圆形，椭圆形，不规则的圆弧convex…再加上3D…估计再好的电脑也撑不住吧。</p>
 
 <p>所以还是先找simplex（2D是一个 三角形，3D里边是一个四面体，特性是：能包含一个“点”的最小形状）好，方便些。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blogs/311">Seperating-Axis GJK and Contact Information Generation Algorithm</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-10T00:00:00+01:00" pubdate data-updated="true">Oct 10<span>th</span>, 2010</time>
-        
-         | <a href="/blogs/311#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ol>
-    <li>Use Seperating-Axis GJK metioned here: <a href="http://mollyrocket.com/849">http://mollyrocket.com/849</a>. Also add some kind of margin when using SA-GJK. So we can saftly do a early out, assume that if dot(A, D) &lt; 0, no intersection.</li>
-    <li>If intersection is found, in other words the SA-GJK does generate a simplex which contains the origin. Then we can use the simplex generated from SA-GJK as intial simplex input to EPA to calculate contact information, such as, contact points and normal, penetration depth.</li>
-</ol>
-
-
-<p>做个笔记，记录下脑袋里边东西&#8230;研究了两个星期Collision detection，看得我抓狂。反正我现在的想法就是这样的&#8230;那个所谓SA-GJK，作为一个quick test（当然在此之前还需要broad phase collision detection check），确定两个物体在有margin的情况下是否有碰撞。如果有碰撞（没碰撞，当然就没他们啥事儿了），那就需要更进一步确定是否真正的碰撞，如何碰撞的&#8230;</p>
-
-<p>虽然SA-GJK只给出boolean，但是我还是得用啊&#8230;浪费半天写了一堆代码总不能不用嘛&#8230;</p>
-
-<p>继续研究&#8230;</p>
 </div>
   
   
@@ -829,6 +800,10 @@ Please install the &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -842,10 +817,6 @@ Please install the &hellip;">
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

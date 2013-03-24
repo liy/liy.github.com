@@ -9,7 +9,7 @@
   <meta name="author" content="Liy">
 
   
-  <meta name="description" content="You&#8217;d better read both of them to gain the full understanding on Win32 and OpenGL setup. theForger&#8217;s Win32 API Tutorial Part 1-4. NeHe &hellip;">
+  <meta name="description" content="You’d better read both of them to gain the full understanding on Win32 and OpenGL setup. theForger&#8217;s Win32 API Tutorial Part 1-4. NeHe OpenGL &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -29,6 +29,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -104,22 +136,17 @@
   </header>
 
 
-<div class="entry-content"><p>You&#8217;d better read both of them to gain the full understanding on Win32 and OpenGL setup.</p>
-
+<div class="entry-content"><p>You’d better read both of them to gain the full understanding on Win32 and OpenGL setup.</p>
 <ul>
-    <li><a href="http://www.winprog.org/tutorial/" target="_blank">theForger&#8217;s Win32 API Tutorial</a> Part 1-4.</li>
-    <li><a href="http://nehe.gamedev.net/data/lessons/lesson.asp?lesson=01" target="_blank">NeHe OpenGL lesson 1</a></li>
+	<li><a href="http://www.winprog.org/tutorial/" target="_blank">theForger&#8217;s Win32 API Tutorial</a> Part 1-4.</li>
+	<li><a href="http://nehe.gamedev.net/data/lessons/lesson.asp?lesson=01" target="_blank">NeHe OpenGL lesson 1</a></li>
 </ul>
-
-
 <p>不太喜欢用GLUT，之前用过，老是感觉很怪，比如有鼠标在屏幕上动，callback interval会变慢。另外也找不到合适的方式来设置game loop。最大的好处就是不需要写太多代码，而且跨平台。</p>
 
-<p>所以还是按照比较正常的win32开发方式来弄咯。NeHe的教程仿佛也没用GLUT。</p>
-
-<div id="_mcePaste" class="mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;overflow:hidden;">
-# theForger&#8217;s Win32 API Programming Tutorial
-</div>
-
+<p>所以还是按照比较正常的win32开发方式来弄咯。NeHe的教程仿佛也没用GLUT。
+&lt;div id=&#8221;_mcePaste&#8221; class=&#8221;mcePaste&#8221; style=&#8221;position:absolute;left:-10000px;top:0;width:1px;height:1px;overflow:hidden;&#8221;&gt;
+# theForger’s Win32 API Programming Tutorial
+&lt;/div&gt;</p>
 </div>
 
 
@@ -183,6 +210,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -196,10 +227,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

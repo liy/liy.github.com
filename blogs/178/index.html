@@ -33,6 +33,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -112,24 +144,23 @@
 <div><font color="#808080">打扫房间   几百年没用吸尘器弄过地毯 </font></div>
 <p><font color="#808080">  1. 是因为懒  </font></p>
 <p><font color="#808080">  2. 是因为吸尘器还要到Reception去借  这就意味着要看他们的臭脸  今天借吸尘器的时候着实让我恶心了一把</font></p>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">他们收钱的时候也不给好脸色   这个轮胎工厂实在让我又有拆了它的冲动  实际上已经开始实施了</font></div>
 <div><font color="#808080">有时候厨房吃饭   会往墙上锤两下   木头的  </font></div>
 <div><font color="#808080">老子交了3000多镑就住个茅房?!?!   天理何在?!?!</font></div>
 <div><font color="#808080">想来想去   我还是只能在这儿发发牢骚   真的让我去找他们理论   我还嫌麻烦&#8230;</font></div>
 <div><font color="#808080">还是那句  惹不起  躲得起   </font></div>
 <div><font color="#808080">我认栽了!!</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">明年还是搬回Whitworth Park住   要不是今年被拒   希罕住这个破地方:  沙发 床垫塌陷   椅子支离破碎</font></div>
 <div><font color="#808080">单纯坐  都把它弄成这样   是些什么玩意儿啊?!?!</font></div>
 <div><font color="#808080">另外  我坦白: 我只有50KG左右</font></div>
 <div><font color="#808080">想象一下这儿的东西有多烂吧&#8230;  顺便想象一下我有多么苗条</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">&#8230;骂完了&#8230;  还是不爽&#8230;</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">等着因果报应吧&#8230;&#8230;..这群财迷心窍的啃轮胎的猪脑&#8230;&#8230;.凸(-_-)凸</font></div>
 <div><font color="#808080">我就是这么龌龊&#8230;<img src="/rte/emoticons/smile_sarcastic.gif" />自己骂骂玩儿   然后睡觉&#8230;</font></div></div>
-
 </div>
 
 
@@ -193,6 +224,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -206,10 +241,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

@@ -29,6 +29,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -104,8 +136,8 @@
   </header>
 
 
-<div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1865" class="bvMsg"><p>啥意思？！Real-Time Browser?! <p>当当当当！！ 那就是： <blockquote> <p>实时浏览器！！！！！！ <p> </blockquote> <p>正在思考这个问题……把现在大部分非实时的网络变成：半实时的，假实时的，甚至完全实时的！ <p>这说不定是个很好的 idea！ 至少可以减少点链接爱好者的数量！ <p>  <p>大概状况就是： <p>当你浏览某个页面的时候，你就相当于已经订阅了此页，然后浏览器就可以接收关于该页面的数据，然后再做出相应的反映！注意哦！是接收！跟点链接，刷新无关…… <p>离开某页面，你就退订了此页，你就不需要接收无关数据了！当然你也可以永久订阅此页，一直接收关于该页的数据！ <p>  <p>可惜这种浏览器还没的…… 最大的问题是：需要Ping服务器和网站支持Ping！！  <p>哇哈哈哈哈！我是天才！！弄个哇？！？！咋样？！每天可以节约点链接的时间来睡觉！！ <p>  <p>说不定哪天Google啊，Microsoft啊，Mozilla啊，Apple啊，之类的就发布这种浏览器了…… 然后就高级了！！  </div>
-
+<div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1865" class="bvMsg"><p>啥意思？！Real-Time Browser?! <p>当当当当！！ 那就是： <blockquote> <p>实时浏览器！！！！！！ <p>  <p>正在思考这个问题……把现在大部分非实时的网络变成：半实时的，假实时的，甚至完全实时的！ <p>这说不定是个很好的 idea！ 至少可以减少点链接爱好者的数量！ <p>  <p>大概状况就是： <p>当你浏览某个页面的时候，你就相当于已经订阅了此页，然后浏览器就可以接收关于该页面的数据，然后再做出相应的反映！注意哦！是接收！跟点链接，刷新无关…… <p>离开某页面，你就退订了此页，你就不需要接收无关数据了！当然你也可以永久订阅此页，一直接收关于该页的数据！ <p>  <p>可惜这种浏览器还没的…… 最大的问题是：需要Ping服务器和网站支持Ping！！  <p>哇哈哈哈哈！我是天才！！弄个哇？！？！咋样？！每天可以节约点链接的时间来睡觉！！ <p>  <p>说不定哪天Google啊，Microsoft啊，Mozilla啊，Apple啊，之类的就发布这种浏览器了…… 然后就高级了！！  
+</p></p></p></p></p></p></p></p></p></p></p></p></p></blockquote></p></p></div>
 </div>
 
 
@@ -169,6 +201,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -182,10 +218,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

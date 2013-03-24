@@ -29,6 +29,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -104,8 +136,7 @@
   </header>
 
 
-<div class="entry-content"><div id="msgcns!657528B8E1B18FB4!257" class="bvMsg"><p><font color="#99cc00">火车开了 火车停了</font></p> <p><font color="#99cc00">一批又一批的人上下</font></p> <p><font color="#99cc00">旁边的座位可以是朋友 或者是陌生人 或者是其他人 或者是空着</font></p> <p><font color="#99cc00">背着火车行驶的方向坐下 看着窗外景物远去</font></p> <p><font color="#99cc00">朝着火车行驶的方向坐下 看着窗外景物靠近</font></p> <p><font color="#99cc00">两种情况 不要回头太久 脖子扭着会痛</font></p> <p><font color="#99cc00">可以做的是换个位子 要么正 要么反 或者下车</font></p> <p><font color="#99cc00">能做的是戴上耳机 翻翻书 眯眯眼睛</font></p> <p><font color="#99cc00"></font> </p> <p><font color="#99cc00">人生不可以转车回家</font></p> <p><font color="#99cc00">车没来不等于我不走</font></p> <p><font color="#99cc00">人少不一定我走错了</font></p> <p><font color="#99cc00"></font> </p> <p><font color="#99cc00">上错了车可以做的就是后悔 也可以做其他事情 不能做的是反悔 毕竟不是游戏</font></p> <p><font color="#99cc00"></font> </p> <p><font color="#99cc00">上车 把包放在脚下 里边只有电脑 照相机和衣服</font></p> <p><font color="#99cc00">下车 把包背在背上 里边只有电脑 照相机和衣服</font></p> <p><font color="#99cc00"></font> </p> <p><font color="#99cc00">火车上只能得到的东西 一种是回忆 一种是憧憬<img height="19" src="http://spaces.msn.com/mmm2005-01-24_16.34/RTE/emoticons/rose_wilted.gif" width="19" /></font></p></div>
-
+<div class="entry-content"><div id="msgcns!657528B8E1B18FB4!257" class="bvMsg"><p><font color="#99cc00">火车开了 火车停了</font></p> <p><font color="#99cc00">一批又一批的人上下</font></p> <p><font color="#99cc00">旁边的座位可以是朋友 或者是陌生人 或者是其他人 或者是空着</font></p> <p><font color="#99cc00">背着火车行驶的方向坐下 看着窗外景物远去</font></p> <p><font color="#99cc00">朝着火车行驶的方向坐下 看着窗外景物靠近</font></p> <p><font color="#99cc00">两种情况 不要回头太久 脖子扭着会痛</font></p> <p><font color="#99cc00">可以做的是换个位子 要么正 要么反 或者下车</font></p> <p><font color="#99cc00">能做的是戴上耳机 翻翻书 眯眯眼睛</font></p> <p><font color="#99cc00" /> </p> <p><font color="#99cc00">人生不可以转车回家</font></p> <p><font color="#99cc00">车没来不等于我不走</font></p> <p><font color="#99cc00">人少不一定我走错了</font></p> <p><font color="#99cc00" /> </p> <p><font color="#99cc00">上错了车可以做的就是后悔 也可以做其他事情 不能做的是反悔 毕竟不是游戏</font></p> <p><font color="#99cc00" /> </p> <p><font color="#99cc00">上车 把包放在脚下 里边只有电脑 照相机和衣服</font></p> <p><font color="#99cc00">下车 把包背在背上 里边只有电脑 照相机和衣服</font></p> <p><font color="#99cc00" /> </p> <p><font color="#99cc00">火车上只能得到的东西 一种是回忆 一种是憧憬<img height="19" src="http://spaces.msn.com/mmm2005-01-24_16.34/RTE/emoticons/rose_wilted.gif" width="19" /></font></p></div>
 </div>
 
 
@@ -169,6 +200,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -182,10 +217,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

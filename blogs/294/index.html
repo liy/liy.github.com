@@ -29,6 +29,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -105,7 +137,6 @@
 
 
 <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!297" class="bvMsg"><p>今天愚人节啊? 是吧? 前年好像是被班主任骗了一次 说是放假</p> <p>愚人节到底是: 愚人的人的节日还是 被愚的人的节日??</p> <p>我希望这个节日不属于我 受不了的话我可以睡一天 可惜胃一开同志会来</p> <p>我得去接他</p> <p>说不定我能耍宝一次 放他鸽子 让他在一个人在piccaidlly station游荡</p> <p> </p> <p>做了chicken passta 跟 roommates 瞎侃了半天 发现已经凌晨了</p> <p>我不能像你一样熬夜 其实你该好好休息 以免恶性循环</p> <p>等我的胃消化完这些垃圾食品 我会睡觉</p> <p>等醒来的时候 该面对只有一天的虚无世界 这天适合玩游戏:</p> <p>Unreal Tournament</p> <p>模拟人生2</p> <p>Counter Strike</p> <p>&#8230;</p> <p>不适合爱情游戏</p> <p>要是这天我喜欢上一个人的话 会很麻烦</p></div>
-
 </div>
 
 
@@ -169,6 +200,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -182,10 +217,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

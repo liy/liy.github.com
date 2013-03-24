@@ -29,6 +29,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -104,8 +136,7 @@
   </header>
 
 
-<div class="entry-content"><div id="msgcns!657528B8E1B18FB4!365" class="bvMsg"><p><font color="#990099"><img height="19" src="http://spaces.msn.com/mmm2005-05-13_18.25/RTE/emoticons/smile_confused.gif" width="19" />做了个网页 只是试验一下 大概了解Dreamweaver怎么用 很垃圾</font></p> <p> </p> <p><img height="302" src="http://www.spymac.com/upload/gallery/f_97/user_975608/upload_409692.jpg" width="518" /> </p> <p><font color="#336699">网站链接:</font> <a href="http://liyjune.spymac.com/" target="_blank"><font color="#ffcc99"><em>六月流月&#8230;</em></font></a></p> <p><font color="#3399ff">其实什么都没有&#8230; 没时间做啊&#8230;没时间研究 </font></p> <p><font color="#3399ff">不过我觉得我要是认真看看 应该一个多星期就能研究得差不多</font></p> <p><font color="#3399ff">还有就是那个CSS模板 好像挺好用得 不过不知道语法是怎么回事</font></p> <p><font color="#3399ff">只有到时候有时间 有心情就弄了</font></p> <p><font color="#3399ff">现在可以跟michael同志一块儿弄网站了 入门应该算入门了</font></p> <p><font color="#3399ff">虽然说那个代理不太好用 不过应该能找到更好得</font></p> <p><font color="#3399ff"></font> </p> <p><font color="#99cc00">应该会自己弄一个BLOG  估计做这个得需要点时间 一个多月?两个月?</font></p> <p><font color="#99cc00">两个月应该能行 回国去买点书看看</font></p> <p><font color="#99cc00">其实网上应该有很多资料&#8230;</font></p> <p><font color="#99cc00"></font> </p> <p><font color="#ffcccc">有人要跟我合伙做网页么?!?!?!? 报名了&#8230;局限于我认识的人哈&#8230;<img height="19" src="http://spaces.msn.com/mmm2005-05-13_18.25/RTE/emoticons/smile_tongue.gif" width="19" /></font></p></div>
-
+<div class="entry-content"><div id="msgcns!657528B8E1B18FB4!365" class="bvMsg"><p><font color="#990099"><img height="19" src="http://spaces.msn.com/mmm2005-05-13_18.25/RTE/emoticons/smile_confused.gif" width="19" />做了个网页 只是试验一下 大概了解Dreamweaver怎么用 很垃圾</font></p> <p> </p> <p><img height="302" src="http://www.spymac.com/upload/gallery/f_97/user_975608/upload_409692.jpg" width="518" /> </p> <p><font color="#336699">网站链接:</font> <a href="http://liyjune.spymac.com/" target="_blank"><font color="#ffcc99"><em>六月流月&#8230;</em></font></a></p> <p><font color="#3399ff">其实什么都没有&#8230; 没时间做啊&#8230;没时间研究 </font></p> <p><font color="#3399ff">不过我觉得我要是认真看看 应该一个多星期就能研究得差不多</font></p> <p><font color="#3399ff">还有就是那个CSS模板 好像挺好用得 不过不知道语法是怎么回事</font></p> <p><font color="#3399ff">只有到时候有时间 有心情就弄了</font></p> <p><font color="#3399ff">现在可以跟michael同志一块儿弄网站了 入门应该算入门了</font></p> <p><font color="#3399ff">虽然说那个代理不太好用 不过应该能找到更好得</font></p> <p><font color="#3399ff" /> </p> <p><font color="#99cc00">应该会自己弄一个BLOG  估计做这个得需要点时间 一个多月?两个月?</font></p> <p><font color="#99cc00">两个月应该能行 回国去买点书看看</font></p> <p><font color="#99cc00">其实网上应该有很多资料&#8230;</font></p> <p><font color="#99cc00" /> </p> <p><font color="#ffcccc">有人要跟我合伙做网页么?!?!?!? 报名了&#8230;局限于我认识的人哈&#8230;<img height="19" src="http://spaces.msn.com/mmm2005-05-13_18.25/RTE/emoticons/smile_tongue.gif" width="19" /></font></p></div>
 </div>
 
 
@@ -169,6 +200,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -182,10 +217,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

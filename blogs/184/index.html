@@ -32,6 +32,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -115,19 +147,18 @@
 <div><font color="#808080">我脑袋已经动不了了</font></div>
 <div><font color="#808080">从中午12点开始就编啊 编啊&#8230;中间也就休息了不到两小时&#8230;  算了 &#8230; </font></div>
 <div><font color="#808080">我又不是天才</font></div>
-<div><font color="#808080"></font> </div>
-<div><font color="#808080"></font> </div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
+<div><font color="#808080" /> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">我简直是Dying in the sun 啊~~</font></div>
 <div><font color="#808080">这首歌不错&#8230;The Canberries 的歌都很好听</font></div>
 <div><font color="#808080">第一次听她的歌 应该是在 3  4年前的一期疯狂英语里边</font></div>
 <div><font color="#808080">忘了是什么名字了&#8230; 一直想找那首  可惜不知道名字  麻烦  而且旋律也不记得了</font></div>
 <div><font color="#808080">单纯的觉得那首歌很好听&#8230;</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">不过这首也很好  How could I let things get to me so bad?<img src="http://spaces.msn.com/rte/emoticons/smile_thinking.gif" /></font></div>
 <blockquote>
 <div><font color="#99cc00"><strong>Do you remember<br />The things we used to say?<br />I feel so nervous<br />When I think of yesterday<br /><br />How could I let things<br />Get to me so bad?<br />How did I let things get to me?<br /><br />Like dying in the sun<br />Like dying in the sun<br />Like dying in the sun<br />Like dying  x2<br /><br />Will you hold on to me<br />I am feeling frail<br />Will you hold on to me<br />We will never fail<br /><br />I wanted to be so perfect you see<br />I wanted to be so perfect<br /><br />Like dying in the sun<br />Like dying in the sun<br />Like dying in the sun</strong></font></div></blockquote></div>
-
 </div>
 
 
@@ -191,6 +222,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -204,10 +239,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

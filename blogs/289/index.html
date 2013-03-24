@@ -29,6 +29,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -104,8 +136,7 @@
   </header>
 
 
-<div class="entry-content"><div id="msgcns!657528B8E1B18FB4!298" class="bvMsg"><p><font color="#ccff66">下了QQ2005 Beta1 感觉挺好 将就用</font></p> <p><font color="#ccff66">把它直接扔在原来的传美版本里边 将就可以显示IP</font></p> <p><font color="#ccff66">跟一个人在QQ上聊了很久 发现善良的人还是有的</font></p> <p><font color="#ccff66">我喜欢这个善良的人 至少她也不属于愚人节</font></p> <p><font color="#ccff66">对于自己现实生活已经无话可说 </font></p> <p><font color="#ccff66">只有将就把自己脑袋里边虚构的东西弄成日记</font></p> <p><font color="#ccff66">有可能的话 希望在愚人节这天 这些东西是真实的</font></p> <p><font color="#ccff66"></font> </p> <p><font color="#ccff66">中午1点过估计会去接胃一开同志 然后我打算做水煮肉片</font></p> <p><font color="#ccff66">当然得先去中国超市一趟</font></p> <p><font color="#ccff66">再到ASDA买点肉&#8230;</font></p> <p><font color="#ccff66">然后回到家 他会上网 我会开始看书 absolute java</font></p> <p><font color="#ccff66">既然是日志 今天才过了一个小时 我无话可说</font></p> <p><font color="#ccff66">就将就预测一下未来&#8230;</font></p></div>
-
+<div class="entry-content"><div id="msgcns!657528B8E1B18FB4!298" class="bvMsg"><p><font color="#ccff66">下了QQ2005 Beta1 感觉挺好 将就用</font></p> <p><font color="#ccff66">把它直接扔在原来的传美版本里边 将就可以显示IP</font></p> <p><font color="#ccff66">跟一个人在QQ上聊了很久 发现善良的人还是有的</font></p> <p><font color="#ccff66">我喜欢这个善良的人 至少她也不属于愚人节</font></p> <p><font color="#ccff66">对于自己现实生活已经无话可说 </font></p> <p><font color="#ccff66">只有将就把自己脑袋里边虚构的东西弄成日记</font></p> <p><font color="#ccff66">有可能的话 希望在愚人节这天 这些东西是真实的</font></p> <p><font color="#ccff66" /> </p> <p><font color="#ccff66">中午1点过估计会去接胃一开同志 然后我打算做水煮肉片</font></p> <p><font color="#ccff66">当然得先去中国超市一趟</font></p> <p><font color="#ccff66">再到ASDA买点肉&#8230;</font></p> <p><font color="#ccff66">然后回到家 他会上网 我会开始看书 absolute java</font></p> <p><font color="#ccff66">既然是日志 今天才过了一个小时 我无话可说</font></p> <p><font color="#ccff66">就将就预测一下未来&#8230;</font></p></div>
 </div>
 
 
@@ -169,6 +200,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -182,10 +217,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

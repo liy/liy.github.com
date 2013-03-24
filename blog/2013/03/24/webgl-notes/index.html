@@ -9,7 +9,8 @@
   <meta name="author" content="Liy">
 
   
-  <meta name="description" content="Framebuffer Framebuffer is not a buffer. It is a collection of states, which has very low memory footprint. Imagine it is a C struct with lots of &hellip;">
+  <meta name="description" content="Framebuffer
+Framebuffer is not a buffer. It is a collection of states, which has very low memory footprint. Imagine it is a C struct with lots of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -29,6 +30,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -104,11 +137,10 @@
   </header>
 
 
-<div class="entry-content"><h3><a href="http://games.greggman.com/game/webgl-image-processing-continued/">Framebuffer</a></h3>
-
+<div class="entry-content"><h3 id="framebufferhttpgamesgreggmancomgamewebgl-image-processing-continued"><a href="http://games.greggman.com/game/webgl-image-processing-continued/">Framebuffer</a></h3>
 <p>Framebuffer is not a buffer. It is a collection of states, which has very low memory footprint. Imagine it is a C struct with lots of pointer to a real buffer, etc.</p>
 
-<h3><a href="http://stackoverflow.com/questions/2213030/whats-the-concept-of-and-differences-between-framebuffer-and-renderbuffer-in">Renderbuffer</a></h3>
+<h3 id="renderbufferhttpstackoverflowcomquestions2213030whats-the-concept-of-and-differences-between-framebuffer-and-renderbuffer-in"><a href="http://stackoverflow.com/questions/2213030/whats-the-concept-of-and-differences-between-framebuffer-and-renderbuffer-in">Renderbuffer</a></h3>
 
 <p>Renderbuffer object is newly introduced for offscreen rendering. It allows to render a scene directly to a renderbuffer object, instead of rendering to a texture object. Renderbuffer is simply a data storage object containing a single image of a renderable internal format. It is used to store OpenGL logical buffers that do not have corresponding texture format, such as stencil or depth buffer.</p>
 </div>
@@ -153,6 +185,8 @@
         <a class="basic-alignment left" href="/blog/2013/03/13/mandelbrot-set-and-webgl/" title="Previous Post: Mandelbrot set and WebGL">&laquo; Mandelbrot set and WebGL</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/03/24/orthogonal-projection-and-clip-space/" title="Next Post: orthogonal projection and clip space">orthogonal projection and clip space &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -172,6 +206,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -185,10 +223,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

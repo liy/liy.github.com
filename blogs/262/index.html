@@ -36,6 +36,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -114,30 +146,29 @@
 <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!381" class="bvMsg"><div> </div>
 <div><font color="#cc99ff">头文字D从动漫弄成电影 把漂移这个词弄得多玄妙的&#8230;</font></div>
 <div><font color="#cc99ff">不过我理解起来 漂移嘛 就是甩尾嘛</font></div>
-<div><font color="#cc99ff"></font> </div>
+<div><font color="#cc99ff" /> </div>
 <div><font color="#cc99ff">我说 我要在光华大道上飘一哈</font></div>
 <div><font color="#cc99ff">穷霸他们说 那我们先下来都&#8230;</font></div>
 <div><font color="#cc99ff">真是打击人&#8230; 虽然说越野车飘不起 但是还是让我失望</font></div>
 <div><font color="#cc99ff">满以为他们会说些仗义的话 啥子不求同日生 但求同日归西之类的&#8230;</font></div>
-<div><font color="#cc99ff"></font> </div>
+<div><font color="#cc99ff" /> </div>
 <div><font color="#33cccc">从雅安回来 爸爸坐旁边 妈妈后边 在高速公路上飚&#8230;</font></div>
 <div><font color="#33cccc">飚着飚着 就开始下雨了</font></div>
 <div><font color="#33cccc">不知道是我开得太快 还是雨真的很大&#8230;</font></div>
 <div><font color="#33cccc">车速110左右</font></div>
 <div><font color="#33cccc">眼睛前边80米外的仍然模糊</font></div>
 <div><font color="#33cccc">瞪大了眼睛 眨都不敢眨一下&#8230;我估计那时候样子肯定比往常还要痴呆</font></div>
-<div><font color="#33cccc"></font> </div>
+<div><font color="#33cccc" /> </div>
 <div><font color="#33cccc">打着超车灯 继续飙 突然看见前边一滩黑灰色的东西 没反映过来 就压上去了</font></div>
 <div><font color="#33cccc">一滩水&#8230;</font></div>
 <div><font color="#33cccc">车子飘了一下 方向盘晃了一下&#8230; 没飘到栅栏上 旁边也没车</font></div>
 <div><font color="#33cccc">高速公路上积水真是害人呃&#8230;</font></div>
 <div><font color="#33cccc">不过至少我也漂移了一次了 虽然没甩尾</font></div>
-<div><font color="#cc99ff"></font> </div>
+<div><font color="#cc99ff" /> </div>
 <div><font color="#cc99ff"><img src="http://spaces.msn.com/rte/emoticons/smile_confused.gif" />要甩尾 还是一个人甩得好&#8230; 我现在可不想谁陪我</font></div>
 <div><font color="#cc99ff">现在不想甩尾&#8230; 我还有首圆舞曲没弹完 </font></div>
 <div><font color="#cc99ff">等我弹完都&#8230;</font></div>
 <div> </div></div>
-
 </div>
 
 
@@ -201,6 +232,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -214,10 +249,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

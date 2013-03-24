@@ -9,7 +9,7 @@
   <meta name="author" content="Liy">
 
   
-  <meta name="description" content="上几个星期就弄过Aircapsule的图标。 因为本来就叫AirCapusle,所以理所当然需要一个胶囊一样的图标，于是乎弄出来一个这个： 晃眼一看还过得去&#8230;不过当我那它来做64*64的Favicon的时候就出问题了&#8230;&#8230;啥都看不到&#8230;&#8230; &hellip;">
+  <meta name="description" content="Use Seperating-Axis GJK metioned here: http://mollyrocket.com/849. Also add some kind of margin when using SA-GJK. So we can saftly do a early out, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -29,6 +29,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -82,6 +114,52 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blogs/311">Seperating-Axis GJK and Contact Information Generation Algorithm</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-10T00:00:00+01:00" pubdate data-updated="true">Oct 10<span>th</span>, 2010</time>
+        
+         | <a href="/blogs/311#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ol>
+	<li>Use Seperating-Axis GJK metioned here: <a href="http://mollyrocket.com/849">http://mollyrocket.com/849</a>. Also add some kind of margin when using SA-GJK. So we can saftly do a early out, assume that if dot(A, D) &lt; 0, no intersection.</li>
+	<li>If intersection is found, in other words the SA-GJK does generate a simplex which contains the origin. Then we can use the simplex generated from SA-GJK as intial simplex input to EPA to calculate contact information, such as, contact points and normal, penetration depth.</li>
+</ol>
+<p>做个笔记，记录下脑袋里边东西…研究了两个星期Collision detection，看得我抓狂。反正我现在的想法就是这样的…那个所谓SA-GJK，作为一个quick test（当然在此之前还需要broad phase collision detection check），确定两个物体在有margin的情况下是否有碰撞。如果有碰撞（没碰撞，当然就没他们啥事儿了），那就需要更进一步确定是否真正的碰撞，如何碰撞的…</p>
+
+<p>虽然SA-GJK只给出boolean，但是我还是得用啊…浪费半天写了一堆代码总不能不用嘛…</p>
+
+<p>继续研究…</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blogs/5">Favicon, Logo更新咯！</a></h1>
     
     
@@ -119,7 +197,6 @@
 我知道左边那个看起来像一个“囧”&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;参考了挺多东西弄出来个“囧”。<br /><br /> <img src="http://pic2.nipic.com/20090413/1012038_085222068_2.jpg" alt="空 书法" height="268" width="451" />
 <img src="http://pic3.nipic.com/20090623/1344717_173235074_2.jpg" alt="祥云" height="189" width="224" />
 <br />可能IE显示Favicon会出些问题，估计是用那个IconWorkshop到处ico图标的时候设置的问题，还要测试一下。 <br /> <br /></div>
-
 </div>
   
   
@@ -158,7 +235,6 @@
 
 
   <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1946" class="bvMsg"> <a href="http://aircapsule.com">AirCapsule|空气胶囊</a> 试运行当中&#8230;敬请关注。<br /><br /><br />此windows live space估计会停止更新，虽然本来这个blog都很久没打理了。<br /><br />主要闲着没事儿，把猪儿子的古董清华同方笔记本搬出来弄了个Ubuntu Server。包括Web server, Samba file server都弄上了。另外因为那台古董键盘有问题，几个字母键都没法用&#8230;只好又装个OpenSSH，用来局域网登录。<br /><br />好不容易想了个将就的名字：<a href="http://aircapsule.com">空气胶囊|AirCapsule</a>，还画了半天图标&#8230;结果还是很不满意。花了几十镑，注册了<a href="http://aircapsule.com">AirCapsule.com</a>的域名外加DNS hosting&#8230;反正弄得我也稀里糊涂，没搞过这些东西，估计弄贵了，花了些冤枉钱，也就认了。<br /><br />当然，服务器还是那台破笔记本，一开blog我就听到硬盘狂转的声音，吓人啊！<br />想弄个普通的服务器电脑&#8230;看了苹果的Mac mini&#8230;将近700镑&#8230;抢钱也不能这样啊！还不如直接买8核的Mac Pro！！<br /><br />现在服务器上也就只有个wordpress，而且还没个像样的主题界面，都是跟着<a href="http://www.wpdesigner.com/2007/02/19/so-you-want-to-create-wordpress-themes-huh/">教程</a>做的。上个星期才复习了点CSS。至于php，反正简单，没啥可看的，我又不写啥高级的程序，语法跟函数知道了乱写就行了！<br /><br />blog的主题界面，在脑袋里边已经有个大概了，估计过几个星期以后能弄出来。<br /><br /><br />同志们没事儿就不要来黑我了&#8230;懒得搞攻防战，估计不爽我就直接拔网线。<br /><br />以后说不定还可以弄些稀奇古怪的东西，比如游戏开发啊，XMPP，一些特殊网站啊(no porn!!)，简单的教程啊，技巧，经验，资源分享之类的&#8230;所以，新手上线，还请关照，多多提意见啊：<br /><a href="http://aircapsule.com/">AirCapsule|空气胶囊</a><br /> <br /></div>
-
 </div>
   
   
@@ -197,7 +273,6 @@
 
 
   <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1931" class="bvMsg"> 虽然英国连三十都没到，国内到了啊！<br /><br />认识不认识的，大家都虎年快乐！！<br /><br />下星期放自己一星期假！！<br />现在先玩儿下游戏都！！<br /><br /> <br /></div>
-
 </div>
   
   
@@ -236,7 +311,6 @@
 
 
   <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1919" class="bvMsg"><p>要是你还没听说这个所谓的：</p> <p><strong>绿坝-花季护航</strong></p> <p>的软件的话，你就有点落伍了。鼓励同学们勇敢的尝试哈！虽然俺还没机会使用。等我把之前的烂笔记本电脑带回国，绝对装个用哈！</p> <p>这整个感觉太无稽了，4000多万竟然就做出来这么一个软件。</p> <p>说它是被“做出来”的话，可能有点抬举了。前几天看了软件的界面截图我就在想，这玩意儿肯定不是一般人能弄出来的。果然！今天看到国内真正强人反编译，分析以后，更让我相当之好奇，吃惊，就这么个东西？！4000多万？！还好意思说每台销售的电脑都要预装，附带？！</p> <p>这儿偷点数据，哪儿抄点代码！违反开源代码协议！东拼西凑出来的东西，漏洞百出，还打算强行安装？用了4000万纳税人的钱，反过来还美其名曰：免费试用1年……这也太无耻了嘛……</p> <p>简直是本世纪第一大笑话！现在好多世纪咯？！21世纪了哇？！</p> <p>说实话，哪个要是给我100万……对嘛，借我100万，找几个人立马可以在我现在做的WindChime Project里边加入家长监控功能。而且是实时监控，父母随可以了解小屁娃在网上干啥子，弄点更无耻的还可以直接强制远程关闭电脑之类的。</p> <p>现在电脑识别图像算法不完善，只能作为一个最基本的筛选工具。当发现可疑图片，网页文字的时候，可以直接通过XMPP Jingle发送即时数据到家长的手机，笔记本，等等移动设备上，让人来判断是否是有害信息，并对算法进行纠正，然后整个软件会自我学习。如果我没记错的话……当年大二学的Subsymbolic Processing and Neural Networks（亚符号处理和神经元网络，是这么翻译？！）里讲到的差不多就这么一个东西，自我完善的神经元网络！仿佛还是需要大量数据来训练Perceptron network。不过反正中国人多三！！数据好办的很！！那一门我也就只记得这些咯！无限难！</p> <p>我描述的软件高级哇？！我这种三流程序员都能设想些更实际，实用的……那么随便给谁4000万也都可以做个真材实料的嘛！！！</p> <p>至于为啥这个软件可以被钦点……估计相关的人脑壳都被屎敷了一遍……当然也不排除相关的人脑壳本身就是屎的可能性……</p> <p> </p> <p>总结:鼓励大家尝试哈滤霸的威力，不过最好在烂电脑上用，要不到时候打个文件都莫名其妙被直接关掉，没有保存……之类的，就安逸咯！</p> <p>哎……最为一名留学生，想爱国，真的要有点能耐，真的不容易啊！给点机会好不好？！</p>  </div>
-
 </div>
   
   
@@ -281,7 +355,6 @@
 <div>最后半个小时就休息哈！干点腮边打网的事情！</div>
 <div> </div>
 <div>比如，无限跩的写日志等下班！</div></div>
-
 </div>
   
   
@@ -319,39 +392,39 @@
   </header>
 
 
-  <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1904" class="bvMsg"><blockquote> <p><font size="1">Access Model<br />Description</font>  <p><font size="1">Open<br />Any entity may subscribe to the node (i.e., without the necessity for subscription approval) and any entity may retrieve items from the node (i.e., without being subscribed); this SHOULD be the default access model for generic pubsub services.</font>  <p><font size="1">Presence<br />Any entity with a subscription of type &quot;from&quot; or &quot;both&quot; may subscribe to the node and retrieve items from the node; this access model applies mainly to instant messaging systems (see RFC 3921).</font>  <p><font size="1">Roster<br />Any entity in the specified roster group(s) may subscribe to the node and retrieve items from the node; this access model applies mainly to instant messaging systems (see RFC 3921).</font>  <p><font size="1">Authorize<br />The node owner must approve all subscription requests, and only subscribers may retrieve items from the node.</font>  <p><font size="1">Whitelist<br />An entity may subscribe or retrieve items only if on a whitelist managed by the node owner. The node owner MUST automatically be on the whitelist. In order to add entities to the whitelist, the node owner SHOULD use the protocol specified in the </font><a href="http://xmpp.org/#owner-affiliations"><font size="1">Manage Affiliated Entities</font></a><font size="1"> section of this document, specifically by setting the affiliation to &quot;member&quot;.</font></p></p></blockquote> <p>修正昨天说的。影响到PubSub External Component的应该有两种Access Model，就是上边所说的Presence和Roster。  <p>不过我实在不知道把Publish Subscribe Service做成一个External Component有多大好处。我之前只是简单觉得，可以把它放在另外一台电脑上运行，而且不一定局限于连接Openfire XMPP Server，以后过度期间还可以连到ejabber啊之类的XMPP Server。  <p>不过现在看来并不能简单得单一的作为一个External Component，因为一旦牵扯到Presence Subscription和Roster，就必须要相关的User data，而这些数据都储存在XMPP server上边，并不能是直接就可以想拿就拿来用的。  <p>也不可能直接调用数据库！首先太慢！其次Server不一定立刻存储数据到数据库。  <p>必须通过发送接收相应的XMPP packet来交换数据，实现数据同步。  <p>现在想的，如果要用External Component，首先要写一个Internal PacketInterceptor Plugin，监视所有的Presence subscription Packet。因为Openfire server api里边没有presence handler处理这种Packet：  <blockquote>
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;font size="1" face="Verdana">&lt;presence to='juliet@example.com' type='subscribe'/&gt;&lt;/font></span></code></pre></td></tr></table></div></figure>
+  <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1904" class="bvMsg"><blockquote> <p><font size="1">Access Model<br />Description</font>  <p><font size="1">Open<br />Any entity may subscribe to the node (i.e., without the necessity for subscription approval) and any entity may retrieve items from the node (i.e., without being subscribed); this SHOULD be the default access model for generic pubsub services.</font>  <p><font size="1">Presence<br />Any entity with a subscription of type &quot;from&quot; or &quot;both&quot; may subscribe to the node and retrieve items from the node; this access model applies mainly to instant messaging systems (see RFC 3921).</font>  <p><font size="1">Roster<br />Any entity in the specified roster group(s) may subscribe to the node and retrieve items from the node; this access model applies mainly to instant messaging systems (see RFC 3921).</font>  <p><font size="1">Authorize<br />The node owner must approve all subscription requests, and only subscribers may retrieve items from the node.</font>  <p><font size="1">Whitelist<br />An entity may subscribe or retrieve items only if on a whitelist managed by the node owner. The node owner MUST automatically be on the whitelist. In order to add entities to the whitelist, the node owner SHOULD use the protocol specified in the </font><a href="http://xmpp.org/#owner-affiliations"><font size="1">Manage Affiliated Entities</font></a><font size="1"> section of this document, specifically by setting the affiliation to &quot;member&quot;.</font></p></p> <p>修正昨天说的。影响到PubSub External Component的应该有两种Access Model，就是上边所说的Presence和Roster。  <p>不过我实在不知道把Publish Subscribe Service做成一个External Component有多大好处。我之前只是简单觉得，可以把它放在另外一台电脑上运行，而且不一定局限于连接Openfire XMPP Server，以后过度期间还可以连到ejabber啊之类的XMPP Server。  <p>不过现在看来并不能简单得单一的作为一个External Component，因为一旦牵扯到Presence Subscription和Roster，就必须要相关的User data，而这些数据都储存在XMPP server上边，并不能是直接就可以想拿就拿来用的。  <p>也不可能直接调用数据库！首先太慢！其次Server不一定立刻存储数据到数据库。  <p>必须通过发送接收相应的XMPP packet来交换数据，实现数据同步。  <p>现在想的，如果要用External Component，首先要写一个Internal PacketInterceptor Plugin，监视所有的Presence subscription Packet。因为Openfire server api里边没有presence handler处理这种Packet：  <blockquote>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">&lt;font size="1" face="Verdana"&gt;&lt;presence to='juliet@example.com' type='subscribe'/&gt;&lt;/font&gt;</span></code></pre></td></tr></table></div></figure></notextile></div>
 </blockquote>
 <p>不过倒是有IQHandler专门可以用来处理Roster add and delete packet： 
 <blockquote>
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;font size="1" face="Verdana">&lt;iq from='juliet@example.com/balcony' type='set' id='roster_2'&gt;
-</span><span class='line'>  &lt;query xmlns='jabber:iq:roster'&gt;
-</span><span class='line'>    &lt;item jid='nurse@example.com'
-</span><span class='line'>          name='Nurse'&gt;
-</span><span class='line'>      &lt;group&gt;Servants&lt;/group&gt;
-</span><span class='line'>    &lt;/item&gt;
-</span><span class='line'>  &lt;/query&gt;
-</span><span class='line'>&lt;/iq&gt;&lt;/font></span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">&lt;font size="1" face="Verdana"&gt;&lt;iq from='juliet@example.com/balcony' type='set' id='roster_2'&gt;
+</span><span class="line">  &lt;query xmlns='jabber:iq:roster'&gt;
+</span><span class="line">    &lt;item jid='nurse@example.com'
+</span><span class="line">          name='Nurse'&gt;
+</span><span class="line">      &lt;group&gt;Servants&lt;/group&gt;
+</span><span class="line">    &lt;/item&gt;
+</span><span class="line">  &lt;/query&gt;
+</span><span class="line">&lt;/iq&gt;&lt;/font&gt;</span></code></pre></td></tr></table></div></figure></notextile></div>
 </blockquote>
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;font face="Verdana">所以同步Roster和Presence Subscription还是可以实现的，当然External Publish Subscribe component也就可以实现了。&lt;/font></span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">&lt;font face="Verdana"&gt;所以同步Roster和Presence Subscription还是可以实现的，当然External Publish Subscribe component也就可以实现了。&lt;/font&gt;</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;font face="Verdana">只是不知道最后会不会太慢。&lt;/font></span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">&lt;font face="Verdana"&gt;只是不知道最后会不会太慢。&lt;/font&gt;</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;font face="Verdana">如果不用External Component，那就简单了，之前写的东西，修改一下，就可以用了。&lt;/font></span></code></pre></td></tr></table></div></figure>
-  </p></p></p></div>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">&lt;font face="Verdana"&gt;如果不用External Component，那就简单了，之前写的东西，修改一下，就可以用了。&lt;/font&gt;</span></code></pre></td></tr></table></div></figure></notextile></div>
+  </p></p></p>
+</p></p></p></p></p></p></p></p></blockquote></div>
 </div>
   
   
@@ -389,8 +462,8 @@
   </header>
 
 
-  <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1902" class="bvMsg"><p>因为在External Component里边没法用一般的Roster query。又只能自己写一个Roster query packet handler之类的了。 <p>不过看了一下，仿佛<a href="http://xmpp.org/extensions/xep-0144.html" target="_blank">XEP-0144: Roster Item Exchange</a>可以部分满足我的要求。虽然这个protocol externsion在Openfire里边没有支持，但是我可能还是照着这个写一个Internal component或者Packet handler plugin比较好，尽量少做修改。 <p>麻烦啊！！把PubSub弄成External Component无限麻烦，因为Publish subscribe里边的Presence Access Model需要用到Roster，这就要跟牵扯到如何获取Roster，如何同步XMPP Server的Roster跟External Component的Roster的问题。要不然就将就用Internal Component算了？！？！省的我浪费几个月时间写PubSub component。  </div>
-
+  <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1902" class="bvMsg"><p>因为在External Component里边没法用一般的Roster query。又只能自己写一个Roster query packet handler之类的了。 <p>不过看了一下，仿佛<a href="http://xmpp.org/extensions/xep-0144.html" target="_blank">XEP-0144: Roster Item Exchange</a>可以部分满足我的要求。虽然这个protocol externsion在Openfire里边没有支持，但是我可能还是照着这个写一个Internal component或者Packet handler plugin比较好，尽量少做修改。 <p>麻烦啊！！把PubSub弄成External Component无限麻烦，因为Publish subscribe里边的Presence Access Model需要用到Roster，这就要跟牵扯到如何获取Roster，如何同步XMPP Server的Roster跟External Component的Roster的问题。要不然就将就用Internal Component算了？！？！省的我浪费几个月时间写PubSub component。  
+</p></p></p></div>
 </div>
   
   
@@ -439,7 +512,6 @@
 <div>之前的试验品弄完了！现在开始最终开发咯！</div>
 <div>好的名字好的开始是必要的！！！</div>
 <div>WC万岁！哇哈哈哈哈！</div></div>
-
 </div>
   
   
@@ -479,46 +551,6 @@
 
   <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1897" class="bvMsg"><div>大换血哦！</div>
 <div>麻烦死了</div></div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blogs/12">给我一个月空闲时间哇？</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-01T00:00:00+00:00" pubdate data-updated="true">Mar 1<span>st</span>, 2009</time>
-        
-         | <a href="/blogs/12#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!1898" class="bvMsg"><p>恼火啊，啥子时候弄得好哦！  </div>
-
 </div>
   
   
@@ -543,6 +575,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -556,10 +592,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

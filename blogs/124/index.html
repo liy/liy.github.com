@@ -16,7 +16,8 @@ Yeah~太阳！！
  
 老子这个月就不写Action Script了！！老子自学Assembler！
  
-真是太阳太阳太阳啊~~~ ">
+真是太阳太阳太阳啊~~~
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -36,6 +37,38 @@ Yeah~太阳！！
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -115,11 +148,10 @@ Yeah~太阳！！
 <div><font color="#ff0000">Yeah~~老子第一年下学期没学过Assembler！！</font></div>
 <div><font color="#ff0000">Yeah~太阳！！</font></div>
 <div><font color="#ff0000">不让我活你就说一声~省得我还要ban一哈&#8230;</font></div>
-<div><font color="#ff0000"></font> </div>
+<div><font color="#ff0000" /> </div>
 <div><font color="#ff0000">老子这个月就不写Action Script了！！老子自学Assembler！</font></div>
-<div><font color="#ff0000"></font> </div>
+<div><font color="#ff0000" /> </div>
 <div><font color="#ff0000">真是太阳太阳太阳啊~~~<img src="/rte/emoticons/smile_baringteeth.gif" /></font></div></div>
-
 </div>
 
 
@@ -183,6 +215,10 @@ Yeah~太阳！！
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -196,10 +232,6 @@ Yeah~太阳！！
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

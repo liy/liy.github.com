@@ -35,6 +35,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -131,7 +163,7 @@
 <div> </div>
 <div><font color="#ffff00"> </font></div>
 <div><font color="#808080">转到正题，关于胃一开小笨蛋回国的问题。实在羡慕啊！！！！</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#ffffff">老子也回国算了。回切当卖馒头的好儿童。推个三轮儿，在大学周围使劲吆喝，累了，坐下来啃一口馒头，看看风景，喝喝自来水，再看看美女。偶尔有奢侈的美女帅哥来买馒头，然后我就给他们Special offer：是美女帅哥，买馒头，买一赠一；是情侣，送情侣馒头，也就是一个红色，一个白色的馒头。</font></div>
 <div><font color="#ffffff">卖完了，还可以偷着去听课。没人会知道我是卖馒头的。</font></div>
 <div> </div>
@@ -145,7 +177,6 @@
 <div><font color="#808080"> </font></div>
 <div><font color="#808080"> </font></div>
 <div><font color="#808080">OK，扯淡扯完了。找点其他事儿做。</font></div></div>
-
 </div>
 
 
@@ -209,6 +240,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -222,10 +257,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

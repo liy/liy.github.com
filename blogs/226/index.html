@@ -31,6 +31,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -117,7 +149,7 @@
 <div><font color="#808000"> </font></div>
 <div><font color="#808000"> </font></div>
 <div><font color="#808000"><img src="http://tinypic.com/ei6sjl.jpg" width="100%" /></font><font color="#808080">前几天跟云之臀部玩魔兽争霸。也不错。</font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">哈哈哈。暴雪公司的游戏就是经典啊！</font></div>
 <div><font color="#808080">不过我不玩魔兽世界！！</font></div>
 <div><font color="#808080">不能玩，玩就脱不到爪爪了！</font></div>
@@ -128,7 +160,7 @@
 <div><font color="#808080"> </font></div>
 <div><font color="#808080">玩得不亦乐乎！掐着时间去上晚自习，最后被老师逮个正着。哈哈，走廊上站了我们一排人。真是令人怀念哦！</font></div>
 <div><font color="#808080"> </font></div>
-<div><font color="#808080"></font> </div>
+<div><font color="#808080" /> </div>
 <div><font color="#808080">现在就不用去网吧了。其实是去网吧给不起钱，再说这儿也没游戏玩。去网吧玩游戏，在英国仿佛没有这种说法。</font></div>
 <div><font color="#808000"> </font></div>
 <div><font color="#0080c0"><img src="http://tinypic.com/ei6xd2.jpg" width="60%" align="right" />Bournemouth的时候，星期六星期天，一般都会有4，5个人抱着电脑，跑我们的那儿来联网。</font></div>
@@ -142,7 +174,6 @@
 <div><font color="#0080c0"> </font></div>
 <div><font color="#0080c0"> </font></div>
 <div><font color="#0080c0">现在我杀完了，就该睡觉了。</font></div></div>
-
 </div>
 
 
@@ -206,6 +237,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -219,10 +254,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

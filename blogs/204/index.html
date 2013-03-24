@@ -34,6 +34,38 @@ NO PS&#8230;&#8230;&#8230;&#8230; MY HOME  
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -110,7 +142,7 @@ NO PS&#8230;&#8230;&#8230;&#8230; MY HOME  
 
 
 <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!871" class="bvMsg"><p align="center"><font color="#ffffff">BLOCK！</font></p>
-<div><font color="#ffffff"></font> </div>
+<div><font color="#ffffff" /> </div>
 <div align="center"><font color="#ffffff">PS&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;..GUITAR</font></div>
 <p align="center"><img src="http://tinypic.com/fem6m9.jpg" width="70%" /></p>
 <p> </p>
@@ -133,7 +165,7 @@ NO PS&#8230;&#8230;&#8230;&#8230; MY HOME  
 <p>
 <hr />
 
-<p></p>
+<p />
 <p><font color="#ffffff">没什么可看的 可说的 可想的</font></p>
 <p><font color="#ffffff">没有发信 没有编程 没有睡觉</font></p>
 <p><font color="#ffffff">什么事情都没做</font></p>
@@ -152,11 +184,11 @@ NO PS&#8230;&#8230;&#8230;&#8230; MY HOME  
 <p><font color="#ffffff">Block掉所有人</font></p>
 <p><font color="#ffffff">受不了现在状态</font></p>
 <p><font color="#ffffff">休养生息</font></p>
-<p><font color="#ffffff"></font> </p>
-<p><font color="#ffffff"></font> </p>
+<p><font color="#ffffff" /> </p>
+<p><font color="#ffffff" /> </p>
 <p><font color="#ffffff">我要跟吉他私奔 </font></p>
-<p><font color="#ffffff">奔死</font></p></font></div>
-
+<p><font color="#ffffff">奔死</font></p>
+</p></font></div>
 </div>
 
 
@@ -220,6 +252,10 @@ NO PS&#8230;&#8230;&#8230;&#8230; MY HOME  
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -233,10 +269,6 @@ NO PS&#8230;&#8230;&#8230;&#8230; MY HOME  
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>

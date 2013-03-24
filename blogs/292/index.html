@@ -29,6 +29,38 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- For display latex -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -105,7 +137,6 @@
 
 
 <div class="entry-content"><div id="msgcns!657528B8E1B18FB4!301" class="bvMsg"><p>第一次做过山车&#8230;一个人坐第二排</p> <p>胃一开同志跟我同学坐第一排&#8230;</p> <p>对我来说&#8230;就跟做梦一样&#8230;恐惧感 眩晕</p> <p>从235ft高处掉下的感觉不错&#8230;</p> <p>但是我还是不得不咒骂: 靠&#8230;</p> <p>挺奇怪为什么会骂 未必我害怕了就会骂人?</p> <p> </p> <p>第二个过山车跟梦境一样 旋转 很舒服</p> <p>旁边的中年英国女人问: are you ok? you can shout it out&#8230;</p> <p>我说: yeah, it&#8217;s ok</p> <p>倒退着 旋转&#8230; 更加虚幻的感觉</p> <p> </p> <p>下次还会去坐过山车 但是不会害怕</p> <p>我同学说胃一开同志的脸都白了&#8230; 我的脸好像没白吧&#8230;</p> <p>屏幕上的照片 胃一开同志埋着头 看不到他的脸 </p> <p>我同学要紧牙齿&#8230;眼睛瞪得很圆</p> <p>而我在仰着头 笑&#8230; 就跟什么事情没发生一样 或者是吓傻了 嘿嘿</p> <p>没买照片&#8230;本来该买的 </p> <p>4.5镑 3个人分 也不算太贵</p> <p> </p> <p>我同学疯了 过山车他都坐完了&#8230; 而我冷得头痛 姑且认为是借口 只坐了其中的3个过山车</p> <p> </p> <p>下次我会放轻松&#8230;</p> <p>如果有可能 我会一个人坐第一排<img height="19" src="http://spaces.msn.com/mmm2005-01-24_16.34/RTE/emoticons/smile_teeth.gif" width="19" /></p></div>
-
 </div>
 
 
@@ -169,6 +200,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/24/orthogonal-projection-and-clip-space/">orthogonal projection and clip space</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/24/webgl-notes/">webgl notes</a>
       </li>
     
@@ -182,10 +217,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/02/migrate-to-github-pages/">Migrate to github pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/29/mang-a/">忙啊</a>
       </li>
     
   </ul>
