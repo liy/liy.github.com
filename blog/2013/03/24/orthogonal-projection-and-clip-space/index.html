@@ -211,25 +211,15 @@ uniform vec2 u_resolution; void main &hellip;">
 
 <p>The OpenGL use column-major matrix. Using a 4x4 matrix represent the projection:</p>
 
-<!---
-right align matrix
-$$
-\left( \begin{array}{rrrr}
-2/resolution.width & 0 & 0 & -1 \\
-0 & -2/resolution.height & 0 & 1 \\
-0 & 0 & 2/resoultion.depth & -1 \\
-0 & 0 & 0 & 1 
-\end{array} \right)
-$$
---->
-<p>$$
-\begin{matrix}
- 2/resolution.width &amp; 0 &amp; 0 &amp; -1 <br />
- 0 &amp; -2/resolution.height &amp; 0 &amp; 1 <br />
- 0 &amp; 0 &amp; 2/resoultion.depth &amp; -1 <br />
- 0 &amp; 0 &amp; 0 &amp; 1 
-\end{matrix}
-$$</p>
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{pmatrix}
+ 2/resolution.width & 0 & 0 & -1 \\
+ 0 & -2/resolution.height & 0 & 1 \\
+ 0 & 0 & 2/resoultion.depth & -1 \\
+ 0 & 0 & 0 & 1 
+\end{pmatrix}
+ %]]></script>
 
 <p>Use the above matrix in the GLSL:</p>
 
