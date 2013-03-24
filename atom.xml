@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-24T14:53:15+00:00</updated>
+  <updated>2013-03-24T15:00:53+00:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -32,12 +32,12 @@
 <span class="line-number">10</span>
 <span class="line-number">11</span>
 <span class="line-number">12</span>
-</pre></td><td class="code"><pre><code class="glsl"><span class="line"><span class="k">attribute</span> <span class="k">vec2</span> <span class="n">a_vertex</span><span class="p">;</span>
+</pre></td><td class="code"><pre><code class="glsl"><span class="line"><span class="k">attribute</span> <span class="k">vec2</span> <span class="n">a_position</span><span class="p">;</span>
 </span><span class="line"><span class="k">uniform</span> <span class="k">vec2</span> <span class="n">u_resolution</span><span class="p">;</span>
 </span><span class="line">
 </span><span class="line"><span class="k">void</span> <span class="n">main</span><span class="p">(){</span>
 </span><span class="line">	<span class="c1">// [0, 1] coordinate system</span>
-</span><span class="line">	<span class="k">vec2</span> <span class="n">clipSpace</span> <span class="o">=</span> <span class="n">a_vertex</span><span class="o">/</span><span class="n">a_resolution</span><span class="p">;</span>
+</span><span class="line">	<span class="k">vec2</span> <span class="n">clipSpace</span> <span class="o">=</span> <span class="n">a_position</span><span class="o">/</span><span class="n">a_resolution</span><span class="p">;</span>
 </span><span class="line">	<span class="c1">// [0, 2] coordinate system</span>
 </span><span class="line">	<span class="n">clipSpace</span> <span class="o">*=</span> <span class="mf">2.0</span><span class="p">;</span>
 </span><span class="line">	<span class="c1">// [-1, 1] finally clip space coordinate system</span>
@@ -62,12 +62,12 @@
 <span class="line-number">12</span>
 <span class="line-number">13</span>
 <span class="line-number">14</span>
-</pre></td><td class="code"><pre><code class="glsl"><span class="line"><span class="k">attribute</span> <span class="k">vec2</span> <span class="n">a_vertex</span><span class="p">;</span>
+</pre></td><td class="code"><pre><code class="glsl"><span class="line"><span class="k">attribute</span> <span class="k">vec2</span> <span class="n">a_position</span><span class="p">;</span>
 </span><span class="line"><span class="k">uniform</span> <span class="k">vec2</span> <span class="n">u_resolution</span><span class="p">;</span>
 </span><span class="line">
 </span><span class="line"><span class="k">void</span> <span class="n">main</span><span class="p">(){</span>
 </span><span class="line">	<span class="c1">// [0, 1] coordinate system</span>
-</span><span class="line">	<span class="k">vec2</span> <span class="n">clipSpace</span> <span class="o">=</span> <span class="n">a_vertex</span><span class="o">/</span><span class="n">a_resolution</span><span class="p">;</span>
+</span><span class="line">	<span class="k">vec2</span> <span class="n">clipSpace</span> <span class="o">=</span> <span class="n">a_position</span><span class="o">/</span><span class="n">a_resolution</span><span class="p">;</span>
 </span><span class="line">	<span class="c1">// [0, 2] coordinate system</span>
 </span><span class="line">	<span class="n">clipSpace</span> <span class="o">*=</span> <span class="mf">2.0</span><span class="p">;</span>
 </span><span class="line">	<span class="c1">// [-1, 1] finally clip space coordinate system</span>
@@ -80,15 +80,46 @@
 
 <p>The OpenGL use column-major matrix. Using a 4x4 matrix represent the projection:</p>
 
-<script type="math/tex; mode=display">% &lt;![CDATA[
-
+<!---
+right align matrix
+$$
 \left( \begin{array}{rrrr}
 2/resolution.width & 0 & 0 & -1 \\
 0 & -2/resolution.height & 0 & 1 \\
 0 & 0 & 2/resoultion.depth & -1 \\
 0 & 0 & 0 & 1 
 \end{array} \right)
- %]]&gt;</script>
+$$
+--->
+<p>$$
+\begin{pmatrix}
+2/resolution.width &amp; 0 &amp; 0 &amp; -1 <br />
+0 &amp; -2/resolution.height &amp; 0 &amp; 1 <br />
+0 &amp; 0 &amp; 2/resoultion.depth &amp; -1 <br />
+0 &amp; 0 &amp; 0 &amp; 1 
+\end{pmatrix}
+$$</p>
+
+<p>Use the above matrix in the GLSL:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="glsl"><span class="line"><span class="k">attribute</span> <span class="k">vec3</span> <span class="n">a_position</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">// orthogonal projection matrix</span>
+</span><span class="line"><span class="k">uniform</span> <span class="k">mat4</span> <span class="n">u_pMatrix</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line"><span class="k">void</span> <span class="n">main</span><span class="p">(){</span>
+</span><span class="line">  <span class="n">gl_Position</span> <span class="o">=</span> <span class="n">u_pMatrix</span> <span class="o">*</span> <span class="k">vec4</span><span class="p">(</span><span class="n">a_position</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 ]]></content>
   </entry>
   
