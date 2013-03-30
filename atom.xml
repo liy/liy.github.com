@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-30T23:00:08+00:00</updated>
+  <updated>2013-03-30T23:10:04+00:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -36,7 +36,7 @@
 
 <script type="math/tex; mode=display"> n' = \mathbf{G} * n </script>
 
-<p>If transformed normal vector <strong><em><code>n'</code></em></strong> is perpendicular to the surface, By definition, there will be:</p>
+<p>If transformed normal vector <strong><em><code>n'</code></em></strong> is perpendicular to the surface, by definition there will be:</p>
 
 <script type="math/tex; mode=display"> n' \cdot t' = (\mathbf{G} * n) \cdot (\mathbf{M} * t) = 0 </script>
 
@@ -60,7 +60,7 @@
 
 <script type="math/tex; mode=display"> n^T * t = n \cdot t = \|n\|\|t\|\cos(\frac{\pi}{2}) = 0 </script>
 
-<p>This is obvious this true, since <strong><em><code>n</code></em></strong> is perpendicular to <strong><em><code>t</code></em></strong>.</p>
+<p>This is obviously true, because <strong><em><code>n</code></em></strong> is perpendicular to <strong><em><code>t</code></em></strong>.</p>
 
 <p><script type="math/tex"> \mathbf{G}^T * \mathbf{M} = \mathbf{I} </script> becomes the key to solve the problem. Multiply both side by <script type="math/tex"> \mathbf{M}^{-1} </script> finally we get the answer.</p>
 
@@ -77,8 +77,7 @@
 
 <p>This inverse transpose model view matrix must be used for surface normal transformation in order to calculate the correct lighting.</p>
 
-<p>This is because the model view matrix could cause the incorrect normal direction. Imagine you have a sphere, and scale 2 only in <strong><code>x</code></strong> axis, the sphere will be stretched. If use the model view matrix, the normal points in <strong><code>y</code></strong> direction clearly will be unchanged, the length of normal in <strong><code>x</code></strong> direction is now 2 units, other normals will be incorrectly pointed towards in either <strong><code>x</code></strong> or <strong><code>-x</code></strong> direction.</p>
-
+<p>This is because the model view matrix could cause the incorrect normal direction. Imagine you have a sphere, and scale 2 units only in <strong><code>x</code></strong> axis, the sphere will be stretched. If use the model view matrix, the normal points in <strong><code>y</code></strong> direction clearly will be unchanged, the length of normal in <strong><code>x</code></strong> direction is now 2 units, other normals will be incorrect as well.</p>
 ]]></content>
   </entry>
   
