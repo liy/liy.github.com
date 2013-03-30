@@ -147,11 +147,15 @@
 
 <p>Below are some conditions for this problem:</p>
 
-<ol>
-  <li>Let <strong><em>n</em></strong> be the surface normal vector, <strong><em>t</em></strong> is a vector on the surface. </li>
-  <li><strong><em>t’</em></strong> is the vector transformed by <strong><em>M</em></strong>, the model view transform matrix. The mathmatics representation is: <script type="math/tex"> {t'} = {t} * \textbf{M} </script> </li>
-  <li><script type="math/tex"> \bm{n'} </script> is vector transformed by <script type="math/tex">  \textbf{M} </script> which is the special normal transformation matrix we need to produce. The mathmatics representation is: <script type="math/tex"> \bm{n'} = \bm{n} * \textbf{G} </script></li>
-</ol>
+<p>Let <strong><em>n</em></strong> be the surface normal vector, <strong><em>t</em></strong> is a vector on the surface. </p>
+
+<p><strong><em>t’</em></strong> is the vector transformed by <strong><em>M</em></strong>, the model view transform matrix. The mathmatics representation is: </p>
+
+<script type="math/tex; mode=display"> {t'} = {t} * \textbf{M} </script>
+
+<p><script type="math/tex"> \bm{n'} </script> is vector transformed by <script type="math/tex"> \textbf{M} </script> which is the special normal transformation matrix we need to produce. The mathmatics representation is: </p>
+
+<script type="math/tex; mode=display"> n' = n * \textbf{G} </script>
 
 <p>By definition, <script type="math/tex"> \bm{n} </script> is perpendicular to the surface, therefore <script type="math/tex"> \bm{n} \cdot \bm{t} = 0 </script>.</p>
 </div>
