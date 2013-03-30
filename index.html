@@ -143,7 +143,7 @@
 
 <script type="math/tex; mode=display"> (\textbf{M}^{-1})^T </script>
 
-<p><strong><code>M</code></strong> is a matrix, usually the <code>model view transform matrix</code>. I was trying to understand how they come up this matrix. Here is my understanding, a brief explanation.</p>
+<p><strong><code>M</code></strong> is a matrix, usually the model view transform matrix. I was trying to understand how they come up this matrix. Here is my understanding, a brief explanation.</p>
 
 <p>Below are some conditions for this problem:</p>
 
@@ -159,13 +159,14 @@
 
 <p>If transformed normal vector <strong><em><code>n'</code></em></strong> is perpendicular to the surface, By definition, there will be:</p>
 
-<script type="math/tex; mode=display"> n' \cdot t' = (\textbf{G}n) \cdot (\textbf{M}t) = 0 </script>
+<script type="math/tex; mode=display"> n' \cdot t' = (\textbf{G} * n) \cdot (\textbf{M} * t) = 0 </script>
 
 <p>Two vectors’ dot product can be rewritten into normal multiplication by transposing one column vector (OpenGL use column vector) into row vector. <a href="http://en.wikipedia.org/wiki/Transpose#Properties">Transpose of matrix, property 6</a></p>
 
-<script type="math/tex; mode=display"> (\textbf{G} * n)^T * (\textbf{M}t) = 0 </script>
+<script type="math/tex; mode=display"> (\textbf{G} * n)^T * (\textbf{M} * t) = 0 </script>
 
-<p><code>Seems like the vectors dot product can be treated as two one dimensional matrices multiplication.</code></p>
+<pre><code>``Seems like the vectors dot product can be treated as two one dimensional matrices multiplication.``
+</code></pre>
 
 <p>According to <a href="http://en.wikipedia.org/wiki/Transpose#Properties">Transpose of matrix, property 3</a>. The final equation is : </p>
 
