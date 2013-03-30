@@ -9,7 +9,7 @@
   <meta name="author" content="Liy">
 
   
-  <meta name="description" content="I was doing WebGL lighting which requires a special normal transformation matrix: $$ (\textbf{M}^{-1})^T $$ M is a matrix, usually the model view &hellip;">
+  <meta name="description" content="I was doing WebGL lighting which requires a special normal transformation matrix: M is a matrix, usually the model view transform matrix. I was &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -141,19 +141,19 @@
 
   <div class="entry-content"><p>I was doing WebGL lighting which requires a special normal transformation matrix:</p>
 
-<p><code>$$ (\textbf{M}^{-1})^T $$</code></p>
+<script type="math/tex; mode=display"> (\textbf{M}^{-1})^T </script>
 
 <p><strong>M</strong> is a matrix, usually the <code>model view transform matrix</code>. I was trying to understand how they come up this matrix. Here is my understanding, a brief explanation.</p>
 
 <p>Below are some conditions for this problem:</p>
 
 <ol>
-  <li>Let <code>$$ \bm{n} $$</code> be the surface normal vector, <code>$$ \bm{t} $$</code> is a vector on the surface. </li>
-  <li><code>$$ \bm{t'} $$</code> is the vector transformed by <code>$$ \textbf{M} $$</code>, the model view transform matrix. The mathmatics representation is: <code>$$ \bm{t'} = \bm{t} * \textbf{M} $$</code> </li>
-  <li><code>$$ \bm{n'} $$</code> is vector transformed by <code>$$  \textbf{M} $$</code> which is the special normal transformation matrix we need to produce. The mathmatics representation is: <code>$$ \bm{n'} = \bm{n} * \textbf{G} $$</code></li>
+  <li>Let <script type="math/tex"> \bm{n} </script> be the surface normal vector, <script type="math/tex"> \bm{t} </script> is a vector on the surface. </li>
+  <li><script type="math/tex"> \bm{t'} </script> is the vector transformed by <script type="math/tex"> \textbf{M} </script>, the model view transform matrix. The mathmatics representation is: <script type="math/tex"> \bm{t'} = \bm{t} * \textbf{M} </script> </li>
+  <li><script type="math/tex"> \bm{n'} </script> is vector transformed by <script type="math/tex">  \textbf{M} </script> which is the special normal transformation matrix we need to produce. The mathmatics representation is: <script type="math/tex"> \bm{n'} = \bm{n} * \textbf{G} </script></li>
 </ol>
 
-<p>By definition, <code>$$ \bm{n} $$</code> is perpendicular to the surface, therefore <code>$$ \bm{n} \cdot \bm{t} = 0 $$</code>.</p>
+<p>By definition, <script type="math/tex"> \bm{n} </script> is perpendicular to the surface, therefore <script type="math/tex"> \bm{n} \cdot \bm{t} = 0 </script>.</p>
 </div>
   
   
