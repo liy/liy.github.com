@@ -143,23 +143,23 @@
 
 <script type="math/tex; mode=display"> (\textbf{M}^{-1})^T </script>
 
-<p><strong>M</strong> is a matrix, usually the <code>model view transform matrix</code>. I was trying to understand how they come up this matrix. Here is my understanding, a brief explanation.</p>
+<p><strong><code>M</code></strong> is a matrix, usually the <code>model view transform matrix</code>. I was trying to understand how they come up this matrix. Here is my understanding, a brief explanation.</p>
 
 <p>Below are some conditions for this problem:</p>
 
-<p>Let <strong><em>n</em></strong> be the surface normal vector, <strong><em>t</em></strong> is a vector on the surface. </p>
+<p>Let <strong><em><code>n</code></em></strong> be the surface normal vector, <strong><em><code>t</code></em></strong> is a vector on the surface. </p>
 
-<p><strong><em>t’</em></strong> is the vector transformed by <strong><em>M</em></strong>, the model view transform matrix. The mathmatics representation is: </p>
+<p><strong><em><code>t'</code></em></strong> is the vector transformed by <strong><code>M</code></strong>, the model view transform matrix. The mathmatics representation is: </p>
 
-<script type="math/tex; mode=display"> t' = {t} * \textbf{M} </script>
+<script type="math/tex; mode=display"> t' = t * \textbf{M} </script>
 
-<p><strong><em>n’</em></strong> is vector transformed by <strong><em>M</em></strong> which is the special normal transformation matrix we need to produce. The mathmatics representation is: </p>
+<p><strong><em><code>n'</code></em></strong> is vector transformed by <strong><code>M</code></strong> which is the special normal transformation matrix we need to produce. The mathmatics representation is: </p>
 
 <script type="math/tex; mode=display"> n' = n * \textbf{G} </script>
 
-<p>By definition, <strong><em>n</em></strong> is perpendicular to the surface, therefore:</p>
+<p>By definition, <strong><em><code>n</code></em></strong> is perpendicular to the surface, therefore:</p>
 
-<script type="math/tex; mode=display"> n \cdot \bm{t} = 0 </script>
+<script type="math/tex; mode=display"> n \cdot t = 0 </script>
 </div>
   
   
