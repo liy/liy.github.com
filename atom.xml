@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-30T20:06:25+00:00</updated>
+  <updated>2013-03-30T20:09:00+00:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -27,8 +27,8 @@
 <p>Below are some conditions for this problem:</p>
 
 <ol>
-  <li>Let <strong><script type="math/tex"> n </script></strong> be the surface normal vector, <script type="math/tex"> \bm{t} </script> is a vector on the surface. </li>
-  <li><strong><script type="math/tex"> t' </script></strong> is the vector transformed by <script type="math/tex"> \textbf{M} </script>, the model view transform matrix. The mathmatics representation is: <script type="math/tex"> \bm{t'} = \bm{t} * \textbf{M} </script> </li>
+  <li>Let <strong><em>n</em></strong> be the surface normal vector, <strong><em>t</em></strong> is a vector on the surface. </li>
+  <li><strong><em>t’</em></strong> is the vector transformed by <strong><em>M</em></strong>, the model view transform matrix. The mathmatics representation is: <script type="math/tex"> {t'} = {t} * \textbf{M} </script> </li>
   <li><script type="math/tex"> \bm{n'} </script> is vector transformed by <script type="math/tex">  \textbf{M} </script> which is the special normal transformation matrix we need to produce. The mathmatics representation is: <script type="math/tex"> \bm{n'} = \bm{n} * \textbf{G} </script></li>
 </ol>
 
