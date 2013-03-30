@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-30T20:10:52+00:00</updated>
+  <updated>2013-03-30T20:13:17+00:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -30,13 +30,15 @@
 
 <p><strong><em>t’</em></strong> is the vector transformed by <strong><em>M</em></strong>, the model view transform matrix. The mathmatics representation is: </p>
 
-<script type="math/tex; mode=display"> {t'} = {t} * \textbf{M} </script>
+<script type="math/tex; mode=display"> t' = {t} * \textbf{M} </script>
 
-<p><script type="math/tex"> \bm{n'} </script> is vector transformed by <script type="math/tex"> \textbf{M} </script> which is the special normal transformation matrix we need to produce. The mathmatics representation is: </p>
+<p><strong><em>n’</em></strong> is vector transformed by <strong><em>M</em></strong> which is the special normal transformation matrix we need to produce. The mathmatics representation is: </p>
 
 <script type="math/tex; mode=display"> n' = n * \textbf{G} </script>
 
-<p>By definition, <script type="math/tex"> \bm{n} </script> is perpendicular to the surface, therefore <script type="math/tex"> \bm{n} \cdot \bm{t} = 0 </script>.</p>
+<p>By definition, <strong><em>n</em></strong> is perpendicular to the surface, therefore:</p>
+
+<script type="math/tex; mode=display"> n \cdot \bm{t} = 0 </script>
 ]]></content>
   </entry>
   
