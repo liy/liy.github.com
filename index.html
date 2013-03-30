@@ -141,7 +141,7 @@
 
   <div class="entry-content"><p>I was doing WebGL lighting which requires a special normal transformation matrix:</p>
 
-<script type="math/tex; mode=display"> (\textbf{M}^{-1})^T </script>
+<script type="math/tex; mode=display"> (\mathbf{M}^{-1})^T </script>
 
 <p><strong><code>M</code></strong> is a matrix, usually the model view transform matrix. I was trying to understand how they come up this matrix. Here is my understanding, a brief explanation.</p>
 
@@ -151,25 +151,25 @@
 
 <p><strong><em><code>t'</code></em></strong> is the vector transformed by <strong><code>M</code></strong>, the model view transform matrix. The mathmatics representation is: </p>
 
-<script type="math/tex; mode=display"> t' = \textbf{M} * t </script>
+<script type="math/tex; mode=display"> t' = \mathbf{M} * t </script>
 
 <p><strong><em><code>n'</code></em></strong> is vector transformed by <strong><code>M</code></strong> which is the special normal transformation matrix we need to produce. The mathmatics representation is: </p>
 
-<script type="math/tex; mode=display"> n' = \textbf{G} * n </script>
+<script type="math/tex; mode=display"> n' = \mathbf{G} * n </script>
 
 <p>If transformed normal vector <strong><em><code>n'</code></em></strong> is perpendicular to the surface, By definition, there will be:</p>
 
-<script type="math/tex; mode=display"> n' \cdot t' = (\textbf{G} * n) \cdot (\textbf{M} * t) = 0 </script>
+<script type="math/tex; mode=display"> n' \cdot t' = (\mathbf{G} * n) \cdot (\mathbf{M} * t) = 0 </script>
 
 <p>Two vectors’ dot product can be rewritten into normal multiplication by transposing one column vector (OpenGL use column vector) into row vector. <a href="http://en.wikipedia.org/wiki/Transpose#Properties">Transpose of matrix, property 6</a></p>
 
-<script type="math/tex; mode=display"> (\textbf{G} * n)^T * (\textbf{M} * t) = 0 </script>
+<script type="math/tex; mode=display"> (\mathbf{G} * n)^T * (\mathbf{M} * t) = 0 </script>
 
 <p><code>Seems like the vectors dot product can be treated as two one dimensional matrices multiplication.</code></p>
 
 <p>According to <a href="http://en.wikipedia.org/wiki/Transpose#Properties">Transpose of matrix, property 3</a>. The final equation is : </p>
 
-<script type="math/tex; mode=display"> n^T * \textbf{G}^T * \textbf{M} * t = 0 </script>
+<script type="math/tex; mode=display"> n^T * \mathbf{G}^T * \mathbf{M} * t = 0 </script>
 
 <p>Now, all we need to do is using this equation to produce the normal matrix (the inverse transpose of the model view matrix).</p>
 
@@ -177,17 +177,7 @@
 
 <script type="math/tex; mode=display"> n^T * t = n \cdot t = 0 </script>
 
-<table>
-  <tbody>
-    <tr>
-      <td>This is obvious, since <strong><em><code>n</code></em></strong> is perpendicular to <strong><em><code>t</code></em></strong>. $$ n \cdot t =</td>
-      <td>n</td>
-      <td> </td>
-      <td>t</td>
-      <td>cos(\theta) = 0 (\theta = 90) $$</td>
-    </tr>
-  </tbody>
-</table>
+<p>This is obvious, since <strong><em><code>n</code></em></strong> is perpendicular to <strong><em><code>t</code></em></strong>. <script type="math/tex"> n \cdot t = \|n\|\|t\|cos(\theta) = 0 (\theta = 90) </script></p>
 
 </div>
   
