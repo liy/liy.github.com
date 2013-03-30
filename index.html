@@ -196,6 +196,10 @@
 
 </script>
 
+<p>This inverse transpose model view matrix must be used for surface normal transformation in order to calculate the correct lighting.</p>
+
+<p>This is because the model view matrix could cause the incorrect normal direction. Imagine you have a sphere, and scale 2 only in <strong><code>x</code></strong> axis, the sphere will be stretched. If use the model view matrix, the normal points in <strong><code>y</code></strong> direction clearly will be unchanged, the length of normal in <strong><code>x</code></strong> direction is now 2 units, other normals will be incorrectly pointed towards in either <strong><code>x</code></strong> or <strong><code>-x</code></strong> direction.</p>
+
 </div>
   
   
