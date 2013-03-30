@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-30T20:20:17+00:00</updated>
+  <updated>2013-03-30T20:21:22+00:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -30,15 +30,15 @@
 
 <p><strong><em><code>t'</code></em></strong> is the vector transformed by <strong><code>M</code></strong>, the model view transform matrix. The mathmatics representation is: </p>
 
-<script type="math/tex; mode=display"> t' = t * \textbf{M} </script>
+<script type="math/tex; mode=display"> t' = \textbf{M} * t </script>
 
 <p><strong><em><code>n'</code></em></strong> is vector transformed by <strong><code>M</code></strong> which is the special normal transformation matrix we need to produce. The mathmatics representation is: </p>
 
-<script type="math/tex; mode=display"> n' = n * \textbf{G} </script>
+<script type="math/tex; mode=display"> n' = \textbf{G} * n </script>
 
 <p>If transformed normal vector <strong><em><code>n'</code></em></strong> is perpendicular to the surface, By definition, there will be:</p>
 
-<script type="math/tex; mode=display"> n' \cdot t' = Gn \cdot Mt = 0 </script>
+<script type="math/tex; mode=display"> n' \cdot t' = G*n \cdot M*t = 0 </script>
 
 ]]></content>
   </entry>
