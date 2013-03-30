@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-30T22:28:45+00:00</updated>
+  <updated>2013-03-30T22:30:03+00:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -65,11 +65,11 @@
 <p><script type="math/tex"> \mathbf{G}^T * \mathbf{M} = \mathbf{I} </script> becomes the key to solve the problem. Multiply both side by <script type="math/tex"> \mathbf{M}^{-1} </script> finally we get the answer.</p>
 
 <script type="math/tex; mode=display"> 
-\mathbf{G}^T * \mathbf{M} * \mathbf{M}^{-1} = \mathbf{I} * \mathbf{M}^{-1} \Rightarrow
+\mathbf{G}^T * \mathbf{M} * \mathbf{M}^{-1} = \mathbf{I} * \mathbf{M}^{-1} \Rightarrow\\
 
-\mathbf{G}^T * \mathbf{I} = \mathbf{M}^{-1}  \Rightarrow
+\mathbf{G}^T * \mathbf{I} = \mathbf{M}^{-1}  \Rightarrow\\
 
-\mathbf{G}^T = \mathbf{M}^{-1} \Rightarrow
+\mathbf{G}^T = \mathbf{M}^{-1} \Rightarrow\\
 
 \mathbf{G} = (\mathbf{M}^{-1})^T
 
