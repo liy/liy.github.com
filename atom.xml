@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-30T16:50:11+00:00</updated>
+  <updated>2013-03-30T20:02:56+00:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -18,7 +18,21 @@
     <link href="http://aircapsule.com/blog/2013/03/30/normal-transformation/"/>
     <updated>2013-03-30T16:05:00+00:00</updated>
     <id>http://aircapsule.com/blog/2013/03/30/normal-transformation</id>
-    <content type="html"><![CDATA[<p>I was trying to understand why surface normal must be transformed by the inverse transpose of model view matrix <code>$$ (\textbf{M}^{-1})^T $$</code></p>
+    <content type="html"><![CDATA[<p>I was doing WebGL lighting which requires a special normal transformation matrix:</p>
+
+<p><code>$$ (\textbf{M}^{-1})^T $$</code></p>
+
+<p><strong>M</strong> is a matrix, usually the <code>model view transform matrix</code>. I was trying to understand how they come up this matrix. Here is my understanding, a brief explanation.</p>
+
+<p>Below are some conditions for this problem:</p>
+
+<ol>
+  <li>Let <code>$$ \bm{n} $$</code> be the surface normal vector, <code>$$ \bm{t} $$</code> is a vector on the surface. </li>
+  <li><code>$$ \bm{t'} $$</code> is the vector transformed by <code>$$ \textbf{M} $$</code>, the model view transform matrix. The mathmatics representation is: <code>$$ \bm{t'} = \bm{t} * \textbf{M} $$</code> </li>
+  <li><code>$$ \bm{n'} $$</code> is vector transformed by <code>$$  \textbf{M} $$</code> which is the special normal transformation matrix we need to produce. The mathmatics representation is: <code>$$ \bm{n'} = \bm{n} * \textbf{G} $$</code></li>
+</ol>
+
+<p>By definition, <code>$$ \bm{n} $$</code> is perpendicular to the surface, therefore <code>$$ \bm{n} \cdot \bm{t} = 0 $$</code>.</p>
 ]]></content>
   </entry>
   
