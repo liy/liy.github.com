@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-30T20:21:22+00:00</updated>
+  <updated>2013-03-30T20:22:34+00:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -38,7 +38,7 @@
 
 <p>If transformed normal vector <strong><em><code>n'</code></em></strong> is perpendicular to the surface, By definition, there will be:</p>
 
-<script type="math/tex; mode=display"> n' \cdot t' = G*n \cdot M*t = 0 </script>
+<script type="math/tex; mode=display"> n' \cdot t' = (\textbf{G} * n) \cdot \textbf{M} * t = 0 </script>
 
 ]]></content>
   </entry>
