@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-31T20:47:30+01:00</updated>
+  <updated>2013-03-31T20:50:25+01:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -138,10 +138,9 @@
 
 <p>References:</p>
 
-<ul>
-  <li><a href="http://stackoverflow.com/questions/4424936/opengl-how-to-design-efficient-rendering-system-using-vertex-arrays-with-depth">stackoverflow</a></li>
-  <li><a href="http://stackoverflow.com/questions/4424936/opengl-how-to-design-efficient-rendering-system-using-vertex-arrays-with-depth">state sorting tutorial</a></li>
-</ul>
+<p><a href="http://stackoverflow.com/questions/4424936/opengl-how-to-design-efficient-rendering-system-using-vertex-arrays-with-depth">stackoverflow</a></p>
+
+<p><a href="http://stackoverflow.com/questions/4424936/opengl-how-to-design-efficient-rendering-system-using-vertex-arrays-with-depth">state sorting tutorial</a></p>
 ]]></content>
   </entry>
   
