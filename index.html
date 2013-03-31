@@ -9,7 +9,7 @@
   <meta name="author" content="Liy">
 
   
-  <meta name="description" content="I was doing WebGL lighting which requires a special normal transformation matrix: M is a matrix, usually the model view transform matrix. I was &hellip;">
+  <meta name="description" content="今天又思考了一下 OpenGL alpha 问题。很早之前就研究过，因为一会儿 Ruby on Rails 一会儿 OpenGL 就忘了不少。 Reducing OpenGL state changes is one of the several ways to optmize the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -108,6 +108,152 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/31/webgl-state-sorting/">WebGL State Sorting</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-31T17:05:00+01:00" pubdate data-updated="true">Mar 31<span>st</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/31/webgl-state-sorting/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天又思考了一下 OpenGL alpha 问题。很早之前就研究过，因为一会儿 Ruby on Rails 一会儿 OpenGL 就忘了不少。</p>
+
+<p>Reducing OpenGL state changes is one of the several ways to optmize the performance. Sorting the objects into categories directly reduced state changes.</p>
+
+<p>Alpha transparency is definitely required in game. This also requires objects sorting. Opaque object must be drawn first, before translucent object.</p>
+
+<h3 id="what-order">What order?</h3>
+
+<ol>
+  <li>From my understanding first of all, the objects must be transformed using <code>model view matrix</code>, into eye coordinates.</li>
+  <li>Second, because opaque must be drawn before translucent object. Objects must be sorted into 2 categories: opaque and translucent. </li>
+  <li>Sort by other states, into categories, e.g., texture id.</li>
+  <li>Opaque objects must be sorted into <code>near to far</code> order.</li>
+  <li>Translucent objects must be sorted into <code>far to near</code> order.</li>
+</ol>
+
+<p>Of course, z-order is related to the eye position, near means closer to eye.</p>
+
+<h3 id="how-to-sort">How to sort?</h3>
+
+<p>Here is a simple JavaScript code. Basically, it is a very simple <a href="http://en.wikipedia.org/wiki/Insertion_sort">insertion sort</a>. JavaScript can use <code>Array.sort</code>.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[];</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">len</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</span><span class="line"><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">){</span>
+</span><span class="line">  <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">texture</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">4</span><span class="p">),</span>
+</span><span class="line">    <span class="nx">translucent</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="o">?</span> <span class="kc">true</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span><span class="line">    <span class="nx">z</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">len</span><span class="p">)</span>
+</span><span class="line">  <span class="p">};</span>
+</span><span class="line">  <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="nx">list</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">sortFunc</span><span class="p">);</span>
+</span><span class="line">
+</span><span class="line"><span class="kd">function</span> <span class="nx">sortFunc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+</span><span class="line">  <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">translucent</span> <span class="o">!=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">translucent</span><span class="p">){</span>
+</span><span class="line">    <span class="k">if</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">translucent</span><span class="p">)</span>
+</span><span class="line">      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">    <span class="k">else</span>
+</span><span class="line">      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span class="line">  <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">  <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">texture</span> <span class="o">!=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">texture</span><span class="p">){</span>
+</span><span class="line">    <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">texture</span> <span class="o">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">texture</span><span class="p">)</span>
+</span><span class="line">      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">    <span class="k">else</span>
+</span><span class="line">      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span class="line">  <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">  <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">z</span> <span class="o">!=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">z</span><span class="p">){</span>
+</span><span class="line">    <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">z</span> <span class="o">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">z</span><span class="p">)</span>
+</span><span class="line">      <span class="k">return</span> <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">translucent</span><span class="p">)</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">z</span> <span class="o">==</span> <span class="nx">b</span><span class="p">.</span><span class="nx">z</span><span class="p">)</span>
+</span><span class="line">      <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">    <span class="k">else</span>
+</span><span class="line">      <span class="k">return</span> <span class="p">(</span><span class="o">!</span><span class="nx">a</span><span class="p">.</span><span class="nx">translucent</span><span class="p">)</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">  <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">){</span>
+</span><span class="line">  <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="s2">&quot;translucent: &quot;</span> <span class="o">+</span> <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">translucent</span> <span class="o">+</span> <span class="s2">&quot; texture: &quot;</span> <span class="o">+</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">texture</span> <span class="o">+</span> <span class="s2">&quot; z: &quot;</span> <span class="o">+</span> <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">z</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -643,44 +789,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blogs/101">朋友们新春快乐！</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-22T00:00:00+00:00" pubdate data-updated="true">Jan 22<span>nd</span>, 2012</time>
-        
-         | <a href="/blogs/101#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>万事都如意可能有点玄，但是身体健康是肯定要的！新年快乐！</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -696,6 +804,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/31/webgl-state-sorting/">WebGL State Sorting</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/30/normal-transformation/">Normal Transformation</a>
       </li>
     
@@ -709,10 +821,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/13/mandelbrot-set-and-webgl/">Mandelbrot set and WebGL</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/03/04/zhun-bei-life-in-uk-kao-shi-zhong/">准备 Life in UK 考试中</a>
       </li>
     
   </ul>

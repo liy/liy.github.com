@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-30T23:12:04+00:00</updated>
+  <updated>2013-03-31T19:54:41+01:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -12,6 +12,123 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[WebGL State Sorting]]></title>
+    <link href="http://aircapsule.com/blog/2013/03/31/webgl-state-sorting/"/>
+    <updated>2013-03-31T17:05:00+01:00</updated>
+    <id>http://aircapsule.com/blog/2013/03/31/webgl-state-sorting</id>
+    <content type="html"><![CDATA[<p>今天又思考了一下 OpenGL alpha 问题。很早之前就研究过，因为一会儿 Ruby on Rails 一会儿 OpenGL 就忘了不少。</p>
+
+<p>Reducing OpenGL state changes is one of the several ways to optmize the performance. Sorting the objects into categories directly reduced state changes.</p>
+
+<p>Alpha transparency is definitely required in game. This also requires objects sorting. Opaque object must be drawn first, before translucent object.</p>
+
+<h3 id="what-order">What order?</h3>
+
+<ol>
+  <li>From my understanding first of all, the objects must be transformed using <code>model view matrix</code>, into eye coordinates.</li>
+  <li>Second, because opaque must be drawn before translucent object. Objects must be sorted into 2 categories: opaque and translucent. </li>
+  <li>Sort by other states, into categories, e.g., texture id.</li>
+  <li>Opaque objects must be sorted into <code>near to far</code> order.</li>
+  <li>Translucent objects must be sorted into <code>far to near</code> order.</li>
+</ol>
+
+<p>Of course, z-order is related to the eye position, near means closer to eye.</p>
+
+<h3 id="how-to-sort">How to sort?</h3>
+
+<p>Here is a simple JavaScript code. Basically, it is a very simple <a href="http://en.wikipedia.org/wiki/Insertion_sort">insertion sort</a>. JavaScript can use <code>Array.sort</code>.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[];</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">len</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</span><span class="line"><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">){</span>
+</span><span class="line">  <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">texture</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">4</span><span class="p">),</span>
+</span><span class="line">    <span class="nx">translucent</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="o">?</span> <span class="kc">true</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span><span class="line">    <span class="nx">z</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">len</span><span class="p">)</span>
+</span><span class="line">  <span class="p">};</span>
+</span><span class="line">  <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="nx">list</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">sortFunc</span><span class="p">);</span>
+</span><span class="line">
+</span><span class="line"><span class="kd">function</span> <span class="nx">sortFunc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+</span><span class="line">  <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">translucent</span> <span class="o">!=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">translucent</span><span class="p">){</span>
+</span><span class="line">    <span class="k">if</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">translucent</span><span class="p">)</span>
+</span><span class="line">      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">    <span class="k">else</span>
+</span><span class="line">      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span class="line">  <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">  <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">texture</span> <span class="o">!=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">texture</span><span class="p">){</span>
+</span><span class="line">    <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">texture</span> <span class="o">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">texture</span><span class="p">)</span>
+</span><span class="line">      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">    <span class="k">else</span>
+</span><span class="line">      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span class="line">  <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">  <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">z</span> <span class="o">!=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">z</span><span class="p">){</span>
+</span><span class="line">    <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">z</span> <span class="o">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">z</span><span class="p">)</span>
+</span><span class="line">      <span class="k">return</span> <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">translucent</span><span class="p">)</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">z</span> <span class="o">==</span> <span class="nx">b</span><span class="p">.</span><span class="nx">z</span><span class="p">)</span>
+</span><span class="line">      <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">    <span class="k">else</span>
+</span><span class="line">      <span class="k">return</span> <span class="p">(</span><span class="o">!</span><span class="nx">a</span><span class="p">.</span><span class="nx">translucent</span><span class="p">)</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">  <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">){</span>
+</span><span class="line">  <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="s2">&quot;translucent: &quot;</span> <span class="o">+</span> <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">translucent</span> <span class="o">+</span> <span class="s2">&quot; texture: &quot;</span> <span class="o">+</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">texture</span> <span class="o">+</span> <span class="s2">&quot; z: &quot;</span> <span class="o">+</span> <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">z</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Normal Transformation]]></title>
@@ -650,25 +767,6 @@
 <p>另外还有个基于上边这个文章的视频：</p>
 
 <p>[blip.tv http://blip.tv/play/Ac6URAI]</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Create a Window in OpenGL without GLUT]]></title>
-    <link href="http://aircapsule.com/blogs/324"/>
-    <updated>2010-12-04T00:00:00+00:00</updated>
-    <id>http://aircapsule.com/blogs/324</id>
-    <content type="html"><![CDATA[<p>You’d better read both of them to gain the full understanding on Win32 and OpenGL setup.</p>
-<ul>
-	<li><a href="http://www.winprog.org/tutorial/" target="_blank">theForger&#8217;s Win32 API Tutorial</a> Part 1-4.</li>
-	<li><a href="http://nehe.gamedev.net/data/lessons/lesson.asp?lesson=01" target="_blank">NeHe OpenGL lesson 1</a></li>
-</ul>
-<p>不太喜欢用GLUT，之前用过，老是感觉很怪，比如有鼠标在屏幕上动，callback interval会变慢。另外也找不到合适的方式来设置game loop。最大的好处就是不需要写太多代码，而且跨平台。</p>
-
-<p>所以还是按照比较正常的win32开发方式来弄咯。NeHe的教程仿佛也没用GLUT。
-&lt;div id=&#8221;_mcePaste&#8221; class=&#8221;mcePaste&#8221; style=&#8221;position:absolute;left:-10000px;top:0;width:1px;height:1px;overflow:hidden;&#8221;&gt;
-# theForger’s Win32 API Programming Tutorial
-&lt;/div&gt;</p>
 ]]></content>
   </entry>
   
