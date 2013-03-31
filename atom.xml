@@ -4,7 +4,7 @@
   <title><![CDATA[空气胶囊]]></title>
   <link href="http://aircapsule.com/atom.xml" rel="self"/>
   <link href="http://aircapsule.com/"/>
-  <updated>2013-03-31T20:26:23+01:00</updated>
+  <updated>2013-03-31T20:29:57+01:00</updated>
   <id>http://aircapsule.com/</id>
   <author>
     <name><![CDATA[Liy]]></name>
@@ -18,7 +18,7 @@
     <link href="http://aircapsule.com/blog/2013/03/31/webgl-state-sorting/"/>
     <updated>2013-03-31T17:05:00+01:00</updated>
     <id>http://aircapsule.com/blog/2013/03/31/webgl-state-sorting</id>
-    <content type="html"><![CDATA[<p>今天又思考了一下 OpenGL alpha 问题。很早之前就研究过，因为一会儿 Ruby on Rails 一会儿 OpenGL 就忘了不少。</p>
+    <content type="html"><![CDATA[<p>今天又思考了一下 OpenGL alpha 问题。很早之前就研究过，因为一会儿 Ruby on Rails 一会儿 Node.js，翻来覆去就忘了。</p>
 
 <p>Reducing OpenGL state changes is one of the several ways to optmize the performance. Sorting the objects into categories directly reduced state changes.</p>
 
