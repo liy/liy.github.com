@@ -1,7 +1,7 @@
 .sass-cache/
 .pygments-cache/
 _drafts/
-_site/
+# _site/
 *.swp
 *.scssc
 .DS_Store
@@ -9,6 +9,3 @@ _site/
 *.psd
 *~
 _plugins copy/
-
-# for github deployment
-_deploy
