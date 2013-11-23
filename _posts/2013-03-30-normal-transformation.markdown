@@ -20,7 +20,7 @@ Let ***``n``*** be the surface normal vector, ***``t``*** is a vector on the sur
 
 $$ t' = \mathbf{M} * t $$
 
-***``n'``*** is vector transformed by **``M``** which is the special normal transformation matrix we need to produce. The mathmatics representation is:
+***``n'``*** is vector transformed by **``G``** which is the special normal transformation matrix we need to produce. The mathmatics representation is:
 
 $$ n' = \mathbf{G} * n $$
 
