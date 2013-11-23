@@ -1,0 +1,11 @@
+.sass-cache/
+.pygments-cache/
+_drafts/
+_site/
+*.swp
+*.scssc
+.DS_Store
+.rvmrc
+*.psd
+*~
+_plugins copy/
