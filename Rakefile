@@ -14,8 +14,7 @@ deploy_branch  = "master"
 posts_dir       = "_posts"    # directory for blog files
 new_post_ext    = "markdown"  # default new post file extension when using the new_post task
 new_page_ext    = "markdown"  # default new page file extension when using the new_page task
-deploy_dir      = "_deploy"   # deploy directory (for Github pages deployment)
-public_dir      = "_site"    # compiled site directory
+deploy_dir      = "_site"   # deploy directory (for Github pages deployment)
 
 # default deploy action
 deploy_default = "push"
@@ -117,10 +116,6 @@ end
 desc "deploy site to github pages"
 multitask :push do
   puts "## Deploying branch to Github Pages "
-  (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
-  # Rake::Task[:copydot].invoke(public_dir, deploy_dir)
-  puts "\n## copying #{public_dir} to #{deploy_dir}"
-  cp_r "#{public_dir}/.", deploy_dir
   cd "#{deploy_dir}" do
     system "git add ."
     system "git add -u"
