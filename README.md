@@ -1,20 +1,30 @@
 Fork from [@muanchiou](http://twitter.com/muanchiou)
 
 ### New Post
-rake new_post
-
-### Publish
 ```
-rake publish
+rake post
+```
+OR
+```
+rake post['my new post']
+```
+
+### Generate site
+```
+rake generate
+```
+
+### Deploy to github pages
+```
+rake deploy
 ```
 Make sure you are on **source** branch
 
-### Generate _site
-```
-jekyll build
-```
-
 ### Local server
+```
+rake watch
+```
+OR
 ```
 jekyll serve
 ```

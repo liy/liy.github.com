@@ -15,15 +15,9 @@ source_branch = "source"
 posts_dir       = "_posts"    # directory for blog files
 new_post_ext    = "markdown"  # default new post file extension when using the new_post task
 new_page_ext    = "markdown"  # default new page file extension when using the new_page task
-deploy_dir      = "_deploy"   # deploy directory (for Github pages deployment)
-public_dir      = "_site"    # compiled site directory
-
-# default deploy action
-deploy_default = "push"
 
 
-
-task :default => :publish
+task :default => :watch
 
 
 desc "compile and run the site"
@@ -54,14 +48,6 @@ task :generate do
   })).process
 end
 
-
-task :check_git do
-  unless git_clean?
-    puts "Dirty repo - commit or discard your changes and run deploy again"
-    exit 1
-  end
-end
-
 desc "Deploy to remote origin"
 task :deploy => [:check_git] do
   message = "Site updated at #{Time.now.utc}"
@@ -81,9 +67,9 @@ task :deploy => [:check_git] do
 end
 
 
-# usage rake new_post[my-new-post] or rake new_post['my new post'] or rake new_post (defaults to "new-post")
+# usage rake post[my-new-post] or rake post['my new post'] or rake post (defaults to "new-post")
 desc "Begin a new post in #{posts_dir}"
-task :new_post, :title do |t, args|
+task :post, :title do |t, args|
   if args.title
     title = args.title
   else
@@ -107,10 +93,19 @@ task :new_post, :title do |t, args|
 end
 
 
+task :check_git do
+  unless git_clean?
+    puts "Dirty repo - commit or discard your changes and run deploy again"
+    exit 1
+  end
+end
+
+
 def get_stdin(message)
   print message
   STDIN.gets.chomp
 end
+
 
 def git_clean?
   git_state = `git status 2> /dev/null | tail -n1`
