@@ -12,6 +12,8 @@ links:
   - name:         About
     url:          /about
 
+root: /
+
 # Disqus Comments
 disqus_short_name: aircapsule
 disqus_show_comment_count: true
