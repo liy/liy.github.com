@@ -1,7 +1,7 @@
 .sass-cache/
 .pygments-cache/
 _drafts/
-# _site/
+_site/
 *.swp
 *.scssc
 .DS_Store

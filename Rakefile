@@ -66,7 +66,6 @@ desc "Deploy to remote origin"
 task :deploy => [:check_git] do
   message = "Site updated at #{Time.now.utc}"
 
-  system "jekyll"
   system "git checkout \"#{deploy_branch}\""
   system "cp -r _site/* . && rm -rf _site/ && touch .nojekyll"
 
