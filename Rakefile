@@ -27,7 +27,7 @@ task :default => :publish
 
 
 desc "compile and run the site"
-task :default do
+task :watch do
   pids = [
     spawn("jekyll server -w"),
     spawn("scss --watch _assets:assets"),
@@ -47,7 +47,7 @@ end
 
 desc "Generate blog files"
 task :generate do
-  system "git checkout source"
+  system "git checkout \"#{source_branch}\""
   Jekyll::Site.new(Jekyll.configuration({
     "source"      => ".",
     "destination" => "_site"
