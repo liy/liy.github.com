@@ -18,7 +18,7 @@ disqus_short_name: aircapsule
 disqus_show_comment_count: true
 
 # Google Analytics
-google_analytics_tracking_id: UA-38976134-1
+google_analytics: UA-38976134-1
 
 # exclude these file when publish to _site
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md']
