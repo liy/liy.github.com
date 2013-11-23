@@ -26,6 +26,7 @@ require 'jekyll'
 
 desc "Generate blog files"
 task :generate do
+  system "git checkout source"
   Jekyll::Site.new(Jekyll.configuration({
     "source"      => ".",
     "destination" => "_site"
