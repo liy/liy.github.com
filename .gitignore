@@ -9,3 +9,6 @@ _site/
 *.psd
 *~
 _plugins copy/
+
+# for github deployment
+_deploy
