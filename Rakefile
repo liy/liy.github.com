@@ -1,3 +1,22 @@
+require 'rubygems'
+require 'rake'
+require 'rdoc'
+require 'date'
+require 'yaml'
+require 'tmpdir'
+require 'jekyll'
+require "bundler/setup"
+require "stringex"
+
+
+posts_dir       = "_posts"    # directory for blog files
+new_post_ext    = "markdown"  # default new post file extension when using the new_post task
+new_page_ext    = "markdown"  # default new page file extension when using the new_page task
+
+
+task :default => :publish
+
+
 desc "compile and run the site"
 task :default do
   pids = [
@@ -16,13 +35,6 @@ task :default do
   end
 end
 
-require 'rubygems'
-require 'rake'
-require 'rdoc'
-require 'date'
-require 'yaml'
-require 'tmpdir'
-require 'jekyll'
 
 desc "Generate blog files"
 task :generate do
@@ -33,11 +45,11 @@ task :generate do
   })).process
 end
 
-
 desc "Generate and publish blog to master"
 task :publish => [:generate] do
   Dir.mktmpdir do |tmp|
     system "mv _site/* #{tmp}"
+    system "git branch master"
     system "git checkout master"
     system "rm -rf *"
     system "mv #{tmp}/* ."
@@ -50,4 +62,34 @@ task :publish => [:generate] do
   end
 end
 
-task :default => :publish
+
+# usage rake new_post[my-new-post] or rake new_post['my new post'] or rake new_post (defaults to "new-post")
+desc "Begin a new post in #{posts_dir}"
+task :new_post, :title do |t, args|
+  if args.title
+    title = args.title
+  else
+    title = get_stdin("Enter a title for your post: ")
+  end
+  mkdir_p "#{posts_dir}"
+  filename = "#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
+  if File.exist?(filename)
+    abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+  end
+  puts "Creating new post: #{filename}"
+  open(filename, 'w') do |post|
+    post.puts "---"
+    post.puts "layout: post"
+    post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
+    post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
+    post.puts "comments: true"
+    post.puts "categories: "
+    post.puts "---"
+  end
+end
+
+
+def get_stdin(message)
+  print message
+  STDIN.gets.chomp
+end
