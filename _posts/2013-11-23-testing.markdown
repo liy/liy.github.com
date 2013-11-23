@@ -1,7 +1,0 @@
----
-layout: post
-title: "testing"
-date: 2013-11-23 20:41
-comments: true
-categories: 
----
