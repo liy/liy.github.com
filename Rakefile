@@ -9,7 +9,8 @@ require "bundler/setup"
 require "stringex"
 
 # This will be configured for you when you run config_deploy
-deploy_branch  = "master"
+deploy_branch = "master"
+source_branch = "source"
 
 posts_dir       = "_posts"    # directory for blog files
 new_post_ext    = "markdown"  # default new post file extension when using the new_post task
@@ -54,21 +55,30 @@ task :generate do
 end
 
 
-desc "Generate and publish blog to master"
-task :publish => [:generate] do
-  Dir.mktmpdir do |tmp|
-    system "mv _site/* #{tmp}"
-    system "git branch master"
-    system "git checkout master"
-    system "rm -rf *"
-    system "mv #{tmp}/* ."
-    message = "Site updated at #{Time.now.utc}"
-    system "git add ."
-    system "git commit -am #{message.shellescape}"
-    system "git push origin master --force"
-    system "git checkout source"
-    system "echo yolo"
+task :check_git do
+  unless git_clean?
+    puts "Dirty repo - commit or discard your changes and run deploy again"
+    exit 1
   end
+end
+
+desc "Deploy to remote origin"
+task :deploy => [:check_git] do
+  message = "Site updated at #{Time.now.utc}"
+
+  system "jekyll"
+  system "git checkout \"#{deploy_branch}\""
+  system "cp -r _site/* . && rm -rf _site/ && touch .nojekyll"
+
+  unless git_clean?
+    system "git add . && git commit -m \"#{message}\""
+    system "git push origin \"#{deploy_branch}\""
+    puts "Pushed to origin with commit message: #{message}"
+  else
+    puts "No changes to deploy - canceled"
+  end
+
+  system "git checkout \"#{source_branch}\""
 end
 
 
@@ -98,51 +108,12 @@ task :new_post, :title do |t, args|
 end
 
 
-
-
-
-desc "Default deploy task"
-task :deploy do
-  # Check if preview posts exist, which should not be published
-  if File.exists?(".preview-mode")
-    puts "## Found posts in preview mode, regenerating files ..."
-    File.delete(".preview-mode")
-    Rake::Task[:generate].execute
-  end
-
-  Rake::Task["#{deploy_default}"].execute
-end
-
-
-desc "deploy site to github pages"
-multitask :push do
-  puts "## Deploying branch to Github Pages "
-  (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
-  Rake::Task[:copydot].invoke(public_dir, deploy_dir)
-  puts "\n## copying #{public_dir} to #{deploy_dir}"
-  cp_r "#{public_dir}/.", deploy_dir
-  cd "#{deploy_dir}" do
-    system "git add ."
-    system "git add -u"
-    puts "\n## Commiting: Site updated at #{Time.now.utc}"
-    message = "Site updated at #{Time.now.utc}"
-    system "git commit -m \"#{message}\""
-    puts "\n## Pushing generated #{deploy_dir} website"
-    system "git push origin #{deploy_branch} --force"
-    puts "\n## Github Pages deploy complete"
-  end
-end
-
-
-desc "copy dot files for deployment"
-task :copydot, :source, :dest do |t, args|
-  FileList["#{args.source}/**/.*"].exclude("**/.", "**/..", "**/.DS_Store", "**/._*").each do |file|
-    cp_r file, file.gsub(/#{args.source}/, "#{args.dest}") unless File.directory?(file)
-  end
-end
-
-
 def get_stdin(message)
   print message
   STDIN.gets.chomp
+end
+
+def git_clean?
+  git_state = `git status 2> /dev/null | tail -n1`
+  clean = (git_state =~ /working directory clean/)
 end
