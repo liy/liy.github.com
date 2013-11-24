@@ -4,10 +4,10 @@ jQuery(function() {
     return $(ele).html(prettyDate(new Date($(this).data("time"))));
   });
   $(document).on("keydown", function(e) {
-    if (e.keyCode === 39 && $("#js-next-post").length) {
+    if (e.keyCode === 39 && (!e.shiftKey && !e.ctrlKey && !e.altKey) && $("#js-next-post").length) {
       location.href = $("#js-next-post").attr("href");
     }
-    if (e.keyCode === 37 && $("#js-previous-post").length) {
+    if (e.keyCode === 37 && (!e.shiftKey && !e.ctrlKey && !e.altKey) && $("#js-previous-post").length) {
       return location.href = $("#js-previous-post").attr("href");
     }
   });

@@ -1,4 +1,4 @@
-title:            Li Yang
+title:            AirCapsule
 url:              http://aircapsule.com
 root:             /
 permalink:        /blog/:year/:month/:day/:title/
@@ -12,6 +12,8 @@ paginate:         5
 links:
   - name:         About
     url:          /about.html
+  - name:         RSS
+    url:          /feed.xml
 
 # Disqus Comments
 disqus_short_name: aircapsule

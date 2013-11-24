@@ -117,5 +117,9 @@ pre, code {
   padding: 3px 5px;
   border-radius: 3px; }
 
+.highlight pre {
+  overflow-x: auto;
+  overflow-y: auto; }
+
 iframe {
   border: 0; }

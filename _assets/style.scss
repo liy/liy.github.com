@@ -38,17 +38,17 @@ hr { border: 0; border-bottom: 1px solid #ddd; border-top: 1px solid #ddd; margi
   text-align: right;
   .site-title {
     &:hover {
-      .block { background-color: #6AD; }
+      .block { background-color: #6AD; width: 30px; margin-right: 10px;}
       .lastname { opacity: .7; color: #59b; }
       color: #59b;
     }
     .block {
       display: inline-block;
-      width: 30px;
+      width: 9px;
       height: 9px;
+      margin-right: 5px;
       margin-top: 1px;
       background-color: #ddd;
-      margin-right: 10px;
       @include transition(.4s);
     }
     float: left;
@@ -209,4 +209,8 @@ article {
 .MathJax_Display .math {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.page {
+  margin-left: 10px;
 }

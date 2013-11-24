@@ -28,6 +28,7 @@ task :watch do
   pids = [
     spawn("jekyll server -w --drafts"),
     spawn("scss --watch _assets:assets"),
+    # spawn("coffee -b -w -o assets -c _assets/*.coffee")
     spawn("coffee -b -w -o assets -c _assets/*.coffee")
   ]
 

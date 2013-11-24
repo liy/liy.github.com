@@ -55,6 +55,12 @@ pre, code {
   border-radius: 3px;
 }
 
+// hide scrollbar on firefox
+.highlight pre {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
 // disable iframe border for jsfiddle
 iframe {
   border: 0;
