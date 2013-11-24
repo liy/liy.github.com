@@ -17,6 +17,8 @@ drafts_dir      = "_drafts"   # directory for draft files
 new_post_ext    = "md"  # default new post file extension when using the new_post task
 new_page_ext    = "md"  # default new page file extension when using the new_page task
 
+editor = "subl"
+
 
 task :default => :watch
 
@@ -96,7 +98,7 @@ task :post, :title do |t, args|
     post.puts "categories: "
     post.puts "---"
   end
-  open_file(filename);
+  open_file(filename, eidtor);
 end
 
 
@@ -119,7 +121,7 @@ task :draft, :title do |t, args|
     post.puts "categories: "
     post.puts "---"
   end
-  open_file(filename);
+  open_file(filename, editor);
 end
 
 
@@ -137,7 +139,7 @@ task :publish do
     filename = files[number.to_i - 1].sub("#{drafts_dir}/", "")
     FileUtils.mv("#{drafts_dir}/#{filename}", "#{posts_dir}/#{Time.now.strftime('%Y-%m-%d %H:%M')}-#{filename}")
     puts "#{filename} was moved to '#{posts_dir}'."
-  else
+  end
 end
 
 
@@ -162,8 +164,7 @@ end
 
 
 # Create the file with the slug and open the default editor
-def open_file(filename)
-  editor = 'subl'
+def open_file(filename, editor)
   if File.exists?(filename)
     if editor && !editor.nil?
       sleep 1
@@ -174,12 +175,19 @@ def open_file(filename)
   end
 end
 
-
 def get_stdin(message)
   print message
   STDIN.gets.chomp
 end
 
+def ask(message, valid_options)
+  if valid_options
+    answer = get_stdin("#{message} #{valid_options.to_s.gsub(/"/, '').gsub(/, /,'/')} ") while !valid_options.include?(answer)
+  else
+    answer = get_stdin(message)
+  end
+  answer
+end
 
 def git_clean?
   git_state = `git status 2> /dev/null | tail -n1`
