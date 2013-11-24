@@ -112,7 +112,10 @@ pre code {
 
 pre, code {
   background-color: #F8F8FF;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
   font-size: 13px;
   padding: 3px 5px;
   border-radius: 3px; }
+
+iframe {
+  border: 0; }

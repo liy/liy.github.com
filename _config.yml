@@ -4,14 +4,14 @@ root:             /
 permalink:        /blog/:year/:month/:day/:title/
 pygments:         true
 markdown:         kramdown
-rdiscount:
-  extensions:     [smart]
+# rdiscount:
+#   extensions:     [smart]
 google_analytics: UA-21332781-7
 timezone:         Europe/London
 paginate:         5
 links:
   - name:         About
-    url:          /about
+    url:          /about.html
 
 # Disqus Comments
 disqus_short_name: aircapsule

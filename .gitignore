@@ -8,4 +8,4 @@ _site/
 .rvmrc
 *.psd
 *~
-_plugins copy/
+_weibo_config.yml

@@ -27,7 +27,7 @@ Here is a simple JavaScript code. Basically, it is a very simple [insertion sort
 
 JavaScript can use ``Array.sort``.
 
-```javascript
+{% highlight javascript linenos %}
 var list = [];
 var len = 100;
 for(var i=0; i<len; ++i){
@@ -71,7 +71,7 @@ function sortFunc(a, b){
 for(var i=0; i<list.length; ++i){
   console.dir("translucent: " + list[i].translucent + " texture: " +list[i].texture + " z: " + list[i].z);
 }
-```
+{% endhighlight %}
 
 {% jsfiddle rVzQd result,js %}
 
