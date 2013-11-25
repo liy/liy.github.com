@@ -7,7 +7,7 @@ categories:
 ---
 In OpenGL clip space coordinate system is between:```[-1, 1]```. 
 
-{% codeblock lang:glsl %}
+{% highlight glsl %}
 attribute vec2 a_position;
 uniform vec2 u_resolution;
 
@@ -20,11 +20,11 @@ void main(){
 	clipSpace -= 1.0;
 	gl_Position = vec4(clipSpace, 0, 1);
 }
-{% endcodeblock %}
+{% endhighlight %}
 
 However, the origin of the clip space will be end up at bottom left corner. We can flip the ```y axis``` to achieve the top left origin, like Adobe Flash and other design tool.
 
-{% codeblock lang:glsl %}
+{% highlight glsl %}
 attribute vec2 a_position;
 uniform vec2 u_resolution;
 
@@ -39,7 +39,7 @@ void main(){
 	clipSpace *= vec2(1, -1);
 	gl_Position = vec4(clipSpace, 0, 1);
 }
-{% endcodeblock %}
+{% endhighlight %}
 
 The OpenGL use column-major matrix. Using a 4x4 matrix represent the projection:
 
